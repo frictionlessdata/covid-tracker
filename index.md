@@ -15,6 +15,8 @@ text: "Last data update: <strong>{{ last_updated }}</strong> (this site is being
 
 ## Status
 
+The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken:
+
 ```html markup
 {% for row in frictionless.extract('data/countries/owid_wrl/latest.csv') %}
 <div class="status row">
