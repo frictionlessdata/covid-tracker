@@ -1,2 +1,2 @@
-# Gained Immunity
+# Immunity Balance
 
