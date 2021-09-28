@@ -4,7 +4,8 @@ about:
   text: A livemark tracking COVID-19 disease pandemic
 github:
   user: frictionlessdata
-  repo: covid-tracker
+  # TODO: update the repo here/badges/git/etc
+  repo: livemark
 topics:
   selector: h2
 site:
@@ -14,7 +15,16 @@ site:
 pages:
   items:
     - path: index
+      name: World
     - path: pages/regions
     - path: pages/countries
     - path: pages/data
     - path: pages/contrib
+links:
+  items:
+    - name: Our World in Data
+      path: https://ourworldindata.org/coronavirus
+    - name: Excess Mortality
+      path: https://github.com/dkobak/excess-mortality
+    - name: Frictionless
+      path: https://frictionlessdata.io

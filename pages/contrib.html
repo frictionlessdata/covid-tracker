@@ -1174,37 +1174,9 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 </style>
 <style>
 
-.item {
-  position: relative;
-  border: solid 1px #eee;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 0 20px;
-  background-color: #EEE8D5;
-  display: flex;
-  align-items: center;
-}
-
-.item:nth-child(odd) {
-  background-color: #EEE8C8;
-}
-
-.item-content {
-  width: 100%;
-  border-right: dashed 1px #ccc;
-}
-
-.item-content-link {
-  color: grey !important;
-}
-
-.item-stars {
-  font-size: 24px;
-  padding-left: 20px;
-}
-
-.item-stars-count {
-  font-size: 30px;
+.status .btn {
+  font-size: 30px !important;
+  font-weight: 900 !important;
 }
 
 </style>
@@ -1876,7 +1848,7 @@ $ livemark build # to build in non-interactive mode
 <div id="livemark-right">
 
 <div id="livemark-rating">
-  <iframe src="https://ghbtns.com/github-btn.html?user=frictionlessdata&amp;repo=covid-tracker&amp;type=star&amp;count=true&amp;size=large" width="160px" height="30px" title="GitHub">
+  <iframe src="https://ghbtns.com/github-btn.html?user=frictionlessdata&amp;repo=livemark&amp;type=star&amp;count=true&amp;size=large" width="160px" height="30px" title="GitHub">
   </iframe>
 </div>
 
@@ -1889,17 +1861,32 @@ $ livemark build # to build in non-interactive mode
 <div id="livemark-links">
   <ul>
         <li>
-      <a href="https://github.com/frictionlessdata/covid-tracker/issues" target="_blank">
+      <a href="https://ourworldindata.org/coronavirus" target="_blank">
+        Our World in Data
+      </a>
+    </li>
+        <li>
+      <a href="https://github.com/dkobak/excess-mortality" target="_blank">
+        Excess Mortality
+      </a>
+    </li>
+        <li>
+      <a href="https://frictionlessdata.io" target="_blank">
+        Frictionless
+      </a>
+    </li>
+        <li>
+      <a href="https://github.com/frictionlessdata/livemark/issues" target="_blank">
         Report
       </a>
     </li>
         <li>
-      <a href="https://github.com/frictionlessdata/covid-tracker/fork" target="_blank">
+      <a href="https://github.com/frictionlessdata/livemark/fork" target="_blank">
         Fork
       </a>
     </li>
         <li>
-      <a href="https://github.com/frictionlessdata/covid-tracker/edit/main/pages/contrib.md" target="_blank">
+      <a href="https://github.com/frictionlessdata/livemark/edit/main/pages/contrib.md" target="_blank">
         Edit
       </a>
     </li>
@@ -2235,9 +2222,109 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const searchItems = {
           'index': {
-          'name': 'World',
+          'name': 'COVID-19 Tracker',
           'path': 'index',
-          'text': "# World ```html markup 4756430.0 232335067.0 6133859009.0 ``` ## Deaths ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1,\"color\": \"red\"}] } } } ``` ## New Cases ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1,\"color\": \"blue\"}] } } } ``` ## Vaccinations ```json chart { \"mark\": \"bar\", \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ```",
+          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/livemark/general/main)](https://github.com/frictionlessdata/livemark/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: This site is being updated on a nightly basis. ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. ## Status ```html markup Deaths 4.8M Cases 232.3M Vaccinations 6.1B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart counds all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Combined The conbined chart might help analyze how the vaccination helps to fight the pandemic and case/deaths causalities: ```json chart { \"width\": 750, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"blue\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Source The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table: ```yaml table data: data/countries/owid_wrl/timeline.csv filters: true dropdownMenu: true contextMenu: true columnSorting: initialConfig: column: 3 sortOrder: desc width: 900 height: 300 ```",
+      },
+          'pages/regions': {
+          'name': 'Regions',
+          'path': 'pages/regions',
+          'text': "# Regions",
+      },
+          'pages/countries': {
+          'name': 'Countries',
+          'path': 'pages/countries',
+          'text': "# Countries",
+      },
+          'pages/data': {
+          'name': 'Data Collection',
+          'path': 'pages/data',
+          'text': "# Data Collection ## Extract First of all, we need to extract all the data packages from Github. We\u0027re going to look at all the repos having `datapackage.json` in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors: ```bash $ python code/extract.py ``` ```python file code/extract.py ``` ## Transform As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository\u0027s stargazers count and save it to the CSV file: ```bash $ python code/transform.py ``` ```python file code/transform.py ``` ## Load After we have the `packages.csv` file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin: ```bash $ python code/load.py ``` ```python file code/load.py ```",
+      },
+          'pages/contrib': {
+          'name': 'Contributing',
+          'path': 'pages/contrib',
+          'text': "# Contributing To start working on the project clone the repository and enter its directory: ```bash $ git clone git@github.com:frictionlessdata/data-packages.git $ cd data-packages ``` ## Install Run the following script to initiate a virtual environment and install the dependencies: ```bash $ make install $ editor .env # add your Github Token ``` ## Data To collect the data use the data collection script (run only if you want to update the data): ```bash $ make data ``` ## Build To build the project use one of these Livemark commands: ```bash $ livemark start # to build and start a live-reload server $ livemark build # to build in non-interactive mode ``` ## Deploy The project is deployed automatically to Github Pages on every push to \"main\". It means that if one propose a change in a PR it will be deployed automatically after merging.",
+      },
+          'index': {
+          'name': 'COVID-19 Tracker',
+          'path': 'index',
+          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/livemark/general/main)](https://github.com/frictionlessdata/livemark/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: This site is being updated on a nightly basis. ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. ## Status ```html markup Deaths 4.8M Cases 232.3M Vaccinations 6.1B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart counds all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Combined The conbined chart might help analyze how the vaccination helps to fight the pandemic and case/deaths causalities: ```json chart { \"width\": 750, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"blue\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Source The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table: ```yaml table data: data/countries/owid_wrl/timeline.csv filters: true dropdownMenu: true contextMenu: true columnSorting: initialConfig: column: 3 sortOrder: desc width: 900 height: 300 ```",
+      },
+          'pages/regions': {
+          'name': 'Regions',
+          'path': 'pages/regions',
+          'text': "# Regions",
+      },
+          'pages/countries': {
+          'name': 'Countries',
+          'path': 'pages/countries',
+          'text': "# Countries",
+      },
+          'pages/data': {
+          'name': 'Data Collection',
+          'path': 'pages/data',
+          'text': "# Data Collection ## Extract First of all, we need to extract all the data packages from Github. We\u0027re going to look at all the repos having `datapackage.json` in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors: ```bash $ python code/extract.py ``` ```python file code/extract.py ``` ## Transform As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository\u0027s stargazers count and save it to the CSV file: ```bash $ python code/transform.py ``` ```python file code/transform.py ``` ## Load After we have the `packages.csv` file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin: ```bash $ python code/load.py ``` ```python file code/load.py ```",
+      },
+          'pages/contrib': {
+          'name': 'Contributing',
+          'path': 'pages/contrib',
+          'text': "# Contributing To start working on the project clone the repository and enter its directory: ```bash $ git clone git@github.com:frictionlessdata/data-packages.git $ cd data-packages ``` ## Install Run the following script to initiate a virtual environment and install the dependencies: ```bash $ make install $ editor .env # add your Github Token ``` ## Data To collect the data use the data collection script (run only if you want to update the data): ```bash $ make data ``` ## Build To build the project use one of these Livemark commands: ```bash $ livemark start # to build and start a live-reload server $ livemark build # to build in non-interactive mode ``` ## Deploy The project is deployed automatically to Github Pages on every push to \"main\". It means that if one propose a change in a PR it will be deployed automatically after merging.",
+      },
+          'index': {
+          'name': 'COVID-19 Tracker',
+          'path': 'index',
+          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/livemark/general/main)](https://github.com/frictionlessdata/livemark/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: This site is being updated on a nightly basis. ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. ## Status ```html markup Deaths 4.8M Cases 232.3M Vaccinations 6.1B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart counds all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Combined The conbined chart might help analyze how the vaccination helps to fight the pandemic and case/deaths causalities: ```json chart { \"width\": 750, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"blue\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Source The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table: ```yaml table data: data/countries/owid_wrl/timeline.csv filters: true dropdownMenu: true contextMenu: true columnSorting: initialConfig: column: 3 sortOrder: desc width: 900 height: 300 ```",
+      },
+          'pages/regions': {
+          'name': 'Regions',
+          'path': 'pages/regions',
+          'text': "# Regions",
+      },
+          'pages/countries': {
+          'name': 'Countries',
+          'path': 'pages/countries',
+          'text': "# Countries",
+      },
+          'pages/data': {
+          'name': 'Data Collection',
+          'path': 'pages/data',
+          'text': "# Data Collection ## Extract First of all, we need to extract all the data packages from Github. We\u0027re going to look at all the repos having `datapackage.json` in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors: ```bash $ python code/extract.py ``` ```python file code/extract.py ``` ## Transform As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository\u0027s stargazers count and save it to the CSV file: ```bash $ python code/transform.py ``` ```python file code/transform.py ``` ## Load After we have the `packages.csv` file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin: ```bash $ python code/load.py ``` ```python file code/load.py ```",
+      },
+          'pages/contrib': {
+          'name': 'Contributing',
+          'path': 'pages/contrib',
+          'text': "# Contributing To start working on the project clone the repository and enter its directory: ```bash $ git clone git@github.com:frictionlessdata/data-packages.git $ cd data-packages ``` ## Install Run the following script to initiate a virtual environment and install the dependencies: ```bash $ make install $ editor .env # add your Github Token ``` ## Data To collect the data use the data collection script (run only if you want to update the data): ```bash $ make data ``` ## Build To build the project use one of these Livemark commands: ```bash $ livemark start # to build and start a live-reload server $ livemark build # to build in non-interactive mode ``` ## Deploy The project is deployed automatically to Github Pages on every push to \"main\". It means that if one propose a change in a PR it will be deployed automatically after merging.",
+      },
+          'index': {
+          'name': 'COVID-19 Tracker',
+          'path': 'index',
+          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/livemark/general/main)](https://github.com/frictionlessdata/livemark/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: This site is being updated on a nightly basis. ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. ## Status ```html markup Deaths 4.8M Cases 232.3M Vaccinations 6.1B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart counds all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Combined The conbined chart might help analyze how the vaccination helps to fight the pandemic and case/deaths causalities: ```json chart { \"width\": 750, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"blue\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Source The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table: ```yaml table data: data/countries/owid_wrl/timeline.csv filters: true dropdownMenu: true contextMenu: true columnSorting: initialConfig: column: 3 sortOrder: desc width: 900 height: 300 ```",
+      },
+          'pages/regions': {
+          'name': 'Regions',
+          'path': 'pages/regions',
+          'text': "# Regions",
+      },
+          'pages/countries': {
+          'name': 'Countries',
+          'path': 'pages/countries',
+          'text': "# Countries",
+      },
+          'pages/data': {
+          'name': 'Data Collection',
+          'path': 'pages/data',
+          'text': "# Data Collection ## Extract First of all, we need to extract all the data packages from Github. We\u0027re going to look at all the repos having `datapackage.json` in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors: ```bash $ python code/extract.py ``` ```python file code/extract.py ``` ## Transform As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository\u0027s stargazers count and save it to the CSV file: ```bash $ python code/transform.py ``` ```python file code/transform.py ``` ## Load After we have the `packages.csv` file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin: ```bash $ python code/load.py ``` ```python file code/load.py ```",
+      },
+          'pages/contrib': {
+          'name': 'Contributing',
+          'path': 'pages/contrib',
+          'text': "# Contributing To start working on the project clone the repository and enter its directory: ```bash $ git clone git@github.com:frictionlessdata/data-packages.git $ cd data-packages ``` ## Install Run the following script to initiate a virtual environment and install the dependencies: ```bash $ make install $ editor .env # add your Github Token ``` ## Data To collect the data use the data collection script (run only if you want to update the data): ```bash $ make data ``` ## Build To build the project use one of these Livemark commands: ```bash $ livemark start # to build and start a live-reload server $ livemark build # to build in non-interactive mode ``` ## Deploy The project is deployed automatically to Github Pages on every push to \"main\". It means that if one propose a change in a PR it will be deployed automatically after merging.",
+      },
+          'index': {
+          'name': 'COVID-19 Tracker',
+          'path': 'index',
+          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/livemark/general/main)](https://github.com/frictionlessdata/livemark/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: This site is being updated on a nightly basis. ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. ## Status ```html markup Deaths 4.8M Cases 232.3M Vaccinations 6.1B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart counds all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Combined The conbined chart might help analyze how the vaccination helps to fight the pandemic and case/deaths causalities: ```json chart { \"width\": 750, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"blue\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Source The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table: ```yaml table data: data/countries/owid_wrl/timeline.csv filters: true dropdownMenu: true contextMenu: true columnSorting: initialConfig: column: 3 sortOrder: desc width: 900 height: 300 ```",
       },
           'pages/regions': {
           'name': 'Regions',
