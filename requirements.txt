@@ -1,0 +1,8 @@
+wheel
+neovim
+pylama
+black
+ipython
+livemark
+PyGithub
+python-dotenv

@@ -1,0 +1,18 @@
+brand:
+  text: Data Packages
+about:
+  text: A livemark listing data packages hosted on Github
+github:
+  user: frictionlessdata
+  repo: data-packages
+topics:
+  selector: h2
+site:
+  favicon: assets/data-package.png
+  styles:
+    - style.css
+pages:
+  items:
+    - path: index
+    - path: data
+    - path: contrib
