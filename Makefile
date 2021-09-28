@@ -1,4 +1,4 @@
-.PHONY: all install collect github
+.PHONY: all install data github
 
 
 LEAD := $(shell head -n 1 LEAD.md)

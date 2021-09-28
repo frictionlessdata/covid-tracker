@@ -1,14 +1,21 @@
 from frictionless import Resource, transform, steps
 
-
-# General
-
+# Timeline
 
 transform(
-    Resource("data/packages.raw.csv"),
+    Resource("data/timeline.csv"),
     steps=[
-        steps.table_normalize(),
-        steps.row_sort(field_names=["stars"], reverse=True),
-        steps.table_write(path="data/packages.csv"),
+        steps.row_filter(function=lambda row: row["iso_code"] == "OWID_WRL"),
+        steps.table_write(path="data/countries/owid_wrl/timeline.csv"),
+    ],
+)
+
+# Latest
+
+transform(
+    Resource("data/latest.csv"),
+    steps=[
+        steps.row_filter(function=lambda row: row["iso_code"] == "OWID_WRL"),
+        steps.table_write(path="data/countries/owid_wrl/latest.csv"),
     ],
 )

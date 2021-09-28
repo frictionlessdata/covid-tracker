@@ -1,18 +1,20 @@
 brand:
-  text: Data Packages
+  text: COVID-19 Tracker
 about:
-  text: A livemark listing data packages hosted on Github
+  text: A livemark tracking COVID-19 disease pandemic
 github:
   user: frictionlessdata
-  repo: data-packages
+  repo: covid-tracker
 topics:
   selector: h2
 site:
-  favicon: assets/data-package.png
+  favicon: assets/covid.svg
   styles:
     - style.css
 pages:
   items:
     - path: index
-    - path: data
-    - path: contrib
+    - path: pages/regions
+    - path: pages/countries
+    - path: pages/data
+    - path: pages/contrib
