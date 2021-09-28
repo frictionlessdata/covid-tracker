@@ -4,9 +4,11 @@
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
+{% set last_updated = frictionless.extract('data/countries/owid_wrl/latest.csv')[0].last_updated_date %}
+
 ```yaml remark
 type: primary
-text: This site is being updated on a nightly basis.
+text: "Last data update: <strong>{{ last_updated }}</strong> (this site is being updated on a nightly basis)."
 ```
 
 **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it's open for contributing for anyone who is interested.
