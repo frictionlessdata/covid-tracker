@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="First of all, we need to extract all the data packages from Github. We're going to look at all the repos having `datapackage.json` in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors:">
-<meta name="keywords" content="data,collection">
+<meta name="description" content="None">
+<meta name="keywords" content="excess,mortality">
 <link rel="icon" href="assets/covid.svg">
-<title>Data Collection | COVID-19 Tracker</title>
+<title>Excess Mortality | COVID-19 Tracker</title>
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.23.0/themes/prism.css">
@@ -1789,7 +1789,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
         Countries
       </a>
           </li>
-        <li class="primary  ">
+        <li class="primary  active">
       <a href="/pages/mortality.html" class="primary">
         Excess Mortality
       </a>
@@ -1799,7 +1799,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
         Gained Immunity
       </a>
           </li>
-        <li class="primary  active">
+        <li class="primary  ">
       <a href="/pages/data.html" class="primary">
         Data Collection
       </a>
@@ -1820,75 +1820,21 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2021-09-28 10:11)
+  (2021-09-28 19:11)
 </div>
 
-<h1>Data Collection</h1>
-<h2>Extract</h2>
-<p>First of all, we need to extract all the data packages from Github. We're going to look at all the repos having <code>datapackage.json</code> in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors:</p>
-<pre><code class="language-bash">$ python code/extract.py
-</code></pre>
-<pre><code class="language-python">from frictionless import Resource
-
-BASEURL = "https://covid.ourworldindata.org/data"
-
-# Timeline
-
-resource = Resource(f"{BASEURL}/owid-covid-data.csv")
-resource.write("data/timeline.csv")
-
-# Latest
-
-resource = Resource(f"{BASEURL}/latest/owid-covid-latest.csv")
-resource.write("data/latest.csv")
-</code></pre><h2>Transform</h2>
-<p>As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository's stargazers count and save it to the CSV file:</p>
-<pre><code class="language-bash">$ python code/transform.py
-</code></pre>
-<pre><code class="language-python">from frictionless import Resource, transform, steps
-
-# Timeline
-
-transform(
-    Resource("data/timeline.csv"),
-    steps=[
-        steps.row_filter(function=lambda row: row["iso_code"] == "OWID_WRL"),
-        steps.table_write(path="data/countries/owid_wrl/timeline.csv"),
-    ],
-)
-
-# Latest
-
-transform(
-    Resource("data/latest.csv"),
-    steps=[
-        steps.row_filter(function=lambda row: row["iso_code"] == "OWID_WRL"),
-        steps.table_write(path="data/countries/owid_wrl/latest.csv"),
-    ],
-)
-</code></pre><h2>Load</h2>
-<p>After we have the <code>packages.csv</code> file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin:</p>
-<pre><code class="language-bash">$ python code/load.py
-</code></pre>
-<pre><code class="language-python">from livemark.plugins.cards import CardsPlugin
-
-
-# General
-
-
-CardsPlugin.delete_cards()
-</code></pre>
+<h1>Excess Mortality</h1>
 
 <div id="livemark-signs">
   <div>
         <div class="next">
-      <a href="/pages/contrib.html">
-        Contributing »
+      <a href="/pages/immunity.html">
+        Gained Immunity »
       </a>
     </div>
             <div class="prev">
-      <a href="/pages/immunity.html">
-        « Gained Immunity
+      <a href="/pages/countries.html">
+        « Countries
       </a>
     </div>
       </div>
@@ -1935,7 +1881,7 @@ CardsPlugin.delete_cards()
       </a>
     </li>
         <li>
-      <a href="https://github.com/frictionlessdata/livemark/edit/main/pages/data.md" target="_blank">
+      <a href="https://github.com/frictionlessdata/livemark/edit/main/pages/mortality.md" target="_blank">
         Edit
       </a>
     </li>

@@ -18,6 +18,8 @@ pages:
       name: World
     - path: pages/regions
     - path: pages/countries
+    - path: pages/mortality
+    - path: pages/immunity
     - path: pages/data
     - path: pages/contrib
 links:
