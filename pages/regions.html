@@ -1820,10 +1820,46 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2021-09-28 14:54)
+  (2021-09-30 10:36)
 </div>
 
 <h1>Regions</h1>
+<h2>Deaths</h2>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-1">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/latest.csv"}, "key": "location", "fields": ["location", "total_deaths_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_deaths_per_million", "type": "quantitative", "scale": {"scheme": "Reds"}, "legend": {"title": "Deaths/1M"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_deaths_per_million", "type": "quantitative", "title": "Deaths/1M"}]}}')
+  const elem = '#livemark-chart-1'
+  vegaEmbed(elem, spec)
+})
+</script>
+<h2>Cases</h2>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-2">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/latest.csv"}, "key": "location", "fields": ["location", "total_cases_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_cases_per_million", "type": "quantitative", "scale": {"scheme": "Blues"}, "legend": {"title": "Deaths/1M"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_cases_per_million", "type": "quantitative", "title": "Cases/1M"}]}}')
+  const elem = '#livemark-chart-2'
+  vegaEmbed(elem, spec)
+})
+</script>
+<h2>Vaccinations</h2>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-3">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/latest.csv"}, "key": "location", "fields": ["location", "total_vaccinations_per_hundred"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_vaccinations_per_hundred", "type": "quantitative", "scale": {"scheme": "Greens"}, "legend": {"title": "Shots/100"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_vaccinations_per_hundred", "type": "quantitative", "title": "Shots/100"}]}}')
+  const elem = '#livemark-chart-3'
+  vegaEmbed(elem, spec)
+})
+</script>
 
 <div id="livemark-signs">
   <div>
@@ -1947,6 +1983,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+<script src="https://unpkg.com/vega@5.20.2/build/vega.min.js"></script>
+<script src="https://unpkg.com/vega-lite@5.1.0/build/vega-lite.min.js"></script>
+<script src="https://unpkg.com/vega-embed@6.18.2/build/vega-embed.min.js"></script>
 <script src="https://unpkg.com/tocbot@4.12.3/dist/tocbot.min.js"></script>
 <script>
 
@@ -2224,7 +2263,7 @@ document.addEventListener("DOMContentLoaded", function () {
           'pages/regions': {
           'name': 'Regions',
           'path': 'pages/regions',
-          'text': "# Regions",
+          'text': "# Regions ## Deaths ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/latest.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_deaths_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ] } } ``` ## Cases ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/latest.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_cases_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Blues\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ] } } ``` ## Vaccinations ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/latest.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_vaccinations_per_hundred\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ] } } ```",
       },
           'pages/countries': {
           'name': 'Countries',

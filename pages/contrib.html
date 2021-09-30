@@ -2239,7 +2239,7 @@ document.addEventListener("DOMContentLoaded", function () {
           'pages/regions': {
           'name': 'Regions',
           'path': 'pages/regions',
-          'text': "# Regions",
+          'text': "# Regions ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/latest.csv\" }, \"key\": \"continent\", \"fields\": [\"continent\", \"total_deaths_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"fill\": \"#eee\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Oranges\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ] } } ```",
       },
           'pages/countries': {
           'name': 'Countries',
