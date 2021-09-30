@@ -17,7 +17,7 @@ Here is an interactive map showing amount of total deaths per region:
       "lookup": "properties.CONTINENT",
       "from": {
         "data": {
-          "url": "../data/latest.csv"
+          "url": "../data/reports/regions.csv"
         },
         "key": "location",
         "fields": ["location", "total_deaths_per_million"]
@@ -72,7 +72,7 @@ Here is an interactive map showing amount of total cases per region:
       "lookup": "properties.CONTINENT",
       "from": {
         "data": {
-          "url": "../data/latest.csv"
+          "url": "../data/reports/regions.csv"
         },
         "key": "location",
         "fields": ["location", "total_cases_per_million"]
@@ -127,7 +127,7 @@ Here is an interactive map showing amount of total shots taken per region:
       "lookup": "properties.CONTINENT",
       "from": {
         "data": {
-          "url": "../data/latest.csv"
+          "url": "../data/reports/regions.csv"
         },
         "key": "location",
         "fields": ["location", "total_vaccinations_per_hundred"]
@@ -165,7 +165,7 @@ Here is an interactive map showing amount of total shots taken per region:
 }
 ```
 
-## Details
+## Summary
 
 ```html markup
 <table class="regions table table-bordered table-striped">
@@ -175,7 +175,7 @@ Here is an interactive map showing amount of total shots taken per region:
     <th>Cases/1M</th>
     <th>Shots/100</th>
   </tr>
-  {% for row in frictionless.extract('data/regions/latest.csv') %}
+  {% for row in frictionless.extract('data/reports/regions.csv') | sort(attribute='total_deaths_per_million', reverse=True) %}
   <tr>
     <td><a href="#card={{ row.iso_code }}">{{ row.location }}</a></td>
     <td>{{ row.total_deaths_per_million }}</td>

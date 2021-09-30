@@ -4,7 +4,7 @@
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
-{% set last_updated = frictionless.extract('data/countries/owid_wrl/latest.csv')[0].last_updated_date %}
+{% set last_updated = frictionless.extract('data/locations/OWID_WRL/latest.csv')[0].last_updated_date %}
 
 ```yaml remark
 type: primary
@@ -18,7 +18,7 @@ text: "Last data update: <strong>{{ last_updated }}</strong> (this site is being
 The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken:
 
 ```html markup
-{% for row in frictionless.extract('data/countries/owid_wrl/latest.csv') %}
+{% for row in frictionless.extract('data/locations/OWID_WRL/latest.csv') %}
 <div class="status row">
   <div class="col-sm-4">
     <div role="button" class="btn btn-danger w-100">
@@ -55,7 +55,7 @@ Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
 ```json chart
 {
   "width": 800,
-  "data": {"url": "data/countries/owid_wrl/timeline.csv"},
+  "data": {"url": "data/locations/OWID_WRL/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
     "y": {"field": "new_deaths", "type": "quantitative"}
@@ -78,7 +78,7 @@ The new cases data is less reliable as cases registration really depends on the 
 ```json chart
 {
   "width": 800,
-  "data": {"url": "data/countries/owid_wrl/timeline.csv"},
+  "data": {"url": "data/locations/OWID_WRL/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
     "y": {"field": "new_cases", "type": "quantitative"}
@@ -101,7 +101,7 @@ The vaccination campaign had been started around January 2021; this chart counds
 ```json chart
 {
   "width": 800,
-  "data": {"url": "data/countries/owid_wrl/timeline.csv"},
+  "data": {"url": "data/locations/OWID_WRL/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
     "y": {"field": "new_vaccinations", "type": "quantitative"}
@@ -124,7 +124,7 @@ The conbined chart might help analyze how the vaccination helps to fight the pan
 ```json chart
 {
   "width": 750,
-  "data": {"url": "data/countries/owid_wrl/timeline.csv"},
+  "data": {"url": "data/locations/OWID_WRL/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
@@ -159,10 +159,10 @@ The conbined chart might help analyze how the vaccination helps to fight the pan
 
 > Put here links to files and cards with table exploration
 
-The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table:
+The page has been created using the following dataset. You can [download CSV](data/locations/OWID_WRL/timeline.csv) or explore the table:
 
 ```yaml table
-data: data/countries/owid_wrl/timeline.csv
+data: data/locations/OWID_WRL/timeline.csv
 filters: true
 dropdownMenu: true
 contextMenu: true

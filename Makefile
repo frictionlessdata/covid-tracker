@@ -12,7 +12,8 @@ install:
 
 data:
 	python code/extract.py
-	python code/transform.py
+	python code/transform/timeline.py
+	python code/transform/latest.py
 	python code/load.py
 
 github:
