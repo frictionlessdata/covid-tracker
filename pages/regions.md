@@ -168,7 +168,7 @@ Here is an interactive map showing amount of total shots taken per region:
 ## Summary
 
 ```html markup
-<table class="regions table table-bordered table-striped">
+<table class="big table table-bordered table-striped">
   <tr>
     <th>Region</th>
     <th>Deaths/1M</th>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="None">
+<meta name="description" content="Here is an interactive map showing amount of total deaths per country:">
 <meta name="keywords" content="countries">
 <link rel="icon" href="assets/covid.svg">
 <title>Countries | COVID-19 Tracker</title>
@@ -1179,8 +1179,8 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
   font-weight: 900 !important;
 }
 
-table.regions th,
-table.regions td {
+table.big th,
+table.big td {
   padding: 10px !important;
 }
 
@@ -1825,10 +1825,1168 @@ table.regions td {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2021-09-28 14:24)
+  (2021-09-30 15:44)
 </div>
 
 <h1>Countries</h1>
+<h2>Deaths</h2>
+<p>Here is an interactive map showing amount of total deaths per country:</p>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-1">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "id", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "iso_code", "fields": ["iso_code", "total_deaths_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_deaths_per_million", "type": "quantitative", "scale": {"scheme": "Reds"}, "legend": {"title": "Deaths/1M"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_deaths_per_million", "type": "quantitative", "title": "Deaths/1M"}]}}')
+  const elem = '#livemark-chart-1'
+  vegaEmbed(elem, spec)
+})
+</script>
+<h2>Cases</h2>
+<p>Here is an interactive map showing amount of total cases per country:</p>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-2">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "id", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "iso_code", "fields": ["iso_code", "total_cases_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_cases_per_million", "type": "quantitative", "scale": {"scheme": "Blues"}, "legend": {"title": "Cases/1M"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_cases_per_million", "type": "quantitative", "title": "Cases/1M"}]}}')
+  const elem = '#livemark-chart-2'
+  vegaEmbed(elem, spec)
+})
+</script>
+<h2>Vaccinations</h2>
+<p>Here is an interactive map showing amount of total shots taken per country:</p>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-3">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.name", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "location", "fields": ["location", "total_vaccinations_per_hundred"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_vaccinations_per_hundred", "type": "quantitative", "scale": {"scheme": "Greens"}, "legend": {"title": "Shots/100"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_vaccinations_per_hundred", "type": "quantitative", "title": "Shots/100"}]}}')
+  const elem = '#livemark-chart-3'
+  vegaEmbed(elem, spec)
+})
+</script>
+<h2>Summary</h2>
+<table class="big table table-bordered table-striped">
+  <tr>
+    <th>Country</th>
+    <th>Deaths/1M</th>
+    <th>Cases/1M</th>
+    <th>Shots/100</th>
+  </tr>
+    <tr>
+    <td><a href="#card=PER">Peru</a></td>
+    <td>5974.745</td>
+    <td>65149.644</td>
+    <td>75.53</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BIH">Bosnia and Herzegovina</a></td>
+    <td>3219.896</td>
+    <td>71162.837</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MKD">North Macedonia</a></td>
+    <td>3172.384</td>
+    <td>91228.961</td>
+    <td>71.82</td>
+  </tr>
+    <tr>
+    <td><a href="#card=HUN">Hungary</a></td>
+    <td>3131.668</td>
+    <td>85244.674</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MNE">Montenegro</a></td>
+    <td>3034.785</td>
+    <td>206973.637</td>
+    <td>71.14</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BGR">Bulgaria</a></td>
+    <td>2992.465</td>
+    <td>71831.489</td>
+    <td>36.37</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CZE">Czechia</a></td>
+    <td>2839.652</td>
+    <td>157546.893</td>
+    <td>109.81</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BRA">Brazil</a></td>
+    <td>2778.838</td>
+    <td>99846.028</td>
+    <td>108.34</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SMR">San Marino</a></td>
+    <td>2675.684</td>
+    <td>159600.118</td>
+    <td>138.44</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ARG">Argentina</a></td>
+    <td>2520.599</td>
+    <td>115159.417</td>
+    <td>111.29</td>
+  </tr>
+    <tr>
+    <td><a href="#card=COL">Colombia</a></td>
+    <td>2461.249</td>
+    <td>96607.993</td>
+    <td>76.6</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SVK">Slovakia</a></td>
+    <td>2306.653</td>
+    <td>74826.864</td>
+    <td>85.81</td>
+  </tr>
+    <tr>
+    <td><a href="#card=PRY">Paraguay</a></td>
+    <td>2242.355</td>
+    <td>63691.256</td>
+    <td>62.17</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GEO">Georgia</a></td>
+    <td>2222.237</td>
+    <td>152560.209</td>
+    <td>43.96</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BEL">Belgium</a></td>
+    <td>2198.011</td>
+    <td>106458.257</td>
+    <td>142.37</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SVN">Slovenia</a></td>
+    <td>2185.957</td>
+    <td>139487.079</td>
+    <td>101.23</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ITA">Italy</a></td>
+    <td>2165.769</td>
+    <td>77228.463</td>
+    <td>139.13</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MEX">Mexico</a></td>
+    <td>2116.316</td>
+    <td>27911.447</td>
+    <td>76.14</td>
+  </tr>
+    <tr>
+    <td><a href="#card=HRV">Croatia</a></td>
+    <td>2108.457</td>
+    <td>98025.875</td>
+    <td>83.5</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TUN">Tunisia</a></td>
+    <td>2077.286</td>
+    <td>59105.894</td>
+    <td>62.21</td>
+  </tr>
+    <tr>
+    <td><a href="#card=USA">United States</a></td>
+    <td>2073.88</td>
+    <td>129511.805</td>
+    <td>115.99</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GBR">United Kingdom</a></td>
+    <td>2002.269</td>
+    <td>113447.712</td>
+    <td>137.03</td>
+  </tr>
+    <tr>
+    <td><a href="#card=POL">Poland</a></td>
+    <td>1999.418</td>
+    <td>76822.367</td>
+    <td>98.28</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CHL">Chile</a></td>
+    <td>1949.006</td>
+    <td>86005.25</td>
+    <td>164.23</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ROU">Romania</a></td>
+    <td>1905.606</td>
+    <td>62723.51</td>
+    <td>52.56</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ESP">Spain</a></td>
+    <td>1846.136</td>
+    <td>105928.284</td>
+    <td>149.19</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LTU">Lithuania</a></td>
+    <td>1832.808</td>
+    <td>121438.944</td>
+    <td>124.15</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ECU">Ecuador</a></td>
+    <td>1830.62</td>
+    <td>28434.79</td>
+    <td>115.0</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ARM">Armenia</a></td>
+    <td>1773.508</td>
+    <td>87262.746</td>
+    <td>13.76</td>
+  </tr>
+    <tr>
+    <td><a href="#card=PRT">Portugal</a></td>
+    <td>1765.847</td>
+    <td>104955.063</td>
+    <td>156.81</td>
+  </tr>
+    <tr>
+    <td><a href="#card=FRA">France</a></td>
+    <td>1740.284</td>
+    <td>104894.377</td>
+    <td>138.86</td>
+  </tr>
+    <tr>
+    <td><a href="#card=URY">Uruguay</a></td>
+    <td>1736.797</td>
+    <td>111493.559</td>
+    <td>176.81</td>
+  </tr>
+    <tr>
+    <td><a href="#card=AND">Andorra</a></td>
+    <td>1680.585</td>
+    <td>196357.008</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MDA">Moldova</a></td>
+    <td>1668.23</td>
+    <td>72077.833</td>
+    <td>34.39</td>
+  </tr>
+    <tr>
+    <td><a href="#card=PAN">Panama</a></td>
+    <td>1646.893</td>
+    <td>106435.733</td>
+    <td>117.03</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BOL">Bolivia</a></td>
+    <td>1580.926</td>
+    <td>42187.501</td>
+    <td>54.45</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LIE">Liechtenstein</a></td>
+    <td>1568.463</td>
+    <td>90055.942</td>
+    <td>122.12</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SWE">Sweden</a></td>
+    <td>1458.737</td>
+    <td>113128.84</td>
+    <td>133.93</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SUR">Suriname</a></td>
+    <td>1454.888</td>
+    <td>68394.959</td>
+    <td>66.24</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ZAF">South Africa</a></td>
+    <td>1452.583</td>
+    <td>48258.239</td>
+    <td>28.03</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LVA">Latvia</a></td>
+    <td>1440.329</td>
+    <td>83064.533</td>
+    <td>86.59</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GRC">Greece</a></td>
+    <td>1420.052</td>
+    <td>62492.22</td>
+    <td>116.11</td>
+  </tr>
+    <tr>
+    <td><a href="#card=IRN">Iran</a></td>
+    <td>1407.159</td>
+    <td>65248.394</td>
+    <td>51.01</td>
+  </tr>
+    <tr>
+    <td><a href="#card=RUS">Russia</a></td>
+    <td>1377.645</td>
+    <td>50268.942</td>
+    <td>61.2</td>
+  </tr>
+    <tr>
+    <td><a href="#card=UKR">Ukraine</a></td>
+    <td>1366.191</td>
+    <td>57600.484</td>
+    <td>28.16</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NAM">Namibia</a></td>
+    <td>1350.42</td>
+    <td>49229.248</td>
+    <td>15.75</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BHS">Bahamas</a></td>
+    <td>1317.666</td>
+    <td>52341.313</td>
+    <td>46.47</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LUX">Luxembourg</a></td>
+    <td>1315.346</td>
+    <td>122760.368</td>
+    <td>122.52</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CHE">Switzerland</a></td>
+    <td>1269.004</td>
+    <td>95976.545</td>
+    <td>118.53</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LBN">Lebanon</a></td>
+    <td>1225.56</td>
+    <td>91952.447</td>
+    <td>41.61</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CRI">Costa Rica</a></td>
+    <td>1221.431</td>
+    <td>102353.293</td>
+    <td>102.71</td>
+  </tr>
+    <tr>
+    <td><a href="#card=AUT">Austria</a></td>
+    <td>1213.747</td>
+    <td>81521.191</td>
+    <td>119.35</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SRB">Serbia</a></td>
+    <td>1189.931</td>
+    <td>134879.72</td>
+    <td>94.19</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GRD">Grenada</a></td>
+    <td>1150.29</td>
+    <td>44286.157</td>
+    <td>45.67</td>
+  </tr>
+    <tr>
+    <td><a href="#card=DEU">Germany</a></td>
+    <td>1114.523</td>
+    <td>50167.752</td>
+    <td>127.57</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SYC">Seychelles</a></td>
+    <td>1112.122</td>
+    <td>216095.44</td>
+    <td>150.04</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NLD">Netherlands</a></td>
+    <td>1081.11</td>
+    <td>118556.388</td>
+    <td>129.69</td>
+  </tr>
+    <tr>
+    <td><a href="#card=IRL">Ireland</a></td>
+    <td>1045.374</td>
+    <td>77408.876</td>
+    <td>144.4</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TTO">Trinidad and Tobago</a></td>
+    <td>1043.2</td>
+    <td>35667.612</td>
+    <td>74.5</td>
+  </tr>
+    <tr>
+    <td><a href="#card=JOR">Jordan</a></td>
+    <td>1041.677</td>
+    <td>79929.52</td>
+    <td>67.39</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SWZ">Eswatini</a></td>
+    <td>1034.657</td>
+    <td>39076.434</td>
+    <td>20.43</td>
+  </tr>
+    <tr>
+    <td><a href="#card=EST">Estonia</a></td>
+    <td>1015.705</td>
+    <td>116154.085</td>
+    <td>102.62</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LCA">Saint Lucia</a></td>
+    <td>1008.671</td>
+    <td>60905.31</td>
+    <td>41.12</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BLZ">Belize</a></td>
+    <td>1000.21</td>
+    <td>49257.252</td>
+    <td>75.13</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BWA">Botswana</a></td>
+    <td>987.385</td>
+    <td>74272.914</td>
+    <td>25.31</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GUY">Guyana</a></td>
+    <td>976.808</td>
+    <td>39522.781</td>
+    <td>67.55</td>
+  </tr>
+    <tr>
+    <td><a href="#card=HND">Honduras</a></td>
+    <td>962.04</td>
+    <td>36083.297</td>
+    <td>51.64</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ALB">Albania</a></td>
+    <td>923.446</td>
+    <td>58542.243</td>
+    <td>58.95</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MLT">Malta</a></td>
+    <td>888.131</td>
+    <td>72105.705</td>
+    <td>158.73</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ISR">Israel</a></td>
+    <td>874.197</td>
+    <td>144512.215</td>
+    <td>169.88</td>
+  </tr>
+    <tr>
+    <td><a href="#card=KAZ">Kazakhstan</a></td>
+    <td>835.222</td>
+    <td>50330.461</td>
+    <td>73.19</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MCO">Monaco</a></td>
+    <td>835.02</td>
+    <td>83577.935</td>
+    <td>126.47</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BHR">Bahrain</a></td>
+    <td>794.488</td>
+    <td>157225.754</td>
+    <td>146.53</td>
+  </tr>
+    <tr>
+    <td><a href="#card=OMN">Oman</a></td>
+    <td>783.976</td>
+    <td>58137.304</td>
+    <td>88.76</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MYS">Malaysia</a></td>
+    <td>783.953</td>
+    <td>67402.394</td>
+    <td>129.29</td>
+  </tr>
+    <tr>
+    <td><a href="#card=PSE">Palestine</a></td>
+    <td>774.687</td>
+    <td>76386.107</td>
+    <td>38.32</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TUR">Turkey</a></td>
+    <td>745.178</td>
+    <td>83095.375</td>
+    <td>126.81</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GTM">Guatemala</a></td>
+    <td>733.923</td>
+    <td>30155.451</td>
+    <td>36.46</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CAN">Canada</a></td>
+    <td>728.987</td>
+    <td>42569.631</td>
+    <td>146.68</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LBY">Libya</a></td>
+    <td>663.501</td>
+    <td>48557.614</td>
+    <td>21.58</td>
+  </tr>
+    <tr>
+    <td><a href="#card=FJI">Fiji</a></td>
+    <td>655.666</td>
+    <td>56270.967</td>
+    <td>108.02</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ATG">Antigua and Barbuda</a></td>
+    <td>648.246</td>
+    <td>29606.596</td>
+    <td>82.97</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CUB">Cuba</a></td>
+    <td>643.163</td>
+    <td>76059.125</td>
+    <td>176.64</td>
+  </tr>
+    <tr>
+    <td><a href="#card=AZE">Azerbaijan</a></td>
+    <td>633.452</td>
+    <td>47088.409</td>
+    <td>81.68</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CYP">Cyprus</a></td>
+    <td>622.744</td>
+    <td>133085.962</td>
+    <td>129.09</td>
+  </tr>
+    <tr>
+    <td><a href="#card=JAM">Jamaica</a></td>
+    <td>619.144</td>
+    <td>27923.68</td>
+    <td>24.07</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CPV">Cape Verde</a></td>
+    <td>597.97</td>
+    <td>66687.904</td>
+    <td>71.56</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LKA">Sri Lanka</a></td>
+    <td>592.214</td>
+    <td>23937.511</td>
+    <td>120.77</td>
+  </tr>
+    <tr>
+    <td><a href="#card=KWT">Kuwait</a></td>
+    <td>565.316</td>
+    <td>95074.035</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=IRQ">Iraq</a></td>
+    <td>537.697</td>
+    <td>48476.092</td>
+    <td>18.09</td>
+  </tr>
+    <tr>
+    <td><a href="#card=IDN">Indonesia</a></td>
+    <td>512.318</td>
+    <td>15231.494</td>
+    <td>48.56</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SLV">El Salvador</a></td>
+    <td>490.45</td>
+    <td>16007.977</td>
+    <td>112.75</td>
+  </tr>
+    <tr>
+    <td><a href="#card=DNK">Denmark</a></td>
+    <td>455.507</td>
+    <td>61765.585</td>
+    <td>150.78</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BLR">Belarus</a></td>
+    <td>434.402</td>
+    <td>56354.601</td>
+    <td>35.9</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MDV">Maldives</a></td>
+    <td>424.929</td>
+    <td>155410.029</td>
+    <td>133.86</td>
+  </tr>
+    <tr>
+    <td><a href="#card=KGZ">Kyrgyzstan</a></td>
+    <td>392.556</td>
+    <td>26902.182</td>
+    <td>21.3</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MAR">Morocco</a></td>
+    <td>380.214</td>
+    <td>24895.014</td>
+    <td>105.84</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NPL">Nepal</a></td>
+    <td>374.154</td>
+    <td>26701.572</td>
+    <td>42.61</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MNG">Mongolia</a></td>
+    <td>373.053</td>
+    <td>89784.824</td>
+    <td>131.46</td>
+  </tr>
+    <tr>
+    <td><a href="#card=DOM">Dominican Republic</a></td>
+    <td>368.916</td>
+    <td>32638.884</td>
+    <td>107.67</td>
+  </tr>
+    <tr>
+    <td><a href="#card=PHL">Philippines</a></td>
+    <td>336.84</td>
+    <td>22430.683</td>
+    <td>39.56</td>
+  </tr>
+    <tr>
+    <td><a href="#card=IND">India</a></td>
+    <td>321.064</td>
+    <td>24183.553</td>
+    <td>61.42</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MMR">Myanmar</a></td>
+    <td>320.822</td>
+    <td>8382.949</td>
+    <td>16.42</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ZWE">Zimbabwe</a></td>
+    <td>305.258</td>
+    <td>8608.371</td>
+    <td>34.69</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SAU">Saudi Arabia</a></td>
+    <td>246.288</td>
+    <td>15477.489</td>
+    <td>117.83</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BRB">Barbados</a></td>
+    <td>236.351</td>
+    <td>26985.694</td>
+    <td>81.38</td>
+  </tr>
+    <tr>
+    <td><a href="#card=THA">Thailand</a></td>
+    <td>234.007</td>
+    <td>22471.866</td>
+    <td>65.79</td>
+  </tr>
+    <tr>
+    <td><a href="#card=STP">Sao Tome and Principe</a></td>
+    <td>219.373</td>
+    <td>14993.464</td>
+    <td>32.78</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ARE">United Arab Emirates</a></td>
+    <td>209.587</td>
+    <td>73583.615</td>
+    <td>198.74</td>
+  </tr>
+    <tr>
+    <td><a href="#card=DMA">Dominica</a></td>
+    <td>207.837</td>
+    <td>45627.113</td>
+    <td>61.83</td>
+  </tr>
+    <tr>
+    <td><a href="#card=QAT">Qatar</a></td>
+    <td>206.448</td>
+    <td>80664.072</td>
+    <td>160.27</td>
+  </tr>
+    <tr>
+    <td><a href="#card=KNA">Saint Kitts and Nevis</a></td>
+    <td>205.431</td>
+    <td>34960.595</td>
+    <td>87.96</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ZMB">Zambia</a></td>
+    <td>192.752</td>
+    <td>11039.099</td>
+    <td>3.7</td>
+  </tr>
+    <tr>
+    <td><a href="#card=FIN">Finland</a></td>
+    <td>192.67</td>
+    <td>25174.642</td>
+    <td>135.6</td>
+  </tr>
+    <tr>
+    <td><a href="#card=VNM">Vietnam</a></td>
+    <td>191.079</td>
+    <td>7803.404</td>
+    <td>39.08</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LSO">Lesotho</a></td>
+    <td>186.655</td>
+    <td>6667.232</td>
+    <td>15.42</td>
+  </tr>
+    <tr>
+    <td><a href="#card=AFG">Afghanistan</a></td>
+    <td>180.744</td>
+    <td>3892.816</td>
+    <td>7.87</td>
+  </tr>
+    <tr>
+    <td><a href="#card=COM">Comoros</a></td>
+    <td>165.456</td>
+    <td>4646.263</td>
+    <td>37.92</td>
+  </tr>
+    <tr>
+    <td><a href="#card=EGY">Egypt</a></td>
+    <td>165.205</td>
+    <td>2899.788</td>
+    <td>13.24</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BGD">Bangladesh</a></td>
+    <td>164.994</td>
+    <td>9335.721</td>
+    <td>24.24</td>
+  </tr>
+    <tr>
+    <td><a href="#card=VCT">Saint Vincent and the Grenadines</a></td>
+    <td>161.77</td>
+    <td>30188.103</td>
+    <td>29.73</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MRT">Mauritania</a></td>
+    <td>161.672</td>
+    <td>7515.848</td>
+    <td>6.98</td>
+  </tr>
+    <tr>
+    <td><a href="#card=DJI">Djibouti</a></td>
+    <td>161.645</td>
+    <td>12226.139</td>
+    <td>6.71</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NOR">Norway</a></td>
+    <td>155.517</td>
+    <td>34322.308</td>
+    <td>141.75</td>
+  </tr>
+    <tr>
+    <td><a href="#card=VEN">Venezuela</a></td>
+    <td>153.702</td>
+    <td>12656.355</td>
+    <td>48.95</td>
+  </tr>
+    <tr>
+    <td><a href="#card=JPN">Japan</a></td>
+    <td>139.023</td>
+    <td>13462.596</td>
+    <td>126.53</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GMB">Gambia</a></td>
+    <td>134.704</td>
+    <td>3992.864</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=KHM">Cambodia</a></td>
+    <td>133.42</td>
+    <td>6486.67</td>
+    <td>140.62</td>
+  </tr>
+    <tr>
+    <td><a href="#card=DZA">Algeria</a></td>
+    <td>129.683</td>
+    <td>4547.117</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=PAK">Pakistan</a></td>
+    <td>122.727</td>
+    <td>5514.322</td>
+    <td>33.81</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SYR">Syria</a></td>
+    <td>121.199</td>
+    <td>1823.35</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MWI">Malawi</a></td>
+    <td>115.942</td>
+    <td>3131.006</td>
+    <td>5.24</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SEN">Senegal</a></td>
+    <td>107.872</td>
+    <td>4288.537</td>
+    <td>10.38</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GNQ">Equatorial Guinea</a></td>
+    <td>97.938</td>
+    <td>8142.681</td>
+    <td>26.34</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ISL">Iceland</a></td>
+    <td>96.109</td>
+    <td>34139.096</td>
+    <td>160.51</td>
+  </tr>
+    <tr>
+    <td><a href="#card=RWA">Rwanda</a></td>
+    <td>94.754</td>
+    <td>7304.777</td>
+    <td>25.68</td>
+  </tr>
+    <tr>
+    <td><a href="#card=KEN">Kenya</a></td>
+    <td>92.915</td>
+    <td>4519.629</td>
+    <td>6.57</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BRN">Brunei</a></td>
+    <td>86.064</td>
+    <td>15174.438</td>
+    <td>100.49</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TLS">Timor</a></td>
+    <td>84.085</td>
+    <td>14434.378</td>
+    <td>50.29</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GAB">Gabon</a></td>
+    <td>80.304</td>
+    <td>12951.827</td>
+    <td>7.78</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SOM">Somalia</a></td>
+    <td>67.912</td>
+    <td>1221.309</td>
+    <td>2.63</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GNB">Guinea-Bissau</a></td>
+    <td>66.981</td>
+    <td>3026.063</td>
+    <td>4.7</td>
+  </tr>
+    <tr>
+    <td><a href="#card=UGA">Uganda</a></td>
+    <td>66.761</td>
+    <td>2615.36</td>
+    <td>4.37</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SDN">Sudan</a></td>
+    <td>64.575</td>
+    <td>850.625</td>
+    <td>3.34</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MUS">Mauritius</a></td>
+    <td>62.037</td>
+    <td>12086.274</td>
+    <td>128.31</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MOZ">Mozambique</a></td>
+    <td>59.385</td>
+    <td>4680.527</td>
+    <td>11.33</td>
+  </tr>
+    <tr>
+    <td><a href="#card=YEM">Yemen</a></td>
+    <td>55.853</td>
+    <td>294.779</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LBR">Liberia</a></td>
+    <td>54.631</td>
+    <td>1118.488</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=HTI">Haiti</a></td>
+    <td>52.852</td>
+    <td>1866.279</td>
+    <td>0.53</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CMR">Cameroon</a></td>
+    <td>50.249</td>
+    <td>3137.422</td>
+    <td>1.69</td>
+  </tr>
+    <tr>
+    <td><a href="#card=AUS">Australia</a></td>
+    <td>48.704</td>
+    <td>3913.066</td>
+    <td>103.38</td>
+  </tr>
+    <tr>
+    <td><a href="#card=KOR">South Korea</a></td>
+    <td>48.026</td>
+    <td>5961.23</td>
+    <td>116.76</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ETH">Ethiopia</a></td>
+    <td>46.142</td>
+    <td>2903.936</td>
+    <td>3.0</td>
+  </tr>
+    <tr>
+    <td><a href="#card=AGO">Angola</a></td>
+    <td>44.587</td>
+    <td>1637.992</td>
+    <td>8.31</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GHA">Ghana</a></td>
+    <td>36.241</td>
+    <td>4002.757</td>
+    <td>5.12</td>
+  </tr>
+    <tr>
+    <td><a href="#card=UZB">Uzbekistan</a></td>
+    <td>36.098</td>
+    <td>5082.927</td>
+    <td>54.59</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TWN">Taiwan</a></td>
+    <td>35.297</td>
+    <td>679.019</td>
+    <td>60.49</td>
+  </tr>
+    <tr>
+    <td><a href="#card=COG">Congo</a></td>
+    <td>34.117</td>
+    <td>2517.935</td>
+    <td>5.83</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MDG">Madagascar</a></td>
+    <td>33.7</td>
+    <td>1509.041</td>
+    <td>1.34</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NIC">Nicaragua</a></td>
+    <td>30.288</td>
+    <td>2048.526</td>
+    <td>11.76</td>
+  </tr>
+    <tr>
+    <td><a href="#card=HKG">Hong Kong</a></td>
+    <td>28.201</td>
+    <td>1614.765</td>
+    <td>113.52</td>
+  </tr>
+    <tr>
+    <td><a href="#card=GIN">Guinea</a></td>
+    <td>28.006</td>
+    <td>2249.646</td>
+    <td>12.59</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TGO">Togo</a></td>
+    <td>26.774</td>
+    <td>2978.448</td>
+    <td>9.82</td>
+  </tr>
+    <tr>
+    <td><a href="#card=MLI">Mali</a></td>
+    <td>26.228</td>
+    <td>727.139</td>
+    <td>1.91</td>
+  </tr>
+    <tr>
+    <td><a href="#card=PNG">Papua New Guinea</a></td>
+    <td>24.893</td>
+    <td>2140.913</td>
+    <td>1.7</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CIV">Cote d'Ivoire</a></td>
+    <td>22.437</td>
+    <td>2216.967</td>
+    <td>7.28</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CAF">Central African Republic</a></td>
+    <td>20.325</td>
+    <td>2311.185</td>
+    <td>3.06</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SLE">Sierra Leone</a></td>
+    <td>14.862</td>
+    <td>785.251</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SGP">Singapore</a></td>
+    <td>13.567</td>
+    <td>15184.636</td>
+    <td>157.5</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TJK">Tajikistan</a></td>
+    <td>12.821</td>
+    <td>1793.3</td>
+    <td>39.72</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NGA">Nigeria</a></td>
+    <td>12.725</td>
+    <td>968.549</td>
+    <td>2.96</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BEN">Benin</a></td>
+    <td>12.368</td>
+    <td>1843.863</td>
+    <td>1.4</td>
+  </tr>
+    <tr>
+    <td><a href="#card=COD">Democratic Republic of Congo</a></td>
+    <td>11.734</td>
+    <td>615.536</td>
+    <td>0.15</td>
+  </tr>
+    <tr>
+    <td><a href="#card=ERI">Eritrea</a></td>
+    <td>11.662</td>
+    <td>1858.69</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=SSD">South Sudan</a></td>
+    <td>11.246</td>
+    <td>1050.312</td>
+    <td>0.88</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TCD">Chad</a></td>
+    <td>10.287</td>
+    <td>297.606</td>
+    <td>0.73</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BFA">Burkina Faso</a></td>
+    <td>8.42</td>
+    <td>659.764</td>
+    <td>1.18</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NER">Niger</a></td>
+    <td>7.998</td>
+    <td>238.353</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=NZL">New Zealand</a></td>
+    <td>5.555</td>
+    <td>865.112</td>
+    <td>103.81</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BTN">Bhutan</a></td>
+    <td>3.847</td>
+    <td>3332.479</td>
+    <td>136.99</td>
+  </tr>
+    <tr>
+    <td><a href="#card=CHN">China</a></td>
+    <td>3.21</td>
+    <td>66.575</td>
+    <td>152.35</td>
+  </tr>
+    <tr>
+    <td><a href="#card=VUT">Vanuatu</a></td>
+    <td>3.18</td>
+    <td>12.72</td>
+    <td>18.18</td>
+  </tr>
+    <tr>
+    <td><a href="#card=BDI">Burundi</a></td>
+    <td>3.101</td>
+    <td>1334.592</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=LAO">Laos</a></td>
+    <td>2.168</td>
+    <td>3041.05</td>
+    <td>None</td>
+  </tr>
+    <tr>
+    <td><a href="#card=TZA">Tanzania</a></td>
+    <td>0.813</td>
+    <td>22.228</td>
+    <td>None</td>
+  </tr>
+  </table>
 
 <div id="livemark-signs">
   <div>
@@ -1952,6 +3110,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+<script src="https://unpkg.com/vega@5.20.2/build/vega.min.js"></script>
+<script src="https://unpkg.com/vega-lite@5.1.0/build/vega-lite.min.js"></script>
+<script src="https://unpkg.com/vega-embed@6.18.2/build/vega-embed.min.js"></script>
 <script src="https://unpkg.com/tocbot@4.12.3/dist/tocbot.min.js"></script>
 <script>
 
@@ -2224,17 +3385,17 @@ document.addEventListener("DOMContentLoaded", function () {
           'index': {
           'name': 'COVID-19 Tracker',
           'path': 'index',
-          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/livemark/general/main)](https://github.com/frictionlessdata/livemark/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: \"Last data update: 2021-09-27 (this site is being updated on a nightly basis).\" ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. ## Status The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken: ```html markup Deaths 4.8M Cases 232.3M Vaccinations 6.1B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart counds all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Combined The conbined chart might help analyze how the vaccination helps to fight the pandemic and case/deaths causalities: ```json chart { \"width\": 750, \"data\": {\"url\": \"data/countries/owid_wrl/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"blue\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Sources \u003e Put here links to files and cards with table exploration The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table: ```yaml table data: data/countries/owid_wrl/timeline.csv filters: true dropdownMenu: true contextMenu: true columnSorting: initialConfig: column: 3 sortOrder: desc width: 900 height: 300 ```",
+          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/workflow/status/frictionlessdata/livemark/general/main)](https://github.com/frictionlessdata/livemark/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: \"Last data update: 2021-09-27 (this site is being updated on a nightly basis).\" ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. ## Status The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken: ```html markup Deaths 4.8M Cases 232.3M Vaccinations 6.1B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart counds all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"} }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Combined The conbined chart might help analyze how the vaccination helps to fight the pandemic and case/deaths causalities: ```json chart { \"width\": 750, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"blue\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Sources \u003e Put here links to files and cards with table exploration The page has been created using the following dataset. You can [download CSV](data/locations/OWID_WRL/timeline.csv) or explore the table: ```yaml table data: data/locations/OWID_WRL/timeline.csv filters: true dropdownMenu: true contextMenu: true columnSorting: initialConfig: column: 3 sortOrder: desc width: 900 height: 300 ```",
       },
           'pages/regions': {
           'name': 'Regions',
           'path': 'pages/regions',
-          'text': "# Regions ## Deaths ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/latest.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_deaths_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ] } } ``` ## Total Cases ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/latest.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_cases_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Blues\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ] } } ``` ## Vaccinations ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/latest.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_vaccinations_per_hundred\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ] } } ``` ## Details ```html markup Region Deaths Africa 152.32 Asia 239.351 Europe 1634.589 European Union 1720.768 International None Kosovo 1520.612 North America 1760.826 Oceania 48.658 South America 2653.444 World 603.994 ```",
+          'text': "# Regions ## Deaths Here is an interactive map showing amount of total deaths per region: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/reports/regions.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_deaths_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ] } } ``` ## Total Cases Here is an interactive map showing amount of total cases per region: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/reports/regions.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_cases_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Blues\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ] } } ``` ## Vaccinations Here is an interactive map showing amount of total shots taken per region: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/reports/regions.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_vaccinations_per_hundred\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ] } } ``` ## Summary ```html markup Region Deaths/1M Cases/1M Shots/100 South America 2653.444 86786.718 99.31 North America 1760.826 86904.766 102.42 Europe 1634.589 78914.123 105.76 Asia 239.351 16105.513 88.18 Africa 152.32 6005.201 10.23 Oceania 48.658 4060.277 78.2 ```",
       },
           'pages/countries': {
           'name': 'Countries',
           'path': 'pages/countries',
-          'text': "# Countries",
+          'text': "# Countries ## Deaths Here is an interactive map showing amount of total deaths per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"id\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"iso_code\", \"fields\": [\"iso_code\", \"total_deaths_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ] } } ``` ## Cases Here is an interactive map showing amount of total cases per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"id\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"iso_code\", \"fields\": [\"iso_code\", \"total_cases_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Blues\"}, \"legend\": { \"title\": \"Cases/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ] } } ``` ## Vaccinations Here is an interactive map showing amount of total shots taken per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_vaccinations_per_hundred\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ] } } ``` ## Summary ```html markup Country Deaths/1M Cases/1M Shots/100 Peru 5974.745 65149.644 75.53 Bosnia and Herzegovina 3219.896 71162.837 None North Macedonia 3172.384 91228.961 71.82 Hungary 3131.668 85244.674 None Montenegro 3034.785 206973.637 71.14 Bulgaria 2992.465 71831.489 36.37 Czechia 2839.652 157546.893 109.81 Brazil 2778.838 99846.028 108.34 San Marino 2675.684 159600.118 138.44 Argentina 2520.599 115159.417 111.29 Colombia 2461.249 96607.993 76.6 Slovakia 2306.653 74826.864 85.81 Paraguay 2242.355 63691.256 62.17 Georgia 2222.237 152560.209 43.96 Belgium 2198.011 106458.257 142.37 Slovenia 2185.957 139487.079 101.23 Italy 2165.769 77228.463 139.13 Mexico 2116.316 27911.447 76.14 Croatia 2108.457 98025.875 83.5 Tunisia 2077.286 59105.894 62.21 United States 2073.88 129511.805 115.99 United Kingdom 2002.269 113447.712 137.03 Poland 1999.418 76822.367 98.28 Chile 1949.006 86005.25 164.23 Romania 1905.606 62723.51 52.56 Spain 1846.136 105928.284 149.19 Lithuania 1832.808 121438.944 124.15 Ecuador 1830.62 28434.79 115.0 Armenia 1773.508 87262.746 13.76 Portugal 1765.847 104955.063 156.81 France 1740.284 104894.377 138.86 Uruguay 1736.797 111493.559 176.81 Andorra 1680.585 196357.008 None Moldova 1668.23 72077.833 34.39 Panama 1646.893 106435.733 117.03 Bolivia 1580.926 42187.501 54.45 Liechtenstein 1568.463 90055.942 122.12 Sweden 1458.737 113128.84 133.93 Suriname 1454.888 68394.959 66.24 South Africa 1452.583 48258.239 28.03 Latvia 1440.329 83064.533 86.59 Greece 1420.052 62492.22 116.11 Iran 1407.159 65248.394 51.01 Russia 1377.645 50268.942 61.2 Ukraine 1366.191 57600.484 28.16 Namibia 1350.42 49229.248 15.75 Bahamas 1317.666 52341.313 46.47 Luxembourg 1315.346 122760.368 122.52 Switzerland 1269.004 95976.545 118.53 Lebanon 1225.56 91952.447 41.61 Costa Rica 1221.431 102353.293 102.71 Austria 1213.747 81521.191 119.35 Serbia 1189.931 134879.72 94.19 Grenada 1150.29 44286.157 45.67 Germany 1114.523 50167.752 127.57 Seychelles 1112.122 216095.44 150.04 Netherlands 1081.11 118556.388 129.69 Ireland 1045.374 77408.876 144.4 Trinidad and Tobago 1043.2 35667.612 74.5 Jordan 1041.677 79929.52 67.39 Eswatini 1034.657 39076.434 20.43 Estonia 1015.705 116154.085 102.62 Saint Lucia 1008.671 60905.31 41.12 Belize 1000.21 49257.252 75.13 Botswana 987.385 74272.914 25.31 Guyana 976.808 39522.781 67.55 Honduras 962.04 36083.297 51.64 Albania 923.446 58542.243 58.95 Malta 888.131 72105.705 158.73 Israel 874.197 144512.215 169.88 Kazakhstan 835.222 50330.461 73.19 Monaco 835.02 83577.935 126.47 Bahrain 794.488 157225.754 146.53 Oman 783.976 58137.304 88.76 Malaysia 783.953 67402.394 129.29 Palestine 774.687 76386.107 38.32 Turkey 745.178 83095.375 126.81 Guatemala 733.923 30155.451 36.46 Canada 728.987 42569.631 146.68 Libya 663.501 48557.614 21.58 Fiji 655.666 56270.967 108.02 Antigua and Barbuda 648.246 29606.596 82.97 Cuba 643.163 76059.125 176.64 Azerbaijan 633.452 47088.409 81.68 Cyprus 622.744 133085.962 129.09 Jamaica 619.144 27923.68 24.07 Cape Verde 597.97 66687.904 71.56 Sri Lanka 592.214 23937.511 120.77 Kuwait 565.316 95074.035 None Iraq 537.697 48476.092 18.09 Indonesia 512.318 15231.494 48.56 El Salvador 490.45 16007.977 112.75 Denmark 455.507 61765.585 150.78 Belarus 434.402 56354.601 35.9 Maldives 424.929 155410.029 133.86 Kyrgyzstan 392.556 26902.182 21.3 Morocco 380.214 24895.014 105.84 Nepal 374.154 26701.572 42.61 Mongolia 373.053 89784.824 131.46 Dominican Republic 368.916 32638.884 107.67 Philippines 336.84 22430.683 39.56 India 321.064 24183.553 61.42 Myanmar 320.822 8382.949 16.42 Zimbabwe 305.258 8608.371 34.69 Saudi Arabia 246.288 15477.489 117.83 Barbados 236.351 26985.694 81.38 Thailand 234.007 22471.866 65.79 Sao Tome and Principe 219.373 14993.464 32.78 United Arab Emirates 209.587 73583.615 198.74 Dominica 207.837 45627.113 61.83 Qatar 206.448 80664.072 160.27 Saint Kitts and Nevis 205.431 34960.595 87.96 Zambia 192.752 11039.099 3.7 Finland 192.67 25174.642 135.6 Vietnam 191.079 7803.404 39.08 Lesotho 186.655 6667.232 15.42 Afghanistan 180.744 3892.816 7.87 Comoros 165.456 4646.263 37.92 Egypt 165.205 2899.788 13.24 Bangladesh 164.994 9335.721 24.24 Saint Vincent and the Grenadines 161.77 30188.103 29.73 Mauritania 161.672 7515.848 6.98 Djibouti 161.645 12226.139 6.71 Norway 155.517 34322.308 141.75 Venezuela 153.702 12656.355 48.95 Japan 139.023 13462.596 126.53 Gambia 134.704 3992.864 None Cambodia 133.42 6486.67 140.62 Algeria 129.683 4547.117 None Pakistan 122.727 5514.322 33.81 Syria 121.199 1823.35 None Malawi 115.942 3131.006 5.24 Senegal 107.872 4288.537 10.38 Equatorial Guinea 97.938 8142.681 26.34 Iceland 96.109 34139.096 160.51 Rwanda 94.754 7304.777 25.68 Kenya 92.915 4519.629 6.57 Brunei 86.064 15174.438 100.49 Timor 84.085 14434.378 50.29 Gabon 80.304 12951.827 7.78 Somalia 67.912 1221.309 2.63 Guinea-Bissau 66.981 3026.063 4.7 Uganda 66.761 2615.36 4.37 Sudan 64.575 850.625 3.34 Mauritius 62.037 12086.274 128.31 Mozambique 59.385 4680.527 11.33 Yemen 55.853 294.779 None Liberia 54.631 1118.488 None Haiti 52.852 1866.279 0.53 Cameroon 50.249 3137.422 1.69 Australia 48.704 3913.066 103.38 South Korea 48.026 5961.23 116.76 Ethiopia 46.142 2903.936 3.0 Angola 44.587 1637.992 8.31 Ghana 36.241 4002.757 5.12 Uzbekistan 36.098 5082.927 54.59 Taiwan 35.297 679.019 60.49 Congo 34.117 2517.935 5.83 Madagascar 33.7 1509.041 1.34 Nicaragua 30.288 2048.526 11.76 Hong Kong 28.201 1614.765 113.52 Guinea 28.006 2249.646 12.59 Togo 26.774 2978.448 9.82 Mali 26.228 727.139 1.91 Papua New Guinea 24.893 2140.913 1.7 Cote d\u0027Ivoire 22.437 2216.967 7.28 Central African Republic 20.325 2311.185 3.06 Sierra Leone 14.862 785.251 None Singapore 13.567 15184.636 157.5 Tajikistan 12.821 1793.3 39.72 Nigeria 12.725 968.549 2.96 Benin 12.368 1843.863 1.4 Democratic Republic of Congo 11.734 615.536 0.15 Eritrea 11.662 1858.69 None South Sudan 11.246 1050.312 0.88 Chad 10.287 297.606 0.73 Burkina Faso 8.42 659.764 1.18 Niger 7.998 238.353 None New Zealand 5.555 865.112 103.81 Bhutan 3.847 3332.479 136.99 China 3.21 66.575 152.35 Vanuatu 3.18 12.72 18.18 Burundi 3.101 1334.592 None Laos 2.168 3041.05 None Tanzania 0.813 22.228 None ```",
       },
           'pages/mortality': {
           'name': 'Excess Mortality',
