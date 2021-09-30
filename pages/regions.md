@@ -2,6 +2,8 @@
 
 ## Deaths
 
+Here is an interactive map showing amount of total deaths per region:
+
 ```json chart
 {
   "width": 800,
@@ -55,6 +57,8 @@
 
 ## Total Cases
 
+Here is an interactive map showing amount of total cases per region:
+
 ```json chart
 {
   "width": 800,
@@ -107,6 +111,8 @@
 ```
 
 ## Vaccinations
+
+Here is an interactive map showing amount of total shots taken per region:
 
 ```json chart
 {
@@ -165,15 +171,17 @@
 <table class="regions table table-bordered table-striped">
   <tr>
     <th>Region</th>
-    <th>Deaths</th>
+    <th>Deaths/1M</th>
+    <th>Cases/1M</th>
+    <th>Shots/100</th>
   </tr>
-  {% for row in frictionless.extract('data/latest.csv') %}
-  {% if row.iso_code.startswith('OWID_') and row.is_code != 'OWID_WRL' %}
+  {% for row in frictionless.extract('data/regions/latest.csv') %}
   <tr>
     <td><a href="#card={{ row.iso_code }}">{{ row.location }}</a></td>
     <td>{{ row.total_deaths_per_million }}</td>
+    <td>{{ row.total_cases_per_million }}</td>
+    <td>{{ row.total_vaccinations_per_hundred }}</td>
   </tr>
-  {% endif %}
   {% endfor %}
 </table>
 ```

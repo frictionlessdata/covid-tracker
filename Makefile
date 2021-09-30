@@ -9,7 +9,6 @@ all:
 
 install:
 	pip install -r requirements.txt
-	cp -n .env.example .env
 
 data:
 	python code/extract.py
