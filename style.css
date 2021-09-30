@@ -2,3 +2,8 @@
   font-size: 30px !important;
   font-weight: 900 !important;
 }
+
+table.regions th,
+table.regions td {
+  padding: 10px !important;
+}

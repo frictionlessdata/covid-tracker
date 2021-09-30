@@ -53,7 +53,7 @@
 }
 ```
 
-## Cases
+## Total Cases
 
 ```json chart
 {
@@ -157,4 +157,23 @@
     ]
   }
 }
+```
+
+## Details
+
+```html markup
+<table class="regions table table-bordered table-striped">
+  <tr>
+    <th>Region</th>
+    <th>Deaths</th>
+  </tr>
+  {% for row in frictionless.extract('data/latest.csv') %}
+  {% if row.iso_code.startswith('OWID_') and row.is_code != 'OWID_WRL' %}
+  <tr>
+    <td><a href="#card={{ row.iso_code }}">{{ row.location }}</a></td>
+    <td>{{ row.total_deaths_per_million }}</td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>
 ```

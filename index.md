@@ -155,7 +155,9 @@ The conbined chart might help analyze how the vaccination helps to fight the pan
 }
 ```
 
-## Source
+## Sources
+
+> Put here links to files and cards with table exploration
 
 The page has been created using the following dataset. You can [download CSV](data/countries/owid_wrl/timeline.csv) or explore the table:
 
