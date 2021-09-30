@@ -17,11 +17,19 @@ code/extract.py
 As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository's stargazers count and save it to the CSV file:
 
 ```bash
-$ python code/transform.py
+$ python code/transform/timeline.py
 ```
 
 ```python file
-code/transform.py
+code/transform/timeline.py
+```
+
+```bash
+$ python code/transform/latest.py
+```
+
+```python file
+code/transform/latest.py
 ```
 
 ## Load

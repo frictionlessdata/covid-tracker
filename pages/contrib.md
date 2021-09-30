@@ -13,7 +13,6 @@ Run the following script to initiate a virtual environment and install the depen
 
 ```bash
 $ make install
-$ editor .env # add your Github Token
 ```
 
 ## Data

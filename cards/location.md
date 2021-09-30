@@ -26,7 +26,7 @@ The main three core metrics we track: total deaths, total cases, and all the vac
     <div role="button" class="btn btn-success w-100">
       Vaccinations<br>
       <span class="badge badge-light">
-        {{ ((data.total_vaccinations or 0)/1000000000) | round(1) }}B
+        {{ ((data.total_vaccinations or 0)/1000000) | round(1) }}M
       </span>
     </div>
   </div>
