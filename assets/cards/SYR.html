@@ -34,6 +34,25 @@
   </div>
 </div>
 <script>
-console.log('!!!')
 vegaEmbed('#livemark-chart-1-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/SYR/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_deaths", "type": "quantitative"}}, "mark": {"type": "area", "line": {"color": "red"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "red"}]}}}'))
+</script>
+
+<h2>New Cases</h2>
+<p>The new cases data is less reliable as cases registration really depends on the testing volume and methodology:</p>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-2-card">
+  </div>
+</div>
+<script>
+vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/SYR/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_cases", "type": "quantitative"}}, "mark": {"type": "area", "line": {"color": "blue"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "blue"}]}}}'))
+</script>
+
+<h2>Vaccinations</h2>
+<p>The vaccination campaign had been started around January 2021; this chart counds all the shots taken:</p>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-3-card">
+  </div>
+</div>
+<script>
+vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/SYR/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_vaccinations", "type": "quantitative"}}, "mark": {"type": "area", "line": {"color": "green"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]}}}'))
 </script>

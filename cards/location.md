@@ -55,3 +55,49 @@ Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
   }
 }
 ```
+
+## New Cases
+
+The new cases data is less reliable as cases registration really depends on the testing volume and methodology:
+
+```json chart card
+{
+  "width": 800,
+  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"},
+    "y": {"field": "new_cases", "type": "quantitative"}
+  },
+  "mark": {
+    "type": "area",
+    "line": {"color": "blue"},
+    "color": {
+      "x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear",
+      "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "blue"}]
+    }
+  }
+}
+```
+
+## Vaccinations
+
+The vaccination campaign had been started around January 2021; this chart counds all the shots taken:
+
+```json chart card
+{
+  "width": 800,
+  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"},
+    "y": {"field": "new_vaccinations", "type": "quantitative"}
+  },
+  "mark": {
+    "type": "area",
+    "line": {"color": "green"},
+    "color": {
+      "x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear",
+      "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]
+    }
+  }
+}
+```
