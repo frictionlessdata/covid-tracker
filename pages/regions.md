@@ -1,5 +1,48 @@
 # Regions
 
+## Summary
+
+Here is a summary of the key pandemic data by regions:
+
+```yaml table
+data:
+  path: data/reports/regions.csv
+  layout:
+    pickFields:
+      - iso_code
+      - location
+      - total_cases
+      - total_cases_per_million
+      - total_deaths
+      - total_deaths_per_million
+      - total_vaccinations
+      - total_vaccinations_per_hundred
+filters: true
+dropdownMenu: true
+columnSorting:
+  initialConfig:
+    column: 1
+    sortOrder: desc
+width: 940
+colWidths: [200, 120, 120, 120, 120, 120, 120]
+colHeaders:
+  - Location
+  - Deaths
+  - Deaths/1M
+  - Cases
+  - Cases/1M
+  - Shots
+  - Shots/100
+columns:
+  - data: 1
+  - data: 4
+  - data: 5
+  - data: 2
+  - data: 3
+  - data: 6
+  - data: 7
+```
+
 ## Deaths
 
 Here is an interactive map showing amount of total deaths per region:
@@ -163,25 +206,4 @@ Here is an interactive map showing amount of total shots taken per region:
     ]
   }
 }
-```
-
-## Summary
-
-```html markup
-<table class="big table table-bordered table-striped">
-  <tr>
-    <th>Region</th>
-    <th>Deaths/1M</th>
-    <th>Cases/1M</th>
-    <th>Shots/100</th>
-  </tr>
-  {% for row in frictionless.extract('data/reports/regions.csv') | sort(attribute='total_deaths_per_million', reverse=True) %}
-  <tr>
-    <td><a href="#card={{ row.iso_code }}">{{ row.location }}</a></td>
-    <td>{{ row.total_deaths_per_million }}</td>
-    <td>{{ row.total_cases_per_million }}</td>
-    <td>{{ row.total_vaccinations_per_hundred }}</td>
-  </tr>
-  {% endfor %}
-</table>
 ```

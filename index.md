@@ -154,22 +154,3 @@ The conbined chart might help analyze how the vaccination helps to fight the pan
   ]
 }
 ```
-
-## Sources
-
-> Put here links to files and cards with table exploration
-
-The page has been created using the following dataset. You can [download CSV](data/locations/OWID_WRL/timeline.csv) or explore the table:
-
-```yaml table
-data: data/locations/OWID_WRL/timeline.csv
-filters: true
-dropdownMenu: true
-contextMenu: true
-columnSorting:
-  initialConfig:
-    column: 3
-    sortOrder: desc
-width: 900
-height: 300
-```

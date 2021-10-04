@@ -3,7 +3,19 @@
   font-weight: 900 !important;
 }
 
-table.big th,
-table.big td {
-  padding: 10px !important;
+.livemark-table th {
+  padding: 10px 2px !important;
+}
+
+.livemark-table td {
+  padding: 10px 5px !important;
+}
+
+.livemark-table th {
+  background-color: #fff !important;
+  font-weight: bold !important;
+}
+
+.livemark-table tr:nth-child(odd) td {
+  background-color: #f8f8f8 !important;
 }
