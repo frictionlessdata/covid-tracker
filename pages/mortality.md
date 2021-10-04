@@ -1,40 +1,5 @@
 # Excess Mortality
 
-## Summary
-
-Here is excess deaths by countries:
-
-```yaml table
-data:
-  path: data/mortality.csv
-  layout:
-    pickFields:
-      - Country
-      - Excess Deaths
-      - Undercount Ratio
-      - Excess per 100k
-filters: true
-dropdownMenu: true
-columnSorting:
-  initialConfig:
-    column: 1
-    sortOrder: desc
-width: 900
-height: 300
-colWidths: [3, 1, 1, 1]
-stretchH: all
-colHeaders:
-  - Location
-  - Deaths
-  - Deaths/100k
-  - Undercount
-columns:
-  - data: 0
-  - data: 1
-  - data: 3
-  - data: 2
-```
-
 ## Excess Deaths
 
 The numbers are based on the World Mortality Dataset:
@@ -71,7 +36,7 @@ The numbers are based on the World Mortality Dataset:
       "type": "quantitative",
       "scale": {"scheme": "Reds"},
       "legend": {
-          "title": "Excess/100k"
+          "title": "Deaths/100k"
       }
     },
     "tooltip": [
@@ -83,9 +48,50 @@ The numbers are based on the World Mortality Dataset:
       {
          "field": "Excess per 100k",
          "type": "quantitative",
-         "title": "Excess/100k"
+         "title": "Deaths/100k"
       }
     ]
   }
 }
+```
+
+## Summary
+
+Here is excess deaths by countries:
+
+```yaml table
+data:
+  path: data/mortality.csv
+  schema:
+    missingValues: ['', 'NaN']
+    fields:
+      - name: Country
+      - name: Excess deaths
+      - name: Undercount ratio
+      - name: Excess per 100k
+  layout:
+    pickFields:
+      - Country
+      - Excess deaths
+      - Undercount ratio
+      - Excess per 100k
+filters: true
+dropdownMenu: true
+columnSorting:
+  initialConfig:
+    column: 1
+    sortOrder: desc
+width: 940
+colWidths: [3, 1, 1, 1]
+stretchH: all
+colHeaders:
+  - Location
+  - Deaths
+  - Deaths/100k
+  - Undercount
+columns:
+  - data: 0
+  - data: 1
+  - data: 3
+  - data: 2
 ```
