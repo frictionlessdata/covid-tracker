@@ -11,17 +11,17 @@ data:
     pickFields:
       - Country
       - Excess Deaths
-      - Excess per 100k
       - Undercount Ratio
+      - Excess per 100k
 filters: true
 dropdownMenu: true
 columnSorting:
   initialConfig:
     column: 1
     sortOrder: desc
-width: 940
+width: 900
 height: 300
-colWidths: [300, 120, 120, 120]
+colWidths: [3, 1, 1, 1]
 stretchH: all
 colHeaders:
   - Location
@@ -31,8 +31,8 @@ colHeaders:
 columns:
   - data: 0
   - data: 1
-  - data: 2
   - data: 3
+  - data: 2
 ```
 
 ## Excess Deaths

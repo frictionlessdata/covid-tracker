@@ -12,8 +12,8 @@ data:
       - iso_code
       - location
       - total_cases
-      - total_cases_per_million
       - total_deaths
+      - total_cases_per_million
       - total_deaths_per_million
       - total_vaccinations
       - total_vaccinations_per_hundred
@@ -23,9 +23,9 @@ columnSorting:
   initialConfig:
     column: 1
     sortOrder: desc
-width: 940
+width: 900
 height: 300
-colWidths: [200, 120, 120, 120, 120, 120, 120]
+colWidths: [2, 1, 1, 1, 1, 1, 1]
 stretchH: all
 colHeaders:
   - Location
@@ -37,10 +37,10 @@ colHeaders:
   - Shots/100
 columns:
   - data: 1
-  - data: 4
+  - data: 3
   - data: 5
   - data: 2
-  - data: 3
+  - data: 4
   - data: 6
   - data: 7
 ```
