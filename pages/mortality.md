@@ -91,6 +91,7 @@ colHeaders:
   - Undercount
 columns:
   - data: 0
+    disableVisualSelection: true
   - data: 1
   - data: 3
   - data: 2

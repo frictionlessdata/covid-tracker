@@ -201,6 +201,8 @@ colHeaders:
 columns:
   - data: 6
     renderer: html
+    readOnly: true
+    disableVisualSelection: true
   - data: 1
   - data: 3
   - data: 0
