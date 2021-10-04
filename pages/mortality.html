@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="The numbers are based on the World Mortality Dataset:">
+<meta name="description" content="Here is excess deaths by countries:">
 <meta name="keywords" content="excess,mortality">
 <link rel="icon" href="assets/covid.svg">
 <title>Excess Mortality | COVID-19 Tracker</title>
@@ -1304,6 +1304,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 }
 
 </style>
+<link rel="stylesheet" href="https://unpkg.com/handsontable@9.0.0/dist/handsontable.min.css">
 <style>
 
 #livemark-topics {
@@ -1837,10 +1838,23 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2021-09-30 18:09)
+  (2021-10-04 17:07)
 </div>
 
 <h1>Excess Mortality</h1>
+<h2>Summary</h2>
+<p>Here is excess deaths by countries:</p>
+<div class="livemark-table">
+  <div id="livemark-table-1">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const spec = JSON.parse('{"data": [["Albania", 348.9], ["Andorra", 105.4], ["Antigua and Barbuda", 98.1], ["Argentina", 93.5], ["Armenia", 319.0], ["Aruba", 47.8], ["Australia", -5.2], ["Austria", 124.6], ["Azerbaijan", 233.2], ["Belarus", 342.9], ["Belgium", 138.1], ["Bermuda", 43.4], ["Bolivia", 381.6], ["Bosnia", 417.5], ["Brazil", 305.9], ["Bulgaria", 531.7], ["Canada", 49.2], ["Chile", 185.6], ["Colombia", 270.6], ["Costa Rica", 18.4], ["Croatia", 239.6], ["Cuba", 4.5], ["Cyprus", 5.0], ["Czechia", 319.4], ["Denmark", 5.6], ["Ecuador", 373.4], ["Egypt", 191.9], ["El Salvador", 72.9], ["Estonia", 169.6], ["Faroe Islands", -124.8], ["Finland", 29.8], ["France", 113.9], ["French Guiana", 35.5], ["French Polynesia", -6.2], ["Georgia", 171.4], ["Germany", 68.2], ["Gibraltar", 65.1], ["Greece", 131.9], ["Greenland", -27.5], ["Guadeloupe", 248.2], ["Guatemala", 57.1], ["Hong Kong", 27.7], ["Hungary", 267.8], ["Iceland", 7.1], ["Iran", 276.9], ["Ireland", 27.8], ["Israel", 67.3], ["Italy", 229.2], ["Jamaica", -10.6], ["Japan", 0.2], ["Kazakhstan", 238.7], ["Kosovo", 208.0], ["Kyrgyzstan", 151.3], ["Latvia", 208.2], ["Lebanon", 155.6], ["Liechtenstein", 100.6], ["Lithuania", 415.1], ["Luxembourg", 28.5], ["Macao", -5.5], ["Malaysia", -32.2], ["Malta", 99.7], ["Martinique", 193.3], ["Mauritius", -33.3], ["Mayotte", 121.6], ["Mexico", 408.4], ["Moldova", 250.1], ["Monaco", 295.2], ["Mongolia", -30.3], ["Montenegro", 317.8], ["Netherlands", 122.2], ["New Zealand", -44.3], ["Nicaragua", 105.0], ["North Macedonia", 474.2], ["Norway", -11.9], ["Oman", 88.7], ["Panama", 151.5], ["Paraguay", 236.6], ["Peru", 615.2], ["Philippines", 38.9], ["Poland", 320.4], ["Portugal", 197.9], ["Puerto Rico", 132.0], ["Qatar", 28.0], ["Romania", 312.9], ["Russia", 424.9], ["RÃ©union", 40.2], ["San Marino", 329.0], ["Serbia", 443.4], ["Seychelles", -96.2], ["Singapore", 2.0], ["Slovakia", 313.9], ["Slovenia", 183.1], ["South Africa", 408.7], ["South Korea", -0.8], ["Spain", 205.2], ["Sweden", 88.7], ["Switzerland", 104.2], ["Taiwan", -14.6], ["Tajikistan", 103.6], ["Thailand", 54.6], ["Transnistria", 371.1], ["Tunisia", 38.8], ["Ukraine", 226.2], ["United Kingdom", 177.0], ["United States", 229.9], ["Uruguay", 87.7], ["Uzbekistan", 64.3]], "filters": true, "dropdownMenu": true, "columnSorting": {"initialConfig": {"column": 1, "sortOrder": "desc"}}, "width": 940, "height": 300, "colWidths": [300, 120, 120, 120], "stretchH": "all", "colHeaders": ["Location", "Deaths", "Deaths/100k", "Undercount"], "columns": [{"data": 0}, {"data": 1}, {"data": 2}, {"data": 3}], "licenseKey": "non-commercial-and-evaluation"}')
+  const elem = document.getElementById('livemark-table-1')
+  new Handsontable(elem, spec)
+});
+</script>
 <h2>Excess Deaths</h2>
 <p>The numbers are based on the World Mortality Dataset:</p>
 <div class="livemark-chart" style="overflow-x: auto">
@@ -1854,549 +1868,6 @@ document.addEventListener("DOMContentLoaded", function(){
   vegaEmbed(elem, spec)
 })
 </script>
-<h2>Summary</h2>
-<table class="big table table-bordered table-striped">
-  <tr>
-    <th>Country</th>
-    <th>Excess Deaths</th>
-    <th>Excess Deaths/100k</th>
-  </tr>
-    <tr>
-    <td>United States</td>
-    <td>761000</td>
-    <td>229.9</td>
-  </tr>
-    <tr>
-    <td>Brazil</td>
-    <td>650120</td>
-    <td>305.9</td>
-  </tr>
-    <tr>
-    <td>Russia</td>
-    <td>623601</td>
-    <td>424.9</td>
-  </tr>
-    <tr>
-    <td>Mexico</td>
-    <td>526533</td>
-    <td>408.4</td>
-  </tr>
-    <tr>
-    <td>South Africa</td>
-    <td>242391</td>
-    <td>408.7</td>
-  </tr>
-    <tr>
-    <td>Iran</td>
-    <td>232572</td>
-    <td>276.9</td>
-  </tr>
-    <tr>
-    <td>Peru</td>
-    <td>202835</td>
-    <td>615.2</td>
-  </tr>
-    <tr>
-    <td>Egypt</td>
-    <td>196420</td>
-    <td>191.9</td>
-  </tr>
-    <tr>
-    <td>Italy</td>
-    <td>138587</td>
-    <td>229.2</td>
-  </tr>
-    <tr>
-    <td>Colombia</td>
-    <td>137673</td>
-    <td>270.6</td>
-  </tr>
-    <tr>
-    <td>Poland</td>
-    <td>121252</td>
-    <td>320.4</td>
-  </tr>
-    <tr>
-    <td>United Kingdom</td>
-    <td>120182</td>
-    <td>177.0</td>
-  </tr>
-    <tr>
-    <td>Spain</td>
-    <td>95952</td>
-    <td>205.2</td>
-  </tr>
-    <tr>
-    <td>Ukraine</td>
-    <td>94470</td>
-    <td>226.2</td>
-  </tr>
-    <tr>
-    <td>France</td>
-    <td>74350</td>
-    <td>113.9</td>
-  </tr>
-    <tr>
-    <td>Ecuador</td>
-    <td>65874</td>
-    <td>373.4</td>
-  </tr>
-    <tr>
-    <td>Romania</td>
-    <td>60198</td>
-    <td>312.9</td>
-  </tr>
-    <tr>
-    <td>Germany</td>
-    <td>57107</td>
-    <td>68.2</td>
-  </tr>
-    <tr>
-    <td>Kazakhstan</td>
-    <td>44823</td>
-    <td>238.7</td>
-  </tr>
-    <tr>
-    <td>Bolivia</td>
-    <td>44547</td>
-    <td>381.6</td>
-  </tr>
-    <tr>
-    <td>Philippines</td>
-    <td>42601</td>
-    <td>38.9</td>
-  </tr>
-    <tr>
-    <td>Argentina</td>
-    <td>42246</td>
-    <td>93.5</td>
-  </tr>
-    <tr>
-    <td>Thailand</td>
-    <td>38086</td>
-    <td>54.6</td>
-  </tr>
-    <tr>
-    <td>Bulgaria</td>
-    <td>36946</td>
-    <td>531.7</td>
-  </tr>
-    <tr>
-    <td>Chile</td>
-    <td>35480</td>
-    <td>185.6</td>
-  </tr>
-    <tr>
-    <td>Czechia</td>
-    <td>34209</td>
-    <td>319.4</td>
-  </tr>
-    <tr>
-    <td>Belarus</td>
-    <td>32397</td>
-    <td>342.9</td>
-  </tr>
-    <tr>
-    <td>Serbia</td>
-    <td>30561</td>
-    <td>443.4</td>
-  </tr>
-    <tr>
-    <td>Hungary</td>
-    <td>25866</td>
-    <td>267.8</td>
-  </tr>
-    <tr>
-    <td>Azerbaijan</td>
-    <td>23648</td>
-    <td>233.2</td>
-  </tr>
-    <tr>
-    <td>Uzbekistan</td>
-    <td>21517</td>
-    <td>64.3</td>
-  </tr>
-    <tr>
-    <td>Netherlands</td>
-    <td>20933</td>
-    <td>122.2</td>
-  </tr>
-    <tr>
-    <td>Portugal</td>
-    <td>20180</td>
-    <td>197.9</td>
-  </tr>
-    <tr>
-    <td>Canada</td>
-    <td>18585</td>
-    <td>49.2</td>
-  </tr>
-    <tr>
-    <td>Slovakia</td>
-    <td>17140</td>
-    <td>313.9</td>
-  </tr>
-    <tr>
-    <td>Paraguay</td>
-    <td>16879</td>
-    <td>236.6</td>
-  </tr>
-    <tr>
-    <td>Belgium</td>
-    <td>16011</td>
-    <td>138.1</td>
-  </tr>
-    <tr>
-    <td>Greece</td>
-    <td>13747</td>
-    <td>131.9</td>
-  </tr>
-    <tr>
-    <td>Bosnia</td>
-    <td>13696</td>
-    <td>417.5</td>
-  </tr>
-    <tr>
-    <td>Lithuania</td>
-    <td>11301</td>
-    <td>415.1</td>
-  </tr>
-    <tr>
-    <td>Austria</td>
-    <td>11221</td>
-    <td>124.6</td>
-  </tr>
-    <tr>
-    <td>Lebanon</td>
-    <td>10618</td>
-    <td>155.6</td>
-  </tr>
-    <tr>
-    <td>Guatemala</td>
-    <td>10223</td>
-    <td>57.1</td>
-  </tr>
-    <tr>
-    <td>Moldova</td>
-    <td>10090</td>
-    <td>250.1</td>
-  </tr>
-    <tr>
-    <td>Albania</td>
-    <td>10042</td>
-    <td>348.9</td>
-  </tr>
-    <tr>
-    <td>Tajikistan</td>
-    <td>9880</td>
-    <td>103.6</td>
-  </tr>
-    <tr>
-    <td>North Macedonia</td>
-    <td>9879</td>
-    <td>474.2</td>
-  </tr>
-    <tr>
-    <td>Kyrgyzstan</td>
-    <td>9868</td>
-    <td>151.3</td>
-  </tr>
-    <tr>
-    <td>Croatia</td>
-    <td>9835</td>
-    <td>239.6</td>
-  </tr>
-    <tr>
-    <td>Armenia</td>
-    <td>9451</td>
-    <td>319.0</td>
-  </tr>
-    <tr>
-    <td>Switzerland</td>
-    <td>9018</td>
-    <td>104.2</td>
-  </tr>
-    <tr>
-    <td>Sweden</td>
-    <td>8959</td>
-    <td>88.7</td>
-  </tr>
-    <tr>
-    <td>Nicaragua</td>
-    <td>6954</td>
-    <td>105.0</td>
-  </tr>
-    <tr>
-    <td>Georgia</td>
-    <td>6838</td>
-    <td>171.4</td>
-  </tr>
-    <tr>
-    <td>Panama</td>
-    <td>6537</td>
-    <td>151.5</td>
-  </tr>
-    <tr>
-    <td>Israel</td>
-    <td>5822</td>
-    <td>67.3</td>
-  </tr>
-    <tr>
-    <td>El Salvador</td>
-    <td>4729</td>
-    <td>72.9</td>
-  </tr>
-    <tr>
-    <td>Tunisia</td>
-    <td>4582</td>
-    <td>38.8</td>
-  </tr>
-    <tr>
-    <td>Oman</td>
-    <td>4532</td>
-    <td>88.7</td>
-  </tr>
-    <tr>
-    <td>Latvia</td>
-    <td>3927</td>
-    <td>208.2</td>
-  </tr>
-    <tr>
-    <td>Kosovo</td>
-    <td>3839</td>
-    <td>208.0</td>
-  </tr>
-    <tr>
-    <td>Slovenia</td>
-    <td>3807</td>
-    <td>183.1</td>
-  </tr>
-    <tr>
-    <td>Puerto Rico</td>
-    <td>3776</td>
-    <td>132.0</td>
-  </tr>
-    <tr>
-    <td>Uruguay</td>
-    <td>3045</td>
-    <td>87.7</td>
-  </tr>
-    <tr>
-    <td>Estonia</td>
-    <td>2250</td>
-    <td>169.6</td>
-  </tr>
-    <tr>
-    <td>Hong Kong</td>
-    <td>2078</td>
-    <td>27.7</td>
-  </tr>
-    <tr>
-    <td>Montenegro</td>
-    <td>1996</td>
-    <td>317.8</td>
-  </tr>
-    <tr>
-    <td>Transnistria</td>
-    <td>1726</td>
-    <td>371.1</td>
-  </tr>
-    <tr>
-    <td>Finland</td>
-    <td>1651</td>
-    <td>29.8</td>
-  </tr>
-    <tr>
-    <td>Ireland</td>
-    <td>1372</td>
-    <td>27.8</td>
-  </tr>
-    <tr>
-    <td>Guadeloupe</td>
-    <td>993</td>
-    <td>248.2</td>
-  </tr>
-    <tr>
-    <td>Costa Rica</td>
-    <td>938</td>
-    <td>18.4</td>
-  </tr>
-    <tr>
-    <td>Qatar</td>
-    <td>807</td>
-    <td>28.0</td>
-  </tr>
-    <tr>
-    <td>Martinique</td>
-    <td>726</td>
-    <td>193.3</td>
-  </tr>
-    <tr>
-    <td>Cuba</td>
-    <td>513</td>
-    <td>4.5</td>
-  </tr>
-    <tr>
-    <td>Malta</td>
-    <td>440</td>
-    <td>99.7</td>
-  </tr>
-    <tr>
-    <td>RÃ©union</td>
-    <td>360</td>
-    <td>40.2</td>
-  </tr>
-    <tr>
-    <td>Mayotte</td>
-    <td>332</td>
-    <td>121.6</td>
-  </tr>
-    <tr>
-    <td>Denmark</td>
-    <td>323</td>
-    <td>5.6</td>
-  </tr>
-    <tr>
-    <td>Japan</td>
-    <td>274</td>
-    <td>0.2</td>
-  </tr>
-    <tr>
-    <td>Luxembourg</td>
-    <td>178</td>
-    <td>28.5</td>
-  </tr>
-    <tr>
-    <td>Singapore</td>
-    <td>118</td>
-    <td>2.0</td>
-  </tr>
-    <tr>
-    <td>Monaco</td>
-    <td>116</td>
-    <td>295.2</td>
-  </tr>
-    <tr>
-    <td>San Marino</td>
-    <td>112</td>
-    <td>329.0</td>
-  </tr>
-    <tr>
-    <td>French Guiana</td>
-    <td>106</td>
-    <td>35.5</td>
-  </tr>
-    <tr>
-    <td>Antigua and Barbuda</td>
-    <td>96</td>
-    <td>98.1</td>
-  </tr>
-    <tr>
-    <td>Andorra</td>
-    <td>81</td>
-    <td>105.4</td>
-  </tr>
-    <tr>
-    <td>Cyprus</td>
-    <td>61</td>
-    <td>5.0</td>
-  </tr>
-    <tr>
-    <td>Aruba</td>
-    <td>51</td>
-    <td>47.8</td>
-  </tr>
-    <tr>
-    <td>Liechtenstein</td>
-    <td>38</td>
-    <td>100.6</td>
-  </tr>
-    <tr>
-    <td>Bermuda</td>
-    <td>27</td>
-    <td>43.4</td>
-  </tr>
-    <tr>
-    <td>Iceland</td>
-    <td>24</td>
-    <td>7.1</td>
-  </tr>
-    <tr>
-    <td>Gibraltar</td>
-    <td>22</td>
-    <td>65.1</td>
-  </tr>
-    <tr>
-    <td>Greenland</td>
-    <td>-16</td>
-    <td>-27.5</td>
-  </tr>
-    <tr>
-    <td>French Polynesia</td>
-    <td>-17</td>
-    <td>-6.2</td>
-  </tr>
-    <tr>
-    <td>Macao</td>
-    <td>-36</td>
-    <td>-5.5</td>
-  </tr>
-    <tr>
-    <td>Faroe Islands</td>
-    <td>-61</td>
-    <td>-124.8</td>
-  </tr>
-    <tr>
-    <td>Seychelles</td>
-    <td>-95</td>
-    <td>-96.2</td>
-  </tr>
-    <tr>
-    <td>Jamaica</td>
-    <td>-315</td>
-    <td>-10.6</td>
-  </tr>
-    <tr>
-    <td>Mauritius</td>
-    <td>-423</td>
-    <td>-33.3</td>
-  </tr>
-    <tr>
-    <td>South Korea</td>
-    <td>-426</td>
-    <td>-0.8</td>
-  </tr>
-    <tr>
-    <td>Norway</td>
-    <td>-648</td>
-    <td>-11.9</td>
-  </tr>
-    <tr>
-    <td>Mongolia</td>
-    <td>-995</td>
-    <td>-30.3</td>
-  </tr>
-    <tr>
-    <td>Australia</td>
-    <td>-1336</td>
-    <td>-5.2</td>
-  </tr>
-    <tr>
-    <td>New Zealand</td>
-    <td>-2136</td>
-    <td>-44.3</td>
-  </tr>
-    <tr>
-    <td>Taiwan</td>
-    <td>-3483</td>
-    <td>-14.6</td>
-  </tr>
-    <tr>
-    <td>Malaysia</td>
-    <td>-10411</td>
-    <td>-32.2</td>
-  </tr>
-  </table>
 
 <div id="livemark-signs">
   <div>
@@ -2523,6 +1994,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="https://unpkg.com/vega@5.20.2/build/vega.min.js"></script>
 <script src="https://unpkg.com/vega-lite@5.1.0/build/vega-lite.min.js"></script>
 <script src="https://unpkg.com/vega-embed@6.18.2/build/vega-embed.min.js"></script>
+<script src="https://unpkg.com/handsontable@9.0.0/dist/handsontable.min.js"></script>
 <script src="https://unpkg.com/tocbot@4.12.3/dist/tocbot.min.js"></script>
 <script>
 
@@ -2805,12 +2277,12 @@ document.addEventListener("DOMContentLoaded", function () {
           'pages/countries': {
           'name': 'Countries',
           'path': 'pages/countries',
-          'text': "# Countries ## Summary Here is a summary of the key pandemic data by countries: ```yaml table data: path: data/reports/countries.csv layout: pickFields: - iso_code - location - total_cases - total_cases_per_million - total_deaths - total_deaths_per_million - total_vaccinations - total_vaccinations_per_hundred filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 height: 385 colWidths: [200, 120, 120, 120, 120, 120, 120] stretchH: all colHeaders: - Location - Deaths - Deaths/1M - Cases - Cases/1M - Shots - Shots/100 columns: - data: 1 - data: 4 - data: 5 - data: 2 - data: 3 - data: 6 - data: 7 ``` ## Deaths Here is an interactive map showing amount of total deaths per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"id\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"iso_code\", \"fields\": [\"iso_code\", \"total_deaths_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ] } } ``` ## Total Cases Here is an interactive map showing amount of total cases per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"id\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"iso_code\", \"fields\": [\"iso_code\", \"total_cases_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Blues\"}, \"legend\": { \"title\": \"Cases/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ] } } ``` ## Vaccinations Here is an interactive map showing amount of total shots taken per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_vaccinations_per_hundred\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ] } } ```",
+          'text': "# Countries ## Summary Here is a summary of the key pandemic data by countries: ```yaml table data: path: data/reports/countries.csv layout: pickFields: - iso_code - location - total_cases - total_cases_per_million - total_deaths - total_deaths_per_million - total_vaccinations - total_vaccinations_per_hundred filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 height: 300 colWidths: [200, 120, 120, 120, 120, 120, 120] stretchH: all colHeaders: - Location - Deaths - Deaths/1M - Cases - Cases/1M - Shots - Shots/100 columns: - data: 1 - data: 4 - data: 5 - data: 2 - data: 3 - data: 6 - data: 7 ``` ## Deaths Here is an interactive map showing amount of total deaths per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"id\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"iso_code\", \"fields\": [\"iso_code\", \"total_deaths_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ] } } ``` ## Total Cases Here is an interactive map showing amount of total cases per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"id\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"iso_code\", \"fields\": [\"iso_code\", \"total_cases_per_million\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Blues\"}, \"legend\": { \"title\": \"Cases/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ] } } ``` ## Vaccinations Here is an interactive map showing amount of total shots taken per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"location\", \"total_vaccinations_per_hundred\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ] } } ```",
       },
           'pages/mortality': {
           'name': 'Excess Mortality',
           'path': 'pages/mortality',
-          'text': "# Excess Mortality ## Excess Deaths The numbers are based on the World Mortality Dataset: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Excess/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Excess/100k\" } ] } } ``` ## Summary ```html markup Country Excess Deaths Excess Deaths/100k United States 761000 229.9 Brazil 650120 305.9 Russia 623601 424.9 Mexico 526533 408.4 South Africa 242391 408.7 Iran 232572 276.9 Peru 202835 615.2 Egypt 196420 191.9 Italy 138587 229.2 Colombia 137673 270.6 Poland 121252 320.4 United Kingdom 120182 177.0 Spain 95952 205.2 Ukraine 94470 226.2 France 74350 113.9 Ecuador 65874 373.4 Romania 60198 312.9 Germany 57107 68.2 Kazakhstan 44823 238.7 Bolivia 44547 381.6 Philippines 42601 38.9 Argentina 42246 93.5 Thailand 38086 54.6 Bulgaria 36946 531.7 Chile 35480 185.6 Czechia 34209 319.4 Belarus 32397 342.9 Serbia 30561 443.4 Hungary 25866 267.8 Azerbaijan 23648 233.2 Uzbekistan 21517 64.3 Netherlands 20933 122.2 Portugal 20180 197.9 Canada 18585 49.2 Slovakia 17140 313.9 Paraguay 16879 236.6 Belgium 16011 138.1 Greece 13747 131.9 Bosnia 13696 417.5 Lithuania 11301 415.1 Austria 11221 124.6 Lebanon 10618 155.6 Guatemala 10223 57.1 Moldova 10090 250.1 Albania 10042 348.9 Tajikistan 9880 103.6 North Macedonia 9879 474.2 Kyrgyzstan 9868 151.3 Croatia 9835 239.6 Armenia 9451 319.0 Switzerland 9018 104.2 Sweden 8959 88.7 Nicaragua 6954 105.0 Georgia 6838 171.4 Panama 6537 151.5 Israel 5822 67.3 El Salvador 4729 72.9 Tunisia 4582 38.8 Oman 4532 88.7 Latvia 3927 208.2 Kosovo 3839 208.0 Slovenia 3807 183.1 Puerto Rico 3776 132.0 Uruguay 3045 87.7 Estonia 2250 169.6 Hong Kong 2078 27.7 Montenegro 1996 317.8 Transnistria 1726 371.1 Finland 1651 29.8 Ireland 1372 27.8 Guadeloupe 993 248.2 Costa Rica 938 18.4 Qatar 807 28.0 Martinique 726 193.3 Cuba 513 4.5 Malta 440 99.7 R\u00c3\u00a9union 360 40.2 Mayotte 332 121.6 Denmark 323 5.6 Japan 274 0.2 Luxembourg 178 28.5 Singapore 118 2.0 Monaco 116 295.2 San Marino 112 329.0 French Guiana 106 35.5 Antigua and Barbuda 96 98.1 Andorra 81 105.4 Cyprus 61 5.0 Aruba 51 47.8 Liechtenstein 38 100.6 Bermuda 27 43.4 Iceland 24 7.1 Gibraltar 22 65.1 Greenland -16 -27.5 French Polynesia -17 -6.2 Macao -36 -5.5 Faroe Islands -61 -124.8 Seychelles -95 -96.2 Jamaica -315 -10.6 Mauritius -423 -33.3 South Korea -426 -0.8 Norway -648 -11.9 Mongolia -995 -30.3 Australia -1336 -5.2 New Zealand -2136 -44.3 Taiwan -3483 -14.6 Malaysia -10411 -32.2 ```",
+          'text': "# Excess Mortality ## Summary Here is excess deaths by countries: ```yaml table data: path: data/mortality.csv layout: pickFields: - Country - Excess Deaths - Excess per 100k - Undercount Ratio filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 height: 300 colWidths: [300, 120, 120, 120] stretchH: all colHeaders: - Location - Deaths - Deaths/100k - Undercount columns: - data: 0 - data: 1 - data: 2 - data: 3 ``` ## Excess Deaths The numbers are based on the World Mortality Dataset: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Excess/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Excess/100k\" } ] } } ```",
       },
           'pages/immunity': {
           'name': 'Rolling Immunity',

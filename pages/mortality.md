@@ -1,5 +1,40 @@
 # Excess Mortality
 
+## Summary
+
+Here is excess deaths by countries:
+
+```yaml table
+data:
+  path: data/mortality.csv
+  layout:
+    pickFields:
+      - Country
+      - Excess Deaths
+      - Excess per 100k
+      - Undercount Ratio
+filters: true
+dropdownMenu: true
+columnSorting:
+  initialConfig:
+    column: 1
+    sortOrder: desc
+width: 940
+height: 300
+colWidths: [300, 120, 120, 120]
+stretchH: all
+colHeaders:
+  - Location
+  - Deaths
+  - Deaths/100k
+  - Undercount
+columns:
+  - data: 0
+  - data: 1
+  - data: 2
+  - data: 3
+```
+
 ## Excess Deaths
 
 The numbers are based on the World Mortality Dataset:
@@ -53,23 +88,4 @@ The numbers are based on the World Mortality Dataset:
     ]
   }
 }
-```
-
-## Summary
-
-```html markup
-<table class="big table table-bordered table-striped">
-  <tr>
-    <th>Country</th>
-    <th>Excess Deaths</th>
-    <th>Excess Deaths/100k</th>
-  </tr>
-  {% for row in frictionless.extract('data/mortality.csv') | selectattr('Excess deaths') | sort(attribute='Excess deaths', reverse=True) %}
-  <tr>
-    <td>{{ row['Country'] }}</td>
-    <td>{{ row['Excess deaths'] }}</td>
-    <td>{{ row['Excess per 100k'] }}</td>
-  </tr>
-  {% endfor %}
-</table>
 ```
