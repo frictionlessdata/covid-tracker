@@ -1850,11 +1850,10 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "id", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "iso_code", "fields": ["iso_code", "total_deaths_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_deaths_per_million", "type": "quantitative", "scale": {"scheme": "Reds"}, "legend": {"title": "Deaths/1M"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_deaths_per_million", "type": "quantitative", "title": "Deaths/1M"}]}}')
-  const elem = '#livemark-chart-1'
-  vegaEmbed(elem, spec)
+  vegaEmbed('#livemark-chart-1', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "id", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "iso_code", "fields": ["iso_code", "total_deaths_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_deaths_per_million", "type": "quantitative", "scale": {"scheme": "Reds"}, "legend": {"title": "Deaths/1M"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_deaths_per_million", "type": "quantitative", "title": "Deaths/1M"}]}}'))
 })
 </script>
+
 <h2>Total Cases</h2>
 <p>Here is an interactive map showing amount of total cases per country:</p>
 <div class="livemark-chart" style="overflow-x: auto">
@@ -1863,11 +1862,10 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "id", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "iso_code", "fields": ["iso_code", "total_cases_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_cases_per_million", "type": "quantitative", "scale": {"scheme": "Blues"}, "legend": {"title": "Cases/1M"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_cases_per_million", "type": "quantitative", "title": "Cases/1M"}]}}')
-  const elem = '#livemark-chart-2'
-  vegaEmbed(elem, spec)
+  vegaEmbed('#livemark-chart-2', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "id", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "iso_code", "fields": ["iso_code", "total_cases_per_million"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_cases_per_million", "type": "quantitative", "scale": {"scheme": "Blues"}, "legend": {"title": "Cases/1M"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_cases_per_million", "type": "quantitative", "title": "Cases/1M"}]}}'))
 })
 </script>
+
 <h2>Vaccinations</h2>
 <p>Here is an interactive map showing amount of total shots taken per country:</p>
 <div class="livemark-chart" style="overflow-x: auto">
@@ -1876,11 +1874,10 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-  const spec = JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.name", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "location", "fields": ["location", "total_vaccinations_per_hundred"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_vaccinations_per_hundred", "type": "quantitative", "scale": {"scheme": "Greens"}, "legend": {"title": "Shots/100"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_vaccinations_per_hundred", "type": "quantitative", "title": "Shots/100"}]}}')
-  const elem = '#livemark-chart-3'
-  vegaEmbed(elem, spec)
+  vegaEmbed('#livemark-chart-3', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/countries.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.name", "from": {"data": {"url": "../data/reports/countries.csv"}, "key": "location", "fields": ["location", "total_vaccinations_per_hundred"]}}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_vaccinations_per_hundred", "type": "quantitative", "scale": {"scheme": "Greens"}, "legend": {"title": "Shots/100"}}, "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country"}, {"field": "total_vaccinations_per_hundred", "type": "quantitative", "title": "Shots/100"}]}}'))
 })
 </script>
+
 <h2>Summary</h2>
 <p>Here is a summary of the key pandemic data by countries:</p>
 <div class="livemark-table">

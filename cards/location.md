@@ -37,10 +37,10 @@ The main three core metrics we track: total deaths, total cases, and all the vac
 
 Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
 
-```json chart
+```json chart card
 {
   "width": 800,
-  "data": {"url": "data/locations/{{ code }}/timeline.csv"},
+  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
     "y": {"field": "new_deaths", "type": "quantitative"}
