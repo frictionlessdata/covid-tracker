@@ -174,14 +174,13 @@ data:
   path: data/reports/countries.csv
   layout:
     pickFields:
-      - iso_code
-      - location
       - total_cases
       - total_deaths
       - total_cases_per_million
       - total_deaths_per_million
       - total_vaccinations
       - total_vaccinations_per_hundred
+      - link
 filters: true
 dropdownMenu: true
 columnSorting:
@@ -200,11 +199,14 @@ colHeaders:
   - Shots
   - Shots/100
 columns:
+  - data: 6
+    renderer: html
+    readOnly: true
+    disableVisualSelection: true
   - data: 1
   - data: 3
-  - data: 5
+  - data: 0
   - data: 2
   - data: 4
-  - data: 6
-  - data: 7
+  - data: 5
 ```
