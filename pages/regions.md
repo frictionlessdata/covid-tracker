@@ -36,6 +36,6 @@ Here is a summary of the key pandemic data by regions:
 
 ```yaml table
 {% with type='regions' %}
-{% include 'blocks/tables/locations.json' %}
+{% include 'blocks/tables/locations.yaml' %}
 {% endwith %}
 ```

@@ -4,11 +4,11 @@
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/livemark)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
-{% set last_updated = frictionless.extract('data/locations/OWID_WRL/latest.csv')[0].last_updated_date %}
+{% set data = frictionless.extract('data/locations/OWID_WRL/latest.csv')[0] %}
 
 ```yaml remark
 type: primary
-text: "Last data update: <strong>{{ last_updated }}</strong> (this site is being updated on a nightly basis)."
+text: "Last data update: <strong>{{ data.last_updated }}</strong> (this site is being updated on a nightly basis)."
 ```
 
 **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it's open for contributing for anyone who is interested.
@@ -18,34 +18,9 @@ text: "Last data update: <strong>{{ last_updated }}</strong> (this site is being
 The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken:
 
 ```html markup
-{% for row in frictionless.extract('data/locations/OWID_WRL/latest.csv') %}
-<div class="status row">
-  <div class="col-sm-4">
-    <div role="button" class="btn btn-danger w-100">
-      Deaths<br>
-      <span class="badge badge-light">
-        {{ (row.total_deaths/1000000) | round(1) }}M
-      </span>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div role="button" class="btn btn-primary w-100">
-      Cases<br>
-      <span class="badge badge-light">
-        {{ (row.total_cases/1000000) | round(1) }}M
-      </span>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div role="button" class="btn btn-success w-100">
-      Vaccinations<br>
-      <span class="badge badge-light">
-        {{ (row.total_vaccinations/1000000000) | round(1) }}B
-      </span>
-    </div>
-  </div>
-</div>
-{% endfor %}
+{% with data=data %}
+{% include 'blocks/status.html' %}
+{% endwith %}
 ```
 
 ## Deaths

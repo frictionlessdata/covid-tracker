@@ -1,0 +1,25 @@
+{
+  "width": 800,
+  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
+  "resolve": {"scale": {"y": "independent"}},
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"}
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}},
+        "color": {"value": "red"}
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}},
+        "color": {"value": "green"}
+      }
+    }
+  ]
+}
+

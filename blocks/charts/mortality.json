@@ -1,0 +1,49 @@
+{
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "../data/spatial/countries.json",
+    "format": {"property": "features"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "../data/reports/mortality.csv"
+        },
+        "key": "Country",
+        "fields": ["Country", "Excess per 100k"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#757575",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "color": {
+      "field": "Excess per 100k",
+      "type": "quantitative",
+      "scale": {"scheme": "Reds"},
+      "legend": {
+          "title": "Deaths/100k"
+      }
+    },
+    "tooltip": [
+      {
+         "field": "properties.name",
+         "type": "nominal",
+         "title": "Country"
+      },
+      {
+         "field": "Excess per 100k",
+         "type": "quantitative",
+         "title": "Deaths/100k"
+      }
+    ]
+  }
+}
+
