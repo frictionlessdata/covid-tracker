@@ -33,13 +33,12 @@
 }
 ```
 
-### UK
-
+### USA
 
 ```json chart
 {
   "width": 800,
-  "data": {"url": "../data/locations/GBR/timeline.csv"},
+  "data": {"url": "../data/locations/USA/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
@@ -63,12 +62,13 @@
 }
 ```
 
-### USA
+### UK
+
 
 ```json chart
 {
   "width": 800,
-  "data": {"url": "../data/locations/USA/timeline.csv"},
+  "data": {"url": "../data/locations/GBR/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
