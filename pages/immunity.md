@@ -9,7 +9,7 @@
 ```json chart
 {
   "width": 750,
-  "data": {"url": "../data/locations/ISR/immunity.csv"},
+  "data": {"url": "../data/locations/ISR/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
@@ -39,7 +39,7 @@
 ```json chart
 {
   "width": 750,
-  "data": {"url": "../data/locations/GBR/immunity.csv"},
+  "data": {"url": "../data/locations/GBR/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
@@ -68,7 +68,7 @@
 ```json chart
 {
   "width": 750,
-  "data": {"url": "../data/locations/USA/immunity.csv"},
+  "data": {"url": "../data/locations/USA/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
@@ -97,7 +97,7 @@
 ```json chart
 {
   "width": 750,
-  "data": {"url": "../data/locations/DEU/immunity.csv"},
+  "data": {"url": "../data/locations/DEU/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
@@ -126,7 +126,7 @@
 ```json chart
 {
   "width": 750,
-  "data": {"url": "../data/locations/BRA/immunity.csv"},
+  "data": {"url": "../data/locations/BRA/timeline.csv"},
   "resolve": {"scale": {"y": "independent"}},
   "encoding": {
     "x": {"field": "date", "type": "temporal"}
@@ -149,5 +149,3 @@
   ]
 }
 ```
-
-### Summary
