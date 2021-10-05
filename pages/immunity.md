@@ -50,7 +50,7 @@
 Here is a summary of the key pandemic data by countries:
 
 ```yaml table
-{% with code="BRA" %}
+{% with %}
 {% include 'blocks/tables/immunity.yaml' %}
 {% endwith %}
 ```
