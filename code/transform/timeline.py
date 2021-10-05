@@ -1,6 +1,8 @@
-from frictionless import Resource
+from pprint import pprint
+from frictionless import Resource, Detector
 
 FRAME = 180
+detector = Detector(sample_size=10000)
 
 # Helpers
 
@@ -23,7 +25,7 @@ def write_group(group):
     if group:
         row = group[-1].copy()
         path = f"data/locations/{row['iso_code']}/timeline.csv"
-        Resource(group).write(path)
+        Resource(group, detector=detector).write(path)
         if (row["population"] or 0) > 1000000:
             row["link"] = f"<a href='#card={row['iso_code']}'>{row['location']}</a>"
             immunity.append(row)
@@ -34,7 +36,7 @@ def write_group(group):
 
 
 immunity = []
-with Resource("data/timeline.csv") as resource:
+with Resource("data/timeline.csv", detector=detector) as resource:
     code = None
     group = []
     for row in resource:
