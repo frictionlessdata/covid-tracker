@@ -13,7 +13,7 @@
           "url": "../data/reports/countries.csv"
         },
         "key": "location",
-        "fields": ["location", "{{ field }}"]
+        "fields": ["iso_code", "location", "{{ field }}"]
       }
     },
     {
