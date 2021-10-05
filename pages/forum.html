@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Here is an interactive map showing amount of total deaths per region:">
-<meta name="keywords" content="regions">
+<meta name="description" content="None">
+<meta name="keywords" content="forum">
 <link rel="icon" href="assets/covid.svg">
-<title>Regions | COVID-19 Tracker</title>
+<title>Forum | COVID-19 Tracker</title>
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.23.0/themes/prism.css">
@@ -1308,7 +1308,6 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 }
 
 </style>
-<link rel="stylesheet" href="https://unpkg.com/handsontable@10.0.0/dist/handsontable.min.css">
 <style>
 
 #livemark-topics {
@@ -1417,6 +1416,15 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 
 #livemark-notes a[target="_blank"]:hover:after {
   color: #80b2e6;
+}
+
+</style>
+<style>
+
+#livemark-comments {
+  border-top: solid 1px #eaecef;
+  margin-top: 16px;
+  padding-top: 16px;
 }
 
 </style>
@@ -1801,7 +1809,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
         World
       </a>
           </li>
-        <li class="primary  active">
+        <li class="primary  ">
       <a href="/pages/regions.html" class="primary">
         Regions
       </a>
@@ -1831,7 +1839,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
         Contribute
       </a>
           </li>
-        <li class="primary  ">
+        <li class="primary  active">
       <a href="/pages/forum.html" class="primary">
         Forum
       </a>
@@ -1847,68 +1855,20 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2021-10-05 20:30)
+  (2021-10-05 22:20)
 </div>
 
-<h1>Regions</h1>
-<h2>Deaths</h2>
-<p>Here is an interactive map showing amount of total deaths per region:</p>
-<div class="livemark-chart" style="overflow-x: auto">
-  <div id="livemark-chart-1">
-  </div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  vegaEmbed('#livemark-chart-1', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/reports/regions.csv"}, "key": "location", "fields": ["iso_code", "location", "total_deaths_per_million"]}}, {"calculate": "\'#card=\' + datum.iso_code", "as": "url"}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_deaths_per_million", "type": "quantitative", "scale": {"scheme": "reds"}, "legend": {"title": "Deaths/1M"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_deaths_per_million", "type": "quantitative", "title": "Deaths/1M"}], "href": {"field": "url", "type": "nominal"}}}'))
-})
-</script>
+<h1>Forum</h1>
 
-<h2>Total Cases</h2>
-<p>Here is an interactive map showing amount of total cases per region:</p>
-<div class="livemark-chart" style="overflow-x: auto">
-  <div id="livemark-chart-2">
-  </div>
+<div id="livemark-comments">
+  <div id="disqus_thread"></div>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  vegaEmbed('#livemark-chart-2', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/reports/regions.csv"}, "key": "location", "fields": ["iso_code", "location", "total_cases_per_million"]}}, {"calculate": "\'#card=\' + datum.iso_code", "as": "url"}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_cases_per_million", "type": "quantitative", "scale": {"scheme": "blues"}, "legend": {"title": "Cases/1M"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_cases_per_million", "type": "quantitative", "title": "Cases/1M"}], "href": {"field": "url", "type": "nominal"}}}'))
-})
-</script>
-
-<h2>Vaccinations</h2>
-<p>Here is an interactive map showing amount of total shots taken per region:</p>
-<div class="livemark-chart" style="overflow-x: auto">
-  <div id="livemark-chart-3">
-  </div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  vegaEmbed('#livemark-chart-3', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/reports/regions.csv"}, "key": "location", "fields": ["iso_code", "location", "total_vaccinations_per_hundred"]}}, {"calculate": "\'#card=\' + datum.iso_code", "as": "url"}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_vaccinations_per_hundred", "type": "quantitative", "scale": {"scheme": "greens"}, "legend": {"title": "Shots/100"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_vaccinations_per_hundred", "type": "quantitative", "title": "Shots/100"}], "href": {"field": "url", "type": "nominal"}}}'))
-})
-</script>
-
-<h2>Summary</h2>
-<p>Here is a summary of the key pandemic data by regions:</p>
-<div class="livemark-table">
-  <div id="livemark-table-1">
-  </div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  new Handsontable(document.getElementById('livemark-table-1'), JSON.parse('{"data": [[8344554, 212239, 6075.454, 154.526, 156168757, 11.37, "<a href=\'#card=OWID_AFR\'>Africa</a>"], [76347730, 1133666, 16314.801, 242.254, 4282522124, 91.51, "<a href=\'#card=OWID_ASI\'>Asia</a>"], [59930136, 1235466, 80147.569, 1652.25, 805526883, 107.73, "<a href=\'#card=OWID_EUR\'>Europe</a>"], [52742447, 1068605, 88407.814, 1791.214, 625768583, 104.89, "<a href=\'#card=OWID_NAM\'>North America</a>"], [192504, 2253, 4454.054, 52.129, 36553722, 84.58, "<a href=\'#card=OWID_OCE\'>Oceania</a>"], [37849125, 1156905, 87157.723, 2664.083, 450770772, 103.8, "<a href=\'#card=OWID_SAM\'>South America</a>"]], "filters": true, "dropdownMenu": true, "columnSorting": {"initialConfig": {"column": 1, "sortOrder": "desc"}}, "width": 940, "colWidths": [2, 1, 1, 1, 1, 1, 1], "stretchH": "all", "colHeaders": ["Location", "Deaths", "Deaths/1M", "Cases", "Cases/1M", "Shots", "Shots/100"], "columns": [{"data": 6, "renderer": "html", "readOnly": true, "disableVisualSelection": true}, {"data": 1}, {"data": 3}, {"data": 0}, {"data": 2}, {"data": 4}, {"data": 5}], "licenseKey": "non-commercial-and-evaluation"}'))
-})
-</script>
 
 <div id="livemark-signs">
   <div>
-        <div class="next">
-      <a href="/pages/countries.html">
-        Countries »
-      </a>
-    </div>
             <div class="prev">
-      <a href="/index.html">
-        « COVID-19 Tracker
+      <a href="/pages/contrib.html">
+        « Contribute
       </a>
     </div>
       </div>
@@ -1955,7 +1915,7 @@ document.addEventListener("DOMContentLoaded", function(){
       </a>
     </li>
         <li>
-      <a href="https://github.com/frictionlessdata/livemark/edit/main/pages/regions.md" target="_blank">
+      <a href="https://github.com/frictionlessdata/livemark/edit/main/pages/forum.md" target="_blank">
         Edit
       </a>
     </li>
@@ -2021,10 +1981,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
-<script src="https://unpkg.com/vega@5.20.2/build/vega.min.js"></script>
-<script src="https://unpkg.com/vega-lite@5.1.0/build/vega-lite.min.js"></script>
-<script src="https://unpkg.com/vega-embed@6.18.2/build/vega-embed.min.js"></script>
-<script src="https://unpkg.com/handsontable@10.0.0/dist/handsontable.min.js"></script>
 <script src="https://unpkg.com/tocbot@4.12.3/dist/tocbot.min.js"></script>
 <script>
 
@@ -2071,6 +2027,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   syncList();
 });
+
+</script>
+<script src="https://livemark.disqus.com/count.js"></script>
+<script>
+
+var disqus_config = function () {
+  this.page.url = "https://covid-tracker.frictionlessdata.io/pages/forum.html";
+  this.page.identifier = "pages/forum";
+};
+(function () {
+  // DON'T EDIT BELOW THIS LINE
+  var d = document,
+    s = d.createElement("script");
+  s.src = "https://frictionless-covid-19-tracker.disqus.com/embed.js";
+  s.setAttribute("data-timestamp", +new Date());
+  (d.head || d.body).appendChild(s);
+})();
 
 </script>
 <script>
@@ -2310,17 +2283,17 @@ document.addEventListener("DOMContentLoaded", function () {
           'pages/countries': {
           'name': 'Countries',
           'path': 'pages/countries',
-          'text': "# Countries ## Deaths Here is an interactive map showing amount of total deaths per country: ```json chart {% with field=\u0027total_deaths_per_million\u0027, title=\u0027Deaths/1M\u0027, scheme=\u0027reds\u0027 %} {% include \u0027blocks/charts/countries.json\u0027 %} {% endwith %} ``` ## Total Cases Here is an interactive map showing amount of total cases per country: ```json chart {% with field=\u0027total_cases_per_million\u0027, title=\u0027Cases/1M\u0027, scheme=\u0027blues\u0027 %} {% include \u0027blocks/charts/countries.json\u0027 %} {% endwith %} ``` ## Vaccinations Here is an interactive map showing amount of total shots taken per country: ```json chart {% with field=\u0027total_vaccinations_per_hundred\u0027, title=\u0027Shots/100\u0027, scheme=\u0027greens\u0027 %} {% include \u0027blocks/charts/countries.json\u0027 %} {% endwith %} ``` ## Summary Here is a summary of the key pandemic data by countries: ```yaml table {% with type=\u0027countries\u0027 %} {% include \u0027blocks/tables/locations.yaml\u0027 %} {% endwith %} ```",
+          'text': "# Countries ## Deaths Here is an interactive map showing amount of total deaths per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_deaths_per_million\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Total Cases Here is an interactive map showing amount of total cases per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_cases_per_million\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"blues\"}, \"legend\": { \"title\": \"Cases/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Vaccinations Here is an interactive map showing amount of total shots taken per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_vaccinations_per_hundred\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Summary Here is a summary of the key pandemic data by countries: ```yaml table data: path: data/reports/countries.csv layout: pickFields: - total_cases - total_deaths - total_cases_per_million - total_deaths_per_million - total_vaccinations - total_vaccinations_per_hundred - link filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 colWidths: [2, 1, 1, 1, 1, 1, 1] stretchH: all colHeaders: - Location - Deaths - Deaths/1M - Cases - Cases/1M - Shots - Shots/100 columns: - data: 6 renderer: html readOnly: true disableVisualSelection: true - data: 1 - data: 3 - data: 0 - data: 2 - data: 4 - data: 5 ```",
       },
           'pages/mortality': {
           'name': 'Excess Mortality',
           'path': 'pages/mortality',
-          'text': "# Excess Mortality ## Excess Deaths The numbers are based on the World Mortality Dataset: ```json chart {% with %} {% include \u0027blocks/charts/mortality.json\u0027 %} {% endwith %} ``` ## Summary Here is excess deaths by countries: ```yaml table {% with %} {% include \u0027blocks/tables/mortality.yaml\u0027 %} {% endwith %} ```",
+          'text': "# Excess Mortality ## Excess Deaths The numbers are based on the World Mortality Dataset: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Deaths/100k\" } ] } } ``` ## Summary Here is excess deaths by countries: ```yaml table data: path: data/reports/mortality.csv schema: missingValues: [\u0027\u0027, \u0027NaN\u0027] fields: - name: Country - name: Excess deaths - name: Undercount ratio - name: Excess per 100k layout: pickFields: - Country - Excess deaths - Undercount ratio - Excess per 100k filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 colWidths: [2, 1, 1, 1] stretchH: all colHeaders: - Location - Deaths - Deaths/100k - Undercount columns: - data: 0 disableVisualSelection: true - data: 1 - data: 3 - data: 2 ```",
       },
           'pages/immunity': {
           'name': 'Rolling Immunity',
           'path': 'pages/immunity',
-          'text': "# Rolling Immunity ## Methodolody ## Countries ### Israel ```json chart {% with code=\"ISR\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### USA ```json chart {% with code=\"USA\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### UK ```json chart {% with code=\"GBR\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### Germany ```json chart {% with code=\"DEU\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### Brasil ```json chart {% with code=\"BRA\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ## Summary Here is a summary of the key pandemic data by countries: ```yaml table {% with %} {% include \u0027blocks/tables/immunity.yaml\u0027 %} {% endwith %} ```",
+          'text': "# Rolling Immunity ## Methodolody ## Countries ### Israel ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/ISR/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### USA ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/USA/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### UK ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/GBR/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### Germany ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/DEU/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### Brasil ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/BRA/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Summary Here is a summary of the key pandemic data by countries: ```yaml table data: path: data/reports/immunity.csv layout: pickFields: - new_cases_smoothed_per_million - new_deaths_smoothed_per_million - rolling_immunity - link filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 colWidths: [2, 1, 1, 1] stretchH: all colHeaders: - Location - Immunity - Deaths/1M - Cases/1M columns: - data: 3 renderer: html readOnly: true disableVisualSelection: true - data: 2 - data: 1 - data: 0 ```",
       },
           'pages/data': {
           'name': 'Data Collection',

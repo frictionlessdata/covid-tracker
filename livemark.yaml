@@ -22,6 +22,7 @@ pages:
     - path: pages/immunity
     - path: pages/data
     - path: pages/contrib
+    - path: pages/forum
 links:
   items:
     - name: Our World in Data

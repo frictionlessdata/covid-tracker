@@ -1828,7 +1828,12 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
           </li>
         <li class="primary  ">
       <a href="/pages/contrib.html" class="primary">
-        Contributing
+        Contribute
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="/pages/forum.html" class="primary">
+        Forum
       </a>
           </li>
       </ul>
@@ -2323,9 +2328,14 @@ document.addEventListener("DOMContentLoaded", function () {
           'text': "# Data Collection ## Extract First of all, we need to extract all the data packages from Github. We\u0027re going to look at all the repos having `datapackage.json` in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors: ```bash $ python code/extract.py ``` ```python file code/extract.py ``` ## Transform As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository\u0027s stargazers count and save it to the CSV file: ```bash $ python code/transform/timeline.py ``` ```python file code/transform/timeline.py ``` ```bash $ python code/transform/latest.py ``` ```python file code/transform/latest.py ``` ## Load After we have the `packages.csv` file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin: ```bash $ python code/load.py ``` ```python file code/load.py ```",
       },
           'pages/contrib': {
-          'name': 'Contributing',
+          'name': 'Contribute',
           'path': 'pages/contrib',
-          'text': "# Contributing To start working on the project clone the repository and enter its directory: ```bash $ git clone git@github.com:frictionlessdata/data-packages.git $ cd data-packages ``` ## Install Run the following script to initiate a virtual environment and install the dependencies: ```bash $ make install ``` ## Data To collect the data use the data collection script (run only if you want to update the data): ```bash $ make data ``` ## Build To build the project use one of these Livemark commands: ```bash $ livemark start # to build and start a live-reload server $ livemark build # to build in non-interactive mode ``` ## Deploy The project is deployed automatically to Github Pages on every push to \"main\". It means that if one propose a change in a PR it will be deployed automatically after merging.",
+          'text': "# Contribute To start working on the project clone the repository and enter its directory: ```bash $ git clone git@github.com:frictionlessdata/data-packages.git $ cd data-packages ``` ## Install Run the following script to initiate a virtual environment and install the dependencies: ```bash $ make install ``` ## Data To collect the data use the data collection script (run only if you want to update the data): ```bash $ make data ``` ## Build To build the project use one of these Livemark commands: ```bash $ livemark start # to build and start a live-reload server $ livemark build # to build in non-interactive mode ``` ## Deploy The project is deployed automatically to Github Pages on every push to \"main\". It means that if one propose a change in a PR it will be deployed automatically after merging.",
+      },
+          'pages/forum': {
+          'name': 'Forum',
+          'path': 'pages/forum',
+          'text': "# Forum",
       },
       };
   const searchIndex = lunr(function () {

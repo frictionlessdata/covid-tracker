@@ -1,4 +1,4 @@
-# Contributing
+# Contribute
 
 To start working on the project clone the repository and enter its directory:
 
