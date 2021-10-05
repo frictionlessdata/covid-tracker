@@ -155,4 +155,26 @@ The vaccination campaign had been started around January 2021; this chart counds
 
 ## Summary
 
-TBD
+
+Here is a summary of the key pandemic data by countries:
+
+```html markup
+<table class="livemark-table handontable table table-bordered table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Deaths</th>
+    <th>Cases</th>
+    <th>Shots</th>
+  </tr>
+  {% for row in frictionless.extract('data/locations/' + code + '/timeline.csv') | reverse %}
+  {% if loop.index < 30 %}
+  <tr>
+    <td>{{ row.date or '' }}</td>
+    <td>{{ row.new_deaths or '' }}</td>
+    <td>{{ row.new_cases or '' }}</td>
+    <td>{{ row.new_vaccinations or '' }}</td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>
+```

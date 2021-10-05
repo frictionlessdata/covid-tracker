@@ -1179,6 +1179,10 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
   font-weight: 900 !important;
 }
 
+.livemark-table {
+  font-size: 13px;
+}
+
 .livemark-table th {
   padding: 10px 2px !important;
 }
@@ -1922,10 +1926,8 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-  const spec = JSON.parse('{"data": [[235408082, 4809149, 29893.22, 610.688, 6357310841, 80.73, "<a href=\'#card=OWID_WRL\'>World</a>"]], "filters": true, "dropdownMenu": true, "columnSorting": {"initialConfig": {"column": 1, "sortOrder": "desc"}}, "width": 940, "colWidths": [2, 1, 1, 1, 1, 1, 1], "stretchH": "all", "colHeaders": ["Location", "Deaths", "Deaths/1M", "Cases", "Cases/1M", "Shots", "Shots/100"], "columns": [{"data": 6, "renderer": "html", "readOnly": true, "disableVisualSelection": true}, {"data": 1}, {"data": 3}, {"data": 0}, {"data": 2}, {"data": 4}, {"data": 5}], "licenseKey": "non-commercial-and-evaluation"}')
-  const elem = document.getElementById('livemark-table-1')
-  new Handsontable(elem, spec)
-});
+  new Handsontable(document.getElementById('livemark-table-1'), JSON.parse('{"data": [[235408082, 4809149, 29893.22, 610.688, 6357310841, 80.73, "<a href=\'#card=OWID_WRL\'>World</a>"]], "filters": true, "dropdownMenu": true, "columnSorting": {"initialConfig": {"column": 1, "sortOrder": "desc"}}, "width": 940, "colWidths": [2, 1, 1, 1, 1, 1, 1], "stretchH": "all", "colHeaders": ["Location", "Deaths", "Deaths/1M", "Cases", "Cases/1M", "Shots", "Shots/100"], "columns": [{"data": 6, "renderer": "html", "readOnly": true, "disableVisualSelection": true}, {"data": 1}, {"data": 3}, {"data": 0}, {"data": 2}, {"data": 4}, {"data": 5}], "licenseKey": "non-commercial-and-evaluation"}'))
+})
 </script>
 
 <div id="livemark-signs">

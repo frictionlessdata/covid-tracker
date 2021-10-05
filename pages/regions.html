@@ -1179,6 +1179,10 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
   font-weight: 900 !important;
 }
 
+.livemark-table {
+  font-size: 13px;
+}
+
 .livemark-table th {
   padding: 10px 2px !important;
 }
@@ -1886,10 +1890,8 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-  const spec = JSON.parse('{"data": [[8344554, 212239, 6075.454, 154.526, 156168757, 11.37, "<a href=\'#card=OWID_AFR\'>Africa</a>"], [76347730, 1133666, 16314.801, 242.254, 4282522124, 91.51, "<a href=\'#card=OWID_ASI\'>Asia</a>"], [59930136, 1235466, 80147.569, 1652.25, 805526883, 107.73, "<a href=\'#card=OWID_EUR\'>Europe</a>"], [52742447, 1068605, 88407.814, 1791.214, 625768583, 104.89, "<a href=\'#card=OWID_NAM\'>North America</a>"], [192504, 2253, 4454.054, 52.129, 36553722, 84.58, "<a href=\'#card=OWID_OCE\'>Oceania</a>"], [37849125, 1156905, 87157.723, 2664.083, 450770772, 103.8, "<a href=\'#card=OWID_SAM\'>South America</a>"]], "filters": true, "dropdownMenu": true, "columnSorting": {"initialConfig": {"column": 1, "sortOrder": "desc"}}, "width": 940, "colWidths": [2, 1, 1, 1, 1, 1, 1], "stretchH": "all", "colHeaders": ["Location", "Deaths", "Deaths/1M", "Cases", "Cases/1M", "Shots", "Shots/100"], "columns": [{"data": 6, "renderer": "html", "readOnly": true, "disableVisualSelection": true}, {"data": 1}, {"data": 3}, {"data": 0}, {"data": 2}, {"data": 4}, {"data": 5}], "licenseKey": "non-commercial-and-evaluation"}')
-  const elem = document.getElementById('livemark-table-1')
-  new Handsontable(elem, spec)
-});
+  new Handsontable(document.getElementById('livemark-table-1'), JSON.parse('{"data": [[8344554, 212239, 6075.454, 154.526, 156168757, 11.37, "<a href=\'#card=OWID_AFR\'>Africa</a>"], [76347730, 1133666, 16314.801, 242.254, 4282522124, 91.51, "<a href=\'#card=OWID_ASI\'>Asia</a>"], [59930136, 1235466, 80147.569, 1652.25, 805526883, 107.73, "<a href=\'#card=OWID_EUR\'>Europe</a>"], [52742447, 1068605, 88407.814, 1791.214, 625768583, 104.89, "<a href=\'#card=OWID_NAM\'>North America</a>"], [192504, 2253, 4454.054, 52.129, 36553722, 84.58, "<a href=\'#card=OWID_OCE\'>Oceania</a>"], [37849125, 1156905, 87157.723, 2664.083, 450770772, 103.8, "<a href=\'#card=OWID_SAM\'>South America</a>"]], "filters": true, "dropdownMenu": true, "columnSorting": {"initialConfig": {"column": 1, "sortOrder": "desc"}}, "width": 940, "colWidths": [2, 1, 1, 1, 1, 1, 1], "stretchH": "all", "colHeaders": ["Location", "Deaths", "Deaths/1M", "Cases", "Cases/1M", "Shots", "Shots/100"], "columns": [{"data": 6, "renderer": "html", "readOnly": true, "disableVisualSelection": true}, {"data": 1}, {"data": 3}, {"data": 0}, {"data": 2}, {"data": 4}, {"data": 5}], "licenseKey": "non-commercial-and-evaluation"}'))
+})
 </script>
 
 <div id="livemark-signs">

@@ -3,6 +3,10 @@
   font-weight: 900 !important;
 }
 
+.livemark-table {
+  font-size: 13px;
+}
+
 .livemark-table th {
   padding: 10px 2px !important;
 }
