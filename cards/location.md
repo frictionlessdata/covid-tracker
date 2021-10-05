@@ -60,34 +60,9 @@ The main three core metrics we track: total deaths, total cases, and all the vac
 Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
 
 ```json chart card
-{
-  "width": 800,
-  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
-  "encoding": {
-    "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_deaths", "type": "quantitative", "scale": {"domainMin": 0}},
-    "tooltip": [
-      {
-         "field": "date",
-         "type": "temporal",
-         "title": "Date"
-      },
-      {
-         "field": "new_deaths",
-         "type": "quantitative",
-         "title": "Deaths"
-      }
-    ]
-  },
-  "mark": {
-    "type": "area",
-    "line": {"color": "red"},
-    "color": {
-      "x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear",
-      "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "red"}]
-    }
-  }
-}
+{% with code=code, field='new_deaths', title='Deaths', color='red', card=True %}
+{% include 'blocks/charts/timeline.json' %}
+{% endwith %}
 ```
 
 ## New Cases
@@ -95,34 +70,9 @@ Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
 The new cases data is less reliable as cases registration really depends on the testing volume and methodology:
 
 ```json chart card
-{
-  "width": 800,
-  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
-  "encoding": {
-    "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_cases", "type": "quantitative", "scale": {"domainMin": 0}},
-    "tooltip": [
-      {
-         "field": "date",
-         "type": "temporal",
-         "title": "Date"
-      },
-      {
-         "field": "new_cases",
-         "type": "quantitative",
-         "title": "Cases"
-      }
-    ]
-  },
-  "mark": {
-    "type": "area",
-    "line": {"color": "blue"},
-    "color": {
-      "x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear",
-      "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "blue"}]
-    }
-  }
-}
+{% with code=code, field='new_cases', title='Cases', color='blue', card=True %}
+{% include 'blocks/charts/timeline.json' %}
+{% endwith %}
 ```
 
 ## Vaccinations
@@ -130,34 +80,9 @@ The new cases data is less reliable as cases registration really depends on the 
 The vaccination campaign had been started around January 2021; this chart counds all the shots taken:
 
 ```json chart card
-{
-  "width": 800,
-  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
-  "encoding": {
-    "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_vaccinations", "type": "quantitative", "scale": {"domainMin": 0}},
-    "tooltip": [
-      {
-         "field": "date",
-         "type": "temporal",
-         "title": "Date"
-      },
-      {
-         "field": "new_vaccinations",
-         "type": "quantitative",
-         "title": "Shots"
-      }
-    ]
-  },
-  "mark": {
-    "type": "area",
-    "line": {"color": "green"},
-    "color": {
-      "x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear",
-      "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]
-    }
-  }
-}
+{% with code=code, field='new_vaccinations', title='Shots', color='green', card=True %}
+{% include 'blocks/charts/timeline.json' %}
+{% endwith %}
 ```
 
 ## Rolling Immunity

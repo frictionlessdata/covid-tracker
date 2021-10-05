@@ -1,0 +1,29 @@
+{
+  "width": 800,
+  "data": {"url": "{% if card %}../{% endif %}data/locations/{{ code }}/timeline.csv"},
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"},
+    "y": {"field": "{{ field }}", "type": "quantitative", "scale": {"domainMin": 0}},
+    "tooltip": [
+      {
+         "field": "date",
+         "type": "temporal",
+         "title": "Date"
+      },
+      {
+         "field": "{{ field }}",
+         "type": "quantitative",
+         "title": "{{ title }}"
+      }
+    ]
+  },
+  "mark": {
+    "type": "area",
+    "line": {"color": "{{ color }}"},
+    "color": {
+      "x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear",
+      "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "{{ color }}"}]
+    }
+  }
+}
+
