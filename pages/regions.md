@@ -22,6 +22,9 @@ Here is an interactive map showing amount of total deaths per region:
         "key": "location",
         "fields": ["location", "total_deaths_per_million"]
       }
+    },
+    {
+      "calculate": "'#card=' + datum.iso_code", "as": "url"
     }
   ],
   "projection": {"type": "mercator"},
@@ -50,7 +53,8 @@ Here is an interactive map showing amount of total deaths per region:
          "type": "quantitative",
          "title": "Deaths/1M"
       }
-    ]
+    ],
+    "href": {"field": "url", "type": "nominal"}
   }
 }
 ```
@@ -77,6 +81,9 @@ Here is an interactive map showing amount of total cases per region:
         "key": "location",
         "fields": ["location", "total_cases_per_million"]
       }
+    },
+    {
+      "calculate": "'#card=' + datum.iso_code", "as": "url"
     }
   ],
   "projection": {"type": "mercator"},
@@ -105,7 +112,8 @@ Here is an interactive map showing amount of total cases per region:
          "type": "quantitative",
          "title": "Cases/1M"
       }
-    ]
+    ],
+    "href": {"field": "url", "type": "nominal"}
   }
 }
 ```
@@ -132,6 +140,9 @@ Here is an interactive map showing amount of total shots taken per region:
         "key": "location",
         "fields": ["location", "total_vaccinations_per_hundred"]
       }
+    },
+    {
+      "calculate": "'#card=' + datum.iso_code", "as": "url"
     }
   ],
   "projection": {"type": "mercator"},
@@ -160,7 +171,8 @@ Here is an interactive map showing amount of total shots taken per region:
          "type": "quantitative",
          "title": "Shots/100"
       }
-    ]
+    ],
+    "href": {"field": "url", "type": "nominal"}
   }
 }
 ```
