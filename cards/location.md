@@ -1,5 +1,9 @@
 # {{ data.location }}
 
+{% set total_deaths = data.total_deaths or 0 %}
+{% set total_cases = data.total_cases or 0 %}
+{% set total_vaccinations = data.total_vaccinations or 0 %}
+
 ## Status
 
 The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken:
@@ -10,7 +14,13 @@ The main three core metrics we track: total deaths, total cases, and all the vac
     <div role="button" class="btn btn-danger w-100">
       Deaths<br>
       <span class="badge badge-light">
-        {{ ((data.total_deaths or 0)/1000000) | round(1) }}M
+        {% if total_deaths > 1000000 %}
+        {{ (total_deaths/1000000) | round(1) }}M
+        {% elif total_deaths > 1000 %}
+        {{ (total_deaths/1000) | round(1) }}K
+        {% else %}
+        {{ total_deaths | round(0) }}
+        {% endif %}
       </span>
     </div>
   </div>
@@ -18,7 +28,13 @@ The main three core metrics we track: total deaths, total cases, and all the vac
     <div role="button" class="btn btn-primary w-100">
       Cases<br>
       <span class="badge badge-light">
-        {{ ((data.total_cases or 0)/1000000) | round(1) }}M
+        {% if total_cases > 1000000 %}
+        {{ (total_cases/1000000) | round(1) }}M
+        {% elif total_cases > 1000 %}
+        {{ (total_cases/1000) | round(1) }}K
+        {% else %}
+        {{ total_cases | round(0) }}
+        {% endif %}
       </span>
     </div>
   </div>
@@ -26,7 +42,13 @@ The main three core metrics we track: total deaths, total cases, and all the vac
     <div role="button" class="btn btn-success w-100">
       Vaccinations<br>
       <span class="badge badge-light">
-        {{ ((data.total_vaccinations or 0)/1000000) | round(1) }}M
+        {% if total_vaccinations > 1000000 %}
+        {{ (total_vaccinations/1000000) | round(1) }}M
+        {% elif total_vaccinations > 1000 %}
+        {{ (total_vaccinations/1000) | round(1) }}K
+        {% else %}
+        {{ total_vaccinations | round(0) }}
+        {% endif %}
       </span>
     </div>
   </div>
