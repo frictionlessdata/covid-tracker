@@ -34,7 +34,7 @@
   </div>
 </div>
 <script>
-vegaEmbed('#livemark-chart-1-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/GGY/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_deaths", "type": "quantitative", "scale": {"domainMin": 0}}}, "mark": {"type": "area", "line": {"color": "red"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "red"}]}}}'))
+vegaEmbed('#livemark-chart-1-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/GGY/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_deaths", "type": "quantitative", "scale": {"domainMin": 0}}, "tooltip": [{"field": "date", "type": "temporal", "title": "Date"}, {"field": "new_deaths", "type": "quantitative", "title": "Deaths"}]}, "mark": {"type": "area", "line": {"color": "red"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "red"}]}}}'))
 </script>
 
 <h2>New Cases</h2>
@@ -44,7 +44,7 @@ vegaEmbed('#livemark-chart-1-card', JSON.parse('{"width": 800, "data": {"url": "
   </div>
 </div>
 <script>
-vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/GGY/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_cases", "type": "quantitative", "scale": {"domainMin": 0}}}, "mark": {"type": "area", "line": {"color": "blue"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "blue"}]}}}'))
+vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/GGY/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_cases", "type": "quantitative", "scale": {"domainMin": 0}}, "tooltip": [{"field": "date", "type": "temporal", "title": "Date"}, {"field": "new_cases", "type": "quantitative", "title": "Cases"}]}, "mark": {"type": "area", "line": {"color": "blue"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "blue"}]}}}'))
 </script>
 
 <h2>Vaccinations</h2>
@@ -54,7 +54,7 @@ vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "
   </div>
 </div>
 <script>
-vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/GGY/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_vaccinations", "type": "quantitative", "scale": {"domainMin": 0}}}, "mark": {"type": "area", "line": {"color": "green"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]}}}'))
+vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/GGY/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_vaccinations", "type": "quantitative", "scale": {"domainMin": 0}}, "tooltip": [{"field": "date", "type": "temporal", "title": "Date"}, {"field": "new_vaccinations", "type": "quantitative", "title": "Shots"}]}, "mark": {"type": "area", "line": {"color": "green"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]}}}'))
 </script>
 
 <h2>Rolling Immunity</h2>

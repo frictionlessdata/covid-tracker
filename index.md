@@ -58,7 +58,19 @@ Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
   "data": {"url": "data/locations/OWID_WRL/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_deaths", "type": "quantitative", "scale": {"domainMin": 0}}
+    "y": {"field": "new_deaths", "type": "quantitative", "scale": {"domainMin": 0}},
+    "tooltip": [
+      {
+         "field": "date",
+         "type": "temporal",
+         "title": "Date"
+      },
+      {
+         "field": "new_deaths",
+         "type": "quantitative",
+         "title": "Deaths"
+      }
+    ]
   },
   "mark": {
     "type": "area",
@@ -81,7 +93,19 @@ The new cases data is less reliable as cases registration really depends on the 
   "data": {"url": "data/locations/OWID_WRL/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_cases", "type": "quantitative", "scale": {"domainMin": 0}}
+    "y": {"field": "new_cases", "type": "quantitative", "scale": {"domainMin": 0}},
+    "tooltip": [
+      {
+         "field": "date",
+         "type": "temporal",
+         "title": "Date"
+      },
+      {
+         "field": "new_cases",
+         "type": "quantitative",
+         "title": "Cases"
+      }
+    ]
   },
   "mark": {
     "type": "area",
@@ -104,7 +128,19 @@ The vaccination campaign had been started around January 2021; this chart counds
   "data": {"url": "data/locations/OWID_WRL/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_vaccinations", "type": "quantitative", "scale": {"domainMin": 0}}
+    "y": {"field": "new_vaccinations", "type": "quantitative", "scale": {"domainMin": 0}},
+    "tooltip": [
+      {
+         "field": "date",
+         "type": "temporal",
+         "title": "Date"
+      },
+      {
+         "field": "new_vaccinations",
+         "type": "quantitative",
+         "title": "Shots"
+      }
+    ]
   },
   "mark": {
     "type": "area",
