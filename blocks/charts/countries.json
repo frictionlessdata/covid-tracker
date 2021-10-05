@@ -1,0 +1,53 @@
+{
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "../data/spatial/countries.json",
+    "format": {"property": "features"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "../data/reports/countries.csv"
+        },
+        "key": "location",
+        "fields": ["location", "{{ field }}"]
+      }
+    },
+    {
+      "calculate": "'#card=' + datum.iso_code", "as": "url"
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#757575",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "color": {
+      "field": "{{ field }}",
+      "type": "quantitative",
+      "scale": {"scheme": "{{ scheme }}"},
+      "legend": {
+          "title": "{{ title }}"
+      }
+    },
+    "tooltip": [
+      {
+         "field": "properties.name",
+         "type": "nominal",
+         "title": "Country"
+      },
+      {
+         "field": "{{ field }}",
+         "type": "quantitative",
+         "title": "{{ title }}"
+      }
+    ],
+    "href": {"field": "url", "type": "nominal"}
+  }
+}
+

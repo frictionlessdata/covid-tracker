@@ -5,58 +5,9 @@
 Here is an interactive map showing amount of total deaths per country:
 
 ```json chart
-{
-  "width": 800,
-  "height": 400,
-  "data": {
-    "url": "../data/spatial/countries.json",
-    "format": {"property": "features"}
-  },
-  "transform": [
-    {
-      "lookup": "id",
-      "from": {
-        "data": {
-          "url": "../data/reports/countries.csv"
-        },
-        "key": "iso_code",
-        "fields": ["iso_code", "total_deaths_per_million"]
-      }
-    },
-    {
-      "calculate": "'#card=' + datum.iso_code", "as": "url"
-    }
-  ],
-  "projection": {"type": "mercator"},
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#757575",
-    "strokeWidth": 0.5
-  },
-  "encoding": {
-    "color": {
-      "field": "total_deaths_per_million",
-      "type": "quantitative",
-      "scale": {"scheme": "Reds"},
-      "legend": {
-          "title": "Deaths/1M"
-      }
-    },
-    "tooltip": [
-      {
-         "field": "properties.name",
-         "type": "nominal",
-         "title": "Country"
-      },
-      {
-         "field": "total_deaths_per_million",
-         "type": "quantitative",
-         "title": "Deaths/1M"
-      }
-    ],
-    "href": {"field": "url", "type": "nominal"}
-  }
-}
+{% with field='total_deaths_per_million', title='Deaths/100', scheme='reds' %}
+{% include 'blocks/charts/countries.json' %}
+{% endwith %}
 ```
 
 ## Total Cases
@@ -64,58 +15,9 @@ Here is an interactive map showing amount of total deaths per country:
 Here is an interactive map showing amount of total cases per country:
 
 ```json chart
-{
-  "width": 800,
-  "height": 400,
-  "data": {
-    "url": "../data/spatial/countries.json",
-    "format": {"property": "features"}
-  },
-  "transform": [
-    {
-      "lookup": "id",
-      "from": {
-        "data": {
-          "url": "../data/reports/countries.csv"
-        },
-        "key": "iso_code",
-        "fields": ["iso_code", "total_cases_per_million"]
-      }
-    },
-    {
-      "calculate": "'#card=' + datum.iso_code", "as": "url"
-    }
-  ],
-  "projection": {"type": "mercator"},
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#757575",
-    "strokeWidth": 0.5
-  },
-  "encoding": {
-    "color": {
-      "field": "total_cases_per_million",
-      "type": "quantitative",
-      "scale": {"scheme": "Blues"},
-      "legend": {
-          "title": "Cases/1M"
-      }
-    },
-    "tooltip": [
-      {
-         "field": "properties.name",
-         "type": "nominal",
-         "title": "Country"
-      },
-      {
-         "field": "total_cases_per_million",
-         "type": "quantitative",
-         "title": "Cases/1M"
-      }
-    ],
-    "href": {"field": "url", "type": "nominal"}
-  }
-}
+{% with field='total_cases_per_million', title='Cases/100', scheme='blues' %}
+{% include 'blocks/charts/countries.json' %}
+{% endwith %}
 ```
 
 ## Vaccinations
@@ -123,58 +25,9 @@ Here is an interactive map showing amount of total cases per country:
 Here is an interactive map showing amount of total shots taken per country:
 
 ```json chart
-{
-  "width": 800,
-  "height": 400,
-  "data": {
-    "url": "../data/spatial/countries.json",
-    "format": {"property": "features"}
-  },
-  "transform": [
-    {
-      "lookup": "properties.name",
-      "from": {
-        "data": {
-          "url": "../data/reports/countries.csv"
-        },
-        "key": "location",
-        "fields": ["location", "total_vaccinations_per_hundred"]
-      }
-    },
-    {
-      "calculate": "'#card=' + datum.iso_code", "as": "url"
-    }
-  ],
-  "projection": {"type": "mercator"},
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#757575",
-    "strokeWidth": 0.5
-  },
-  "encoding": {
-    "color": {
-      "field": "total_vaccinations_per_hundred",
-      "type": "quantitative",
-      "scale": {"scheme": "Greens"},
-      "legend": {
-          "title": "Shots/100"
-      }
-    },
-    "tooltip": [
-      {
-         "field": "properties.name",
-         "type": "nominal",
-         "title": "Country"
-      },
-      {
-         "field": "total_vaccinations_per_hundred",
-         "type": "quantitative",
-         "title": "Shots/100"
-      }
-    ],
-    "href": {"field": "url", "type": "nominal"}
-  }
-}
+{% with field='total_vaccinations_per_hundred', title='Shots/100', scheme='greens' %}
+{% include 'blocks/charts/countries.json' %}
+{% endwith %}
 ```
 
 ## Summary
