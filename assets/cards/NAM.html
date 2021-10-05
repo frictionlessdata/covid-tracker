@@ -34,7 +34,7 @@
   </div>
 </div>
 <script>
-vegaEmbed('#livemark-chart-1-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_deaths", "type": "quantitative"}}, "mark": {"type": "area", "line": {"color": "red"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "red"}]}}}'))
+vegaEmbed('#livemark-chart-1-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_deaths", "type": "quantitative", "scale": {"domainMin": 0}}}, "mark": {"type": "area", "line": {"color": "red"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "red"}]}}}'))
 </script>
 
 <h2>New Cases</h2>
@@ -44,7 +44,7 @@ vegaEmbed('#livemark-chart-1-card', JSON.parse('{"width": 800, "data": {"url": "
   </div>
 </div>
 <script>
-vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_cases", "type": "quantitative"}}, "mark": {"type": "area", "line": {"color": "blue"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "blue"}]}}}'))
+vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_cases", "type": "quantitative", "scale": {"domainMin": 0}}}, "mark": {"type": "area", "line": {"color": "blue"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "blue"}]}}}'))
 </script>
 
 <h2>Vaccinations</h2>
@@ -54,7 +54,7 @@ vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "
   </div>
 </div>
 <script>
-vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_vaccinations", "type": "quantitative"}}, "mark": {"type": "area", "line": {"color": "green"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]}}}'))
+vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_vaccinations", "type": "quantitative", "scale": {"domainMin": 0}}}, "mark": {"type": "area", "line": {"color": "green"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]}}}'))
 </script>
 
 <h2>Rolling Immunity</h2>
@@ -63,7 +63,7 @@ vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "
   </div>
 </div>
 <script>
-vegaEmbed('#livemark-chart-4-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "resolve": {"scale": {"y": "independent"}}, "encoding": {"x": {"field": "date", "type": "temporal"}}, "layer": [{"mark": "line", "encoding": {"y": {"field": "new_deaths_per_million", "type": "quantitative"}, "color": {"value": "red"}}}, {"mark": "line", "encoding": {"y": {"field": "rolling_immunity", "type": "quantitative"}, "color": {"value": "green"}}}]}'))
+vegaEmbed('#livemark-chart-4-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/NAM/timeline.csv"}, "resolve": {"scale": {"y": "independent"}}, "encoding": {"x": {"field": "date", "type": "temporal"}}, "layer": [{"mark": "line", "encoding": {"y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}}, "color": {"value": "red"}}}, {"mark": "line", "encoding": {"y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}}, "color": {"value": "green"}}}]}'))
 </script>
 
 <h2>Summary</h2>

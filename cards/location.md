@@ -65,7 +65,7 @@ Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
   "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_deaths", "type": "quantitative"}
+    "y": {"field": "new_deaths", "type": "quantitative", "scale": {"domainMin": 0}}
   },
   "mark": {
     "type": "area",
@@ -88,7 +88,7 @@ The new cases data is less reliable as cases registration really depends on the 
   "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_cases", "type": "quantitative"}
+    "y": {"field": "new_cases", "type": "quantitative", "scale": {"domainMin": 0}}
   },
   "mark": {
     "type": "area",
@@ -111,7 +111,7 @@ The vaccination campaign had been started around January 2021; this chart counds
   "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "new_vaccinations", "type": "quantitative"}
+    "y": {"field": "new_vaccinations", "type": "quantitative", "scale": {"domainMin": 0}}
   },
   "mark": {
     "type": "area",
@@ -138,14 +138,14 @@ The vaccination campaign had been started around January 2021; this chart counds
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "new_deaths_per_million", "type": "quantitative"},
+        "y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}},
         "color": {"value": "red"}
       }
     },
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "rolling_immunity", "type": "quantitative"},
+        "y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}},
         "color": {"value": "green"}
       }
     }

@@ -18,14 +18,14 @@
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "new_deaths_per_million", "type": "quantitative"},
+        "y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}},
         "color": {"value": "red"}
       }
     },
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "rolling_immunity", "type": "quantitative"},
+        "y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}},
         "color": {"value": "green"}
       }
     }
@@ -47,14 +47,14 @@
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "new_deaths_per_million", "type": "quantitative"},
+        "y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}},
         "color": {"value": "red"}
       }
     },
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "rolling_immunity", "type": "quantitative"},
+        "y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}},
         "color": {"value": "green"}
       }
     }
@@ -77,14 +77,14 @@
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "new_deaths_per_million", "type": "quantitative"},
+        "y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}},
         "color": {"value": "red"}
       }
     },
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "rolling_immunity", "type": "quantitative"},
+        "y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}},
         "color": {"value": "green"}
       }
     }
@@ -106,14 +106,14 @@
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "new_deaths_per_million", "type": "quantitative"},
+        "y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}},
         "color": {"value": "red"}
       }
     },
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "rolling_immunity", "type": "quantitative"},
+        "y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}},
         "color": {"value": "green"}
       }
     }
@@ -135,14 +135,14 @@
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "new_deaths_per_million", "type": "quantitative"},
+        "y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}},
         "color": {"value": "red"}
       }
     },
     {
       "mark": "line",
       "encoding": {
-        "y": {"field": "rolling_immunity", "type": "quantitative"},
+        "y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}},
         "color": {"value": "green"}
       }
     }
