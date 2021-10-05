@@ -56,3 +56,15 @@ vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "
 <script>
 vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/ESP/timeline.csv"}, "encoding": {"x": {"field": "date", "type": "temporal"}, "y": {"field": "new_vaccinations", "type": "quantitative"}}, "mark": {"type": "area", "line": {"color": "green"}, "color": {"x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{"offset": 0, "color": "white"}, {"offset": 1, "color": "green"}]}}}'))
 </script>
+
+<h2>Rolling Immunity</h2>
+<div class="livemark-chart" style="overflow-x: auto">
+  <div id="livemark-chart-4-card">
+  </div>
+</div>
+<script>
+vegaEmbed('#livemark-chart-4-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/ESP/timeline.csv"}, "resolve": {"scale": {"y": "independent"}}, "encoding": {"x": {"field": "date", "type": "temporal"}}, "layer": [{"mark": "line", "encoding": {"y": {"field": "new_deaths_per_million", "type": "quantitative"}, "color": {"value": "red"}}}, {"mark": "line", "encoding": {"y": {"field": "rolling_immunity", "type": "quantitative"}, "color": {"value": "green"}}}]}'))
+</script>
+
+<h2>Summary</h2>
+<p>TBD</p>

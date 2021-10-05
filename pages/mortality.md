@@ -17,7 +17,7 @@ The numbers are based on the World Mortality Dataset:
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "../data/mortality.csv"
+          "url": "../data/reports/mortality.csv"
         },
         "key": "Country",
         "fields": ["Country", "Excess per 100k"]
@@ -61,7 +61,7 @@ Here is excess deaths by countries:
 
 ```yaml table
 data:
-  path: data/mortality.csv
+  path: data/reports/mortality.csv
   schema:
     missingValues: ['', 'NaN']
     fields:
@@ -82,7 +82,7 @@ columnSorting:
     column: 1
     sortOrder: desc
 width: 940
-colWidths: [3, 1, 1, 1]
+colWidths: [2, 1, 1, 1]
 stretchH: all
 colHeaders:
   - Location

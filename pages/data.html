@@ -1854,37 +1854,72 @@ GITHUB = "https://raw.githubusercontent.com"
 
 resource = Resource(f"{OWID}/owid-covid-data.csv")
 resource.write("data/timeline.csv")
+print(f"Extracted: timeline")
 
 # Latest
 
 resource = Resource(f"{OWID}/latest/owid-covid-latest.csv")
 resource.write("data/latest.csv")
+print(f"Extracted: latest")
 
 # Mortality
 
 resource = Resource(f"{GITHUB}/dkobak/excess-mortality/main/excess-mortality.csv")
-resource.write("data/mortality.csv")
+resource.write("data/reports/mortality.csv")
+print(f"Extracted: reports/mortality")
 </code></pre><h2>Transform</h2>
 <p>As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository's stargazers count and save it to the CSV file:</p>
 <pre><code class="language-bash">$ python code/transform/timeline.py
 </code></pre>
 <pre><code class="language-python">from frictionless import Resource
 
+FRAME = 180
+
+# Helpers
+
+
+def calculate_rolling_immunity(group):
+    total_units = 0
+    for number, row in enumerate(reversed(group[-FRAME:]), start=1):
+        if not row["population"]:
+            return 0
+        new_vaccinations = float(row["new_vaccinations"] or 0)
+        new_cases = float(row["new_deaths"] or 0) * 100
+        #  new_cases = float(row["new_cases"] or 0) * 2
+        row_units = (new_cases + new_vaccinations) * ((FRAME - number + 1) / FRAME)
+        row_units = row_units / float(row["population"])
+        total_units += row_units
+    return round(total_units, 3)
+
+
+def write_group(group):
+    if group:
+        row = group[-1].copy()
+        path = f"data/locations/{row['iso_code']}/timeline.csv"
+        Resource(group).write(path)
+        if (row["population"] or 0) &gt; 1000000:
+            row["link"] = f"<a href="#card=%7Brow%5B" iso_code>{row['location']}</a>"
+            immunity.append(row)
+        print(f"Transformed timeline: {row['location']}")
+
+
 # General
 
+
+immunity = []
 with Resource("data/timeline.csv") as resource:
     code = None
     group = []
     for row in resource:
-        path = f"data/locations/{code}/timeline.csv"
         if code != row["iso_code"]:
-            if group:
-                Resource(group).write(path)
+            write_group(group)
             code = row["iso_code"]
             group = []
+        row = row.to_dict()
+        row["rolling_immunity"] = calculate_rolling_immunity(group)
         group.append(row)
-    if group:
-        Resource(group).write(path)
+    write_group(group)
+Resource(immunity).write("data/reports/immunity.csv")
 </code></pre><pre><code class="language-bash">$ python code/transform/latest.py
 </code></pre>
 <pre><code class="language-python">from frictionless import Resource
@@ -1913,6 +1948,7 @@ with Resource("data/latest.csv") as resource:
 Resource(world).write("data/reports/world.csv")
 Resource(regions).write("data/reports/regions.csv")
 Resource(countries).write("data/reports/countries.csv")
+print("Transformed latest")
 </code></pre><h2>Load</h2>
 <p>After we have the <code>packages.csv</code> file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin:</p>
 <pre><code class="language-bash">$ python code/load.py
@@ -1929,6 +1965,7 @@ with Resource("data/latest.csv") as resource:
     for row in resource:
         code = row["iso_code"]
         CardsPlugin.create_card("cards/location.md", code=code, data=row)
+        print(f"Loaded: {row['location']}")
 </code></pre>
 
 <div id="livemark-signs">
@@ -2343,12 +2380,12 @@ document.addEventListener("DOMContentLoaded", function () {
           'pages/mortality': {
           'name': 'Excess Mortality',
           'path': 'pages/mortality',
-          'text': "# Excess Mortality ## Excess Deaths The numbers are based on the World Mortality Dataset: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Deaths/100k\" } ] } } ``` ## Summary Here is excess deaths by countries: ```yaml table data: path: data/mortality.csv schema: missingValues: [\u0027\u0027, \u0027NaN\u0027] fields: - name: Country - name: Excess deaths - name: Undercount ratio - name: Excess per 100k layout: pickFields: - Country - Excess deaths - Undercount ratio - Excess per 100k filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 colWidths: [3, 1, 1, 1] stretchH: all colHeaders: - Location - Deaths - Deaths/100k - Undercount columns: - data: 0 disableVisualSelection: true - data: 1 - data: 3 - data: 2 ```",
+          'text': "# Excess Mortality ## Excess Deaths The numbers are based on the World Mortality Dataset: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Deaths/100k\" } ] } } ``` ## Summary Here is excess deaths by countries: ```yaml table data: path: data/reports/mortality.csv schema: missingValues: [\u0027\u0027, \u0027NaN\u0027] fields: - name: Country - name: Excess deaths - name: Undercount ratio - name: Excess per 100k layout: pickFields: - Country - Excess deaths - Undercount ratio - Excess per 100k filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 colWidths: [2, 1, 1, 1] stretchH: all colHeaders: - Location - Deaths - Deaths/100k - Undercount columns: - data: 0 disableVisualSelection: true - data: 1 - data: 3 - data: 2 ```",
       },
           'pages/immunity': {
           'name': 'Rolling Immunity',
           'path': 'pages/immunity',
-          'text': "# Rolling Immunity ```json chart { \"width\": 750, \"data\": {\"url\": \"../data/locations/ISR/immunity.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ```json chart { \"width\": 750, \"data\": {\"url\": \"../data/locations/USA/immunity.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ```json chart { \"width\": 750, \"data\": {\"url\": \"../data/locations/DEU/immunity.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ```json chart { \"width\": 750, \"data\": {\"url\": \"../data/locations/GBR/immunity.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ```json chart { \"width\": 750, \"data\": {\"url\": \"../data/locations/BRA/immunity.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ```",
+          'text': "# Rolling Immunity ## Methodolody ## Countries ### Israel ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/ISR/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ### UK ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/GBR/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ### USA ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/USA/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ### Germany ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/DEU/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ### Brasil ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/BRA/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\"}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Summary Here is a summary of the key pandemic data by countries: ```yaml table data: path: data/reports/immunity.csv layout: pickFields: - new_cases_smoothed_per_million - new_deaths_smoothed_per_million - rolling_immunity - link filters: true dropdownMenu: true columnSorting: initialConfig: column: 1 sortOrder: desc width: 940 colWidths: [2, 1, 1, 1] stretchH: all colHeaders: - Location - Immunity - Deaths/1M - Cases/1M columns: - data: 3 renderer: html readOnly: true disableVisualSelection: true - data: 2 - data: 1 - data: 0 ```",
       },
           'pages/data': {
           'name': 'Data Collection',

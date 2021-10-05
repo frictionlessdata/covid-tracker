@@ -24,3 +24,4 @@ with Resource("data/latest.csv") as resource:
 Resource(world).write("data/reports/world.csv")
 Resource(regions).write("data/reports/regions.csv")
 Resource(countries).write("data/reports/countries.csv")
+print("Transformed latest")

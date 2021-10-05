@@ -101,3 +101,36 @@ The vaccination campaign had been started around January 2021; this chart counds
   }
 }
 ```
+
+## Rolling Immunity
+
+```json chart card
+{
+  "width": 800,
+  "data": {"url": "../data/locations/{{ code }}/timeline.csv"},
+  "resolve": {"scale": {"y": "independent"}},
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"}
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "y": {"field": "new_deaths_per_million", "type": "quantitative"},
+        "color": {"value": "red"}
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "y": {"field": "rolling_immunity", "type": "quantitative"},
+        "color": {"value": "green"}
+      }
+    }
+  ]
+}
+```
+
+## Summary
+
+TBD
