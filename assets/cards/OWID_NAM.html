@@ -28,7 +28,7 @@
   </div>
 </div>
 <h2>Deaths</h2>
-<p>Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:</p>
+<p>Here is a timeline of the deaths caused by the COVID-19 pandemic:</p>
 <div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-1-card">
   </div>
@@ -48,7 +48,7 @@ vegaEmbed('#livemark-chart-2-card', JSON.parse('{"width": 800, "data": {"url": "
 </script>
 
 <h2>Vaccinations</h2>
-<p>The vaccination campaign had been started around January 2021; this chart counds all the shots taken:</p>
+<p>This chart shows all the vaccination shots taken:</p>
 <div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-3-card">
   </div>
@@ -58,6 +58,7 @@ vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "
 </script>
 
 <h2>Rolling Immunity</h2>
+<p>Here is deaths/rolling immunity chart. Read more about <a href="immunity.md">rolling immunity</a>:</p>
 <div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-4-card">
   </div>
@@ -66,8 +67,8 @@ vegaEmbed('#livemark-chart-3-card', JSON.parse('{"width": 800, "data": {"url": "
 vegaEmbed('#livemark-chart-4-card', JSON.parse('{"width": 800, "data": {"url": "../data/locations/OWID_NAM/timeline.csv"}, "resolve": {"scale": {"y": "independent"}}, "encoding": {"x": {"field": "date", "type": "temporal"}}, "layer": [{"mark": "line", "encoding": {"y": {"field": "new_deaths_per_million", "type": "quantitative", "scale": {"domainMin": 0}}, "color": {"value": "red"}}}, {"mark": "line", "encoding": {"y": {"field": "rolling_immunity", "type": "quantitative", "scale": {"domain": [0, 1]}}, "color": {"value": "green"}}}]}'))
 </script>
 
-<h2>Summary</h2>
-<p>Here is a summary of the key pandemic data by countries:</p>
+<h2>Timeline</h2>
+<p>Here is a timeline for the last 30 days:</p>
 <table class="livemark-table handontable table table-bordered table-striped">
   <tr>
     <th>Date</th>

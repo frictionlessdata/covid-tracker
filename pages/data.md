@@ -2,7 +2,7 @@
 
 ## Extract
 
-First of all, we need to extract all the data packages from Github. We're going to look at all the repos having `datapackage.json` in the root directory. Github Search API has quite strict querying limits so we have to use different techniques to avoid rate limit errors:
+First of all, we need to extract all the from Our World in Data and Excess Mortality repositories:
 
 ```bash
 $ python code/extract.py
@@ -14,7 +14,7 @@ code/extract.py
 
 ## Transform
 
-As a high-level data collections framework, we will use Frictionless Transform. It will sort the packages by repository's stargazers count and save it to the CSV file:
+We will split the data by location and calculate rolling immunity:
 
 ```bash
 $ python code/transform/timeline.py
@@ -34,7 +34,7 @@ code/transform/latest.py
 
 ## Load
 
-After we have the `packages.csv` file filled with data packages, we need to load them as Livemark Cards. To achieve this task we will use builtin methods that comes with the Cards plugin:
+To show different locations as cards we render them:
 
 ```bash
 $ python code/load.py

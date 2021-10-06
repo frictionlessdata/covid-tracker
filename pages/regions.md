@@ -30,9 +30,9 @@ Here is an interactive map showing amount of total shots taken per region:
 {% endwith %}
 ```
 
-## Summary
+## Locations
 
-Here is a summary of the key pandemic data by regions:
+Here is a summary of the key pandemic data by region:
 
 ```yaml table
 {% with type='regions' %}

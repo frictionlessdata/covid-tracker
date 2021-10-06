@@ -45,7 +45,7 @@ The new cases data is less reliable as cases registration really depends on the 
 
 ## Vaccinations
 
-The vaccination campaign had been started around January 2021; this chart counds all the shots taken:
+The vaccination campaign had been started around January 2021; this chart shows all the shots taken:
 
 ```json chart
 {% with code='OWID_WRL', field='new_vaccinations', title='Shots', color='green' %}
@@ -55,7 +55,7 @@ The vaccination campaign had been started around January 2021; this chart counds
 
 ## Summary
 
-Here is a summary of the key pandemic data by countries:
+Here is a summary of the key pandemic data:
 
 ```yaml table
 {% with type='world' %}

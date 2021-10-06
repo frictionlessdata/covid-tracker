@@ -1,8 +1,10 @@
 # Excess Mortality
 
-## Excess Deaths
+**Excess mortality** is a [term](https://odihpn.org/resources/interpreting-and-using-mortality-data-in-humanitarian-emergencies/) used in epidemiology and public health that refers to the number of deaths from all causes during a crisis above and beyond what we would have expected to see under ‘normal’ conditions.
 
-The numbers are based on the World Mortality Dataset:
+## Deaths
+
+Here is a relative excess deaths number on the world map:
 
 ```json chart
 {% with %}
@@ -10,7 +12,7 @@ The numbers are based on the World Mortality Dataset:
 {% endwith %}
 ```
 
-## Summary
+## Locations
 
 Here is excess deaths by countries:
 
@@ -19,3 +21,8 @@ Here is excess deaths by countries:
 {% include 'blocks/tables/mortality.yaml' %}
 {% endwith %}
 ```
+
+## Methodology
+
+This page is based on researh by [Karlinsky & Kobak](https://github.com/dkobak/excess-mortality). The numbers are based on the World Mortality Dataset and the idea the comparing expected mortality trends with real mortality during pandemic we can calculate the real deaths amount as some countries might provide innacurate data.
+

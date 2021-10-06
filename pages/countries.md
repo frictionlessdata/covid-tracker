@@ -30,9 +30,9 @@ Here is an interactive map showing amount of total shots taken per country:
 {% endwith %}
 ```
 
-## Summary
+## Locations
 
-Here is a summary of the key pandemic data by countries:
+Here is a summary of the key pandemic data by country:
 
 ```yaml table
 {% with type='countries' %}

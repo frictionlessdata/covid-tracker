@@ -3,8 +3,8 @@
 To start working on the project clone the repository and enter its directory:
 
 ```bash
-$ git clone git@github.com:frictionlessdata/data-packages.git
-$ cd data-packages
+$ git clone git@github.com:frictionlessdata/covid-tracker.git
+$ cd covid-tracker
 ```
 
 ## Install

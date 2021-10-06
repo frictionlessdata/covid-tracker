@@ -12,7 +12,7 @@ The main three core metrics we track: total deaths, total cases, and all the vac
 
 ## Deaths
 
-Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
+Here is a timeline of the deaths caused by the COVID-19 pandemic:
 
 ```json chart card
 {% with code=code, field='new_deaths', title='Deaths', color='red', card=True %}
@@ -32,7 +32,7 @@ The new cases data is less reliable as cases registration really depends on the 
 
 ## Vaccinations
 
-The vaccination campaign had been started around January 2021; this chart counds all the shots taken:
+This chart shows all the vaccination shots taken:
 
 ```json chart card
 {% with code=code, field='new_vaccinations', title='Shots', color='green', card=True %}
@@ -42,15 +42,17 @@ The vaccination campaign had been started around January 2021; this chart counds
 
 ## Rolling Immunity
 
+Here is deaths/rolling immunity chart. Read more about [rolling immunity](immunity.md):
+
 ```json chart card
 {% with code=code %}
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
 
-## Summary
+## Timeline
 
-Here is a summary of the key pandemic data by countries:
+Here is a timeline for the last 30 days:
 
 ```html markup
 {% with code=code %}
