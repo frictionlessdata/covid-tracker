@@ -6,7 +6,7 @@
     <th>Shots</th>
   </tr>
   {% for row in frictionless.extract('data/locations/' + code + '/timeline.csv') | reverse %}
-  {% if loop.index < 30 %}
+  {% if loop.index <= 10 %}
   <tr>
     <td>{{ row.date or '' }}</td>
     <td>{{ row.new_deaths or '' }}</td>

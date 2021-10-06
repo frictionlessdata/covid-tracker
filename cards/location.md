@@ -52,7 +52,7 @@ Here is deaths/rolling immunity chart. Read more about [rolling immunity](immuni
 
 ## Timeline
 
-Here is a timeline for the last 30 days:
+Here is a timeline for the last 10 days:
 
 ```html markup
 {% with code=code %}
