@@ -8,7 +8,7 @@
 
 ```yaml remark
 type: primary
-text: "Last data update: <strong>{{ data.last_updated }}</strong> (this site is being updated on a nightly basis)."
+text: "Last data update: <strong>{{ data.last_updated_date }}</strong> (this site is being updated on a nightly basis)."
 ```
 
 **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it's open for contributing for anyone who is interested.
