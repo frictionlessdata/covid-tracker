@@ -7,7 +7,7 @@ text: It's a data journalism rather than scientific work. Immunity/antibodies an
 
 **Rolling immynity** (in terms of this page) is a collective immunity metric based on factual uses cases (counted using deaths) and vaccination shots timeline and the fact that individual immunity decreases over time.  This page is about finding relations with pandemic outbreaks and rolling immunity concept.
 
-## Showcases
+## Examples
 
 To showcase the idea we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast vaccination campaign leads to following outbreaks due to low levels of rolling immunity.
 
