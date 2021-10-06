@@ -1,4 +1,4 @@
-# Data Packages
+# COVID-19 Tracker
 
-A livemark listing data packages hosted on Github:
-- https://data-packages.frictionlessdata.io
+A livemark tracking COVID-19 disease pandemic:
+- https://covid-tracker.frictionlessdata.io
