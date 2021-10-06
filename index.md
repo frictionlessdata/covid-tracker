@@ -53,7 +53,7 @@ The vaccination campaign had been started around January 2021; this chart shows 
 {% endwith %}
 ```
 
-## Summary
+## Locations
 
 Here is a summary of the key pandemic data:
 
