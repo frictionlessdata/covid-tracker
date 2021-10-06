@@ -9,7 +9,7 @@ text: It's a data journalism rather than scientific work. Immunity/antibodies an
 
 ## Examples
 
-To showcase the idea we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast vaccination campaign leads to following outbreaks due to low levels of rolling immunity.
+To showcase the idea we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast vaccination campaign leads to following outbreaks due to low levels of rolling immunity. This USA case **mighe** show that vaccination level wasn't enough.
 
 ### Israel
 
