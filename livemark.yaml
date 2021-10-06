@@ -4,8 +4,7 @@ about:
   text: A livemark tracking COVID-19 disease pandemic
 github:
   user: frictionlessdata
-  # TODO: update the repo here/badges/git/etc
-  repo: livemark
+  repo: covid-tracker
 topics:
   selector: h2
 site:
