@@ -2,7 +2,7 @@
 
 ## Extract
 
-First of all, we need to extract all the from Our World in Data and Excess Mortality repositories:
+First of all, we need to extract all the from [Our World in Data](https://ourworldindata.org/coronavirus) and [Excess Mortality](https://github.com/dkobak/excess-mortality) repositories:
 
 ```bash
 $ python code/extract.py
