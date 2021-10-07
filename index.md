@@ -32,6 +32,7 @@ Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
 {% include 'blocks/charts/timeline.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#deaths)*
 
 ## New Cases
 
@@ -42,6 +43,7 @@ The new cases data is less reliable as cases registration really depends on the 
 {% include 'blocks/charts/timeline.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#new-cases)*
 
 ## Vaccinations
 
@@ -52,6 +54,7 @@ The vaccination campaign had been started around January 2021; this chart shows 
 {% include 'blocks/charts/timeline.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#vaccinations)*
 
 ## Locations
 
@@ -62,3 +65,4 @@ Here is a summary of the key pandemic data:
 {% include 'blocks/tables/locations.yaml' %}
 {% endwith %}
 ```
+*[source code for table](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#locations)*
