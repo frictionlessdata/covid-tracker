@@ -1,8 +1,9 @@
 # Regions
+This page displays the total count of deaths, case numbers, and vaccinations for regions of the world.
 
 ## Deaths
 
-Here is an interactive map showing amount of total deaths per region:
+Here is an interactive map showing the count of total deaths per region:
 
 ```json chart
 {% with field='total_deaths_per_million', title='Deaths/1M', scheme='reds' %}
@@ -13,7 +14,7 @@ Here is an interactive map showing amount of total deaths per region:
 
 ## Total Cases
 
-Here is an interactive map showing amount of total cases per region:
+Here is an interactive map showing the count of total cases per region:
 
 ```json chart
 {% with field='total_cases_per_million', title='Cases/1M', scheme='blues' %}
@@ -24,7 +25,7 @@ Here is an interactive map showing amount of total cases per region:
 
 ## Vaccinations
 
-Here is an interactive map showing amount of total shots taken per region:
+Here is an interactive map showing the amount of total shots taken per region:
 
 ```json chart
 {% with field='total_vaccinations_per_hundred', title='Shots/100', scheme='greens' %}

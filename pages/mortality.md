@@ -4,7 +4,7 @@
 
 ## Deaths
 
-Here is a relative excess deaths number on the world map:
+Here is a representation of excess mortality per country on the world map:
 
 ```json chart
 {% with %}
@@ -15,7 +15,7 @@ Here is a relative excess deaths number on the world map:
 
 ## Locations
 
-Here is excess deaths by countries:
+Here is a list of excess deaths by countries:
 
 ```yaml table
 {% with %}

@@ -1,5 +1,9 @@
 # Contribute
 
+Welcome! We're happy you'd like to contribute! This is an open project, and we value contributions from everyone.
+
+We use Github as a code and issues hosting platform. To report a bug or propose a new feature, please open an [issue](https://github.com/frictionlessdata/covid-tracker/issues). For pull requests, we would ask you initially create an issue and then create a pull requests linked to this issue.
+
 To start working on the project clone the repository and enter its directory:
 
 ```bash
@@ -34,4 +38,4 @@ $ livemark build # to build in non-interactive mode
 
 ## Deploy
 
-The project is deployed automatically to Github Pages on every push to "main". It means that if one propose a change in a PR it will be deployed automatically after merging.
+The project is deployed automatically to Github Pages on every push to "main". That means that the page will automatically be deployed every time there is a change approved from a Pull Request.
