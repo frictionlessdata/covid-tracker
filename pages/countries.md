@@ -10,7 +10,6 @@ Here is an interactive map showing the count of total deaths per country:
 {% include 'blocks/charts/countries.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/countries.md#deaths)*
 
 ## Total Cases
 
@@ -21,7 +20,6 @@ Here is an interactive map showing the count of total cases per country:
 {% include 'blocks/charts/countries.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/countries.md#total-cases)*
 
 ## Vaccinations
 
@@ -32,7 +30,6 @@ Here is an interactive map showing the amount of total shots taken per country:
 {% include 'blocks/charts/countries.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/countries.md#vaccinations)*
 
 ## Locations
 
@@ -43,4 +40,3 @@ Here is a summary of the key pandemic data by country:
 {% include 'blocks/tables/locations.yaml' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/countries.md#locations)*

@@ -18,7 +18,6 @@ To showcase the idea of rolling immunity, we use 5 countries having different va
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#israel)*
 
 ### USA
 
@@ -27,7 +26,6 @@ To showcase the idea of rolling immunity, we use 5 countries having different va
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#usa)*
 
 ### UK
 
@@ -36,7 +34,6 @@ To showcase the idea of rolling immunity, we use 5 countries having different va
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#uk)*
 
 ### Germany
 
@@ -45,7 +42,6 @@ To showcase the idea of rolling immunity, we use 5 countries having different va
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#germany)*
 
 ### Brasil
 
@@ -54,7 +50,6 @@ To showcase the idea of rolling immunity, we use 5 countries having different va
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#brasil)*
 
 ## Locations
 
@@ -65,7 +60,6 @@ Explore charts for other countries and [share](forum.html) what you think. Take 
 {% include 'blocks/tables/immunity.yaml' %}
 {% endwith %}
 ```
-*[source code for table](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#locations)*
 
 ## Methodology
 

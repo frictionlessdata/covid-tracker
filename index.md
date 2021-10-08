@@ -13,9 +13,6 @@ text: "Last data update: <strong>{{ data.last_updated_date }}</strong> (this sit
 
 **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it's open for contributing for anyone who is interested. The main COVID-19 data resources we use for this project are [Our World in Data](https://ourworldindata.org/coronavirus) core data and [Excess Mortality](https://github.com/dkobak/excess-mortality) research.
 
-## How to use this site
-The purpose of this site is to display analyzed COVID-19 data in a helpful way. On the homepage, you can find summary data for total counts of death, case numbers, and vaccinations from around the world. There are also separate pages displaying similar data but for specific world [regions](/pages/regions.html) and [countries](/pages/countries.html), as well as displaying calculated data like [excess mortality](/pages/mortality.html) and [rolling immunity](/pages/immunity.html). This site is build on the open source Frictionless Livemark tool, and all data collection information is freely shared on the [data collection page](/pages/data.html). Additionally, all source code for the data visualisations can be found on the [GitHub repository](https://github.com/frictionlessdata/covid-tracker). Finally, this is a community project, and anyone is welcome to [contribute](/pages/contrib.html)!
-
 ## Status
 
 The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken (worldwide):
@@ -57,7 +54,6 @@ The vaccination campaign had been started around January 2021; this chart shows 
 {% include 'blocks/charts/timeline.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#vaccinations)*
 
 ## Locations
 
@@ -68,4 +64,6 @@ Here is a summary of the key pandemic data:
 {% include 'blocks/tables/locations.yaml' %}
 {% endwith %}
 ```
-*[source code for table](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#locations)*
+
+## About
+The purpose of this site is to display analyzed COVID-19 data in a helpful way. On the homepage, you can find summary data for total counts of death, case numbers, and vaccinations from around the world. There are also separate pages displaying similar data but for specific world [regions](/pages/regions.html) and [countries](/pages/countries.html), as well as displaying calculated data like [excess mortality](/pages/mortality.html) and [rolling immunity](/pages/immunity.html). This site is build on the open source Frictionless Livemark tool, and all data collection information is freely shared on the [data collection page](/pages/data.html). Additionally, all source code for the data visualisations can be found on the [GitHub repository](https://github.com/frictionlessdata/covid-tracker). Finally, this is a community project, and anyone is welcome to [contribute](/pages/contrib.html)!

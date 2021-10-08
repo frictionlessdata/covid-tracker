@@ -13,7 +13,14 @@ $ cd covid-tracker
 
 ## Install
 
-Run the following script to initiate a virtual environment and install the dependencies:
+Run the following script to initiate a virtual environmentdependencies (optional):
+
+```bash
+python3.8 -m venv .python
+source .python/bin/activate
+```
+
+Install the dependencies:
 
 ```bash
 $ make install
@@ -29,11 +36,18 @@ $ make data
 
 ## Build
 
-To build the project use one of these Livemark commands:
+> See the Livemark documentation for full details: https://livemark.frictionlessdata.io/
 
-```bash
-$ livemark start # to build and start a live-reload server
-$ livemark build # to build in non-interactive mode
+You can then use the command-line interface to build the output HTML file:
+
+```
+$ livemark build
+```
+
+Or start a livereload server to automatically reload the output page as you modify the input Markdown document:
+
+```
+$ livemark start
 ```
 
 ## Deploy
