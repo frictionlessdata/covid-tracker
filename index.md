@@ -32,7 +32,6 @@ Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic:
 {% include 'blocks/charts/timeline.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#deaths)*
 
 ## New Cases
 
@@ -43,7 +42,6 @@ The new cases data is less reliable as cases registration really depends on the 
 {% include 'blocks/charts/timeline.json' %}
 {% endwith %}
 ```
-*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/index.md#new-cases)*
 
 ## Vaccinations
 
