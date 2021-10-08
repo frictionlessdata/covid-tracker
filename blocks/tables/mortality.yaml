@@ -4,12 +4,14 @@ data:
     missingValues: ['', 'NaN']
     fields:
       - name: Country
+      - name: Data until
       - name: Excess deaths
       - name: Undercount ratio
       - name: Excess per 100k
   layout:
     pickFields:
       - Country
+      - Data until
       - Excess deaths
       - Undercount ratio
       - Excess per 100k
@@ -20,17 +22,19 @@ columnSorting:
     column: 1
     sortOrder: desc
 width: 940
-colWidths: [2, 1, 1, 1]
+colWidths: [2, 1, 1, 1, 1]
 stretchH: all
 colHeaders:
   - Location
   - Deaths
   - Deaths/100k
   - Undercount
+  - Last Updated
 columns:
   - data: 0
     disableVisualSelection: true
-  - data: 1
-  - data: 3
   - data: 2
+  - data: 4
+  - data: 3
+  - data: 1
 
