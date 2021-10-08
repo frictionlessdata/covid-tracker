@@ -4,23 +4,25 @@
 
 ## Deaths
 
-Here is a relative excess deaths number on the world map:
+Here is a representation of excess mortality per country on the world map:
 
 ```json chart
 {% with %}
 {% include 'blocks/charts/mortality.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/mortality.md#deaths)*
 
 ## Locations
 
-Here is excess deaths by countries:
+Here is a list of excess deaths by countries:
 
 ```yaml table
 {% with %}
 {% include 'blocks/tables/mortality.yaml' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/mortality.md#locations)*
 
 ## Methodology
 

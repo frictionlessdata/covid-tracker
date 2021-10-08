@@ -2,14 +2,14 @@
 
 ```yaml remark
 type: warning
-text: It's a data journalism rather than scientific work. Immunity/antibodies analysis is complicated matter. You can read more about it, for example, in this <a href="https://www.nature.com/articles/s41591-021-01377-8">scientific paper</a>.
+text: This website is data journalism rather than scientific work. Immunity/antibodies analysis is a complicated matter. You can read more about it, for example, in this <a href="https://www.nature.com/articles/s41591-021-01377-8">scientific paper</a><a href="https://doi.org/10.1038/s41591-021-01377-8"> (DOI)</a>.
 ```
 
-**Rolling immynity** (in terms of this page) is a collective immunity metric based on factual uses cases (counted using deaths) and vaccination shots timeline and the fact that individual immunity decreases over time.  This page is about finding relations with pandemic outbreaks and rolling immunity concept.
+**Rolling immunity** (in terms of this page) is a collective immunity metric based on factual uses cases (counted using deaths) and vaccination shots timeline and the fact that individual immunity decreases over time.  This page is about finding relations with pandemic outbreaks and the rolling immunity concept.
 
 ## Examples
 
-To showcase the idea we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast vaccination campaign leads to following outbreaks due to low levels of rolling immunity. This USA case **might** be showing that vaccination level wasn't enough.
+To showcase the idea of rolling immunity, we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast of a vaccination campaign leads to outbreaks due to low levels of rolling immunity. This USA case **might** be showing that the vaccination level wasn't enough.
 
 ### Israel
 
@@ -18,6 +18,7 @@ To showcase the idea we use 5 countries having different vaccination timeframes.
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#israel)*
 
 ### USA
 
@@ -26,6 +27,7 @@ To showcase the idea we use 5 countries having different vaccination timeframes.
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#usa)*
 
 ### UK
 
@@ -34,6 +36,7 @@ To showcase the idea we use 5 countries having different vaccination timeframes.
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#uk)*
 
 ### Germany
 
@@ -42,15 +45,16 @@ To showcase the idea we use 5 countries having different vaccination timeframes.
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#germany)*
 
 ### Brasil
-
 
 ```json chart
 {% with code="BRA" %}
 {% include 'blocks/charts/immunity.json' %}
 {% endwith %}
 ```
+*[source code for chart](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#brasil)*
 
 ## Locations
 
@@ -61,6 +65,7 @@ Explore charts for other countries and [share](forum.html) what you think. Take 
 {% include 'blocks/tables/immunity.yaml' %}
 {% endwith %}
 ```
+*[source code for table](https://github.com/frictionlessdata/covid-tracker/blob/main/pages/immunity.md#locations)*
 
 ## Methodology
 
