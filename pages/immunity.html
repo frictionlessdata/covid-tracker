@@ -1979,8 +1979,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 <tr>
                     <td><a href="#card=OWID_ASI">Asia</a></td>
                     <td>0.46</td>
-                    <td>0.299</td>
-                    <td>23.555</td>
+                    <td>0.305</td>
+                    <td>24.002</td>
                   </tr>
                 <tr>
                     <td><a href="#card=AUS">Australia</a></td>
@@ -2020,7 +2020,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=BEL">Belgium</a></td>
-                    <td>0.42</td>
+                    <td>0.43</td>
                     <td>1.032</td>
                     <td>293.333</td>
                   </tr>
@@ -2146,7 +2146,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=CUB">Cuba</a></td>
-                    <td>1.27</td>
+                    <td>1.29</td>
                     <td>2.184</td>
                     <td>184.43</td>
                   </tr>
@@ -2176,7 +2176,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=DOM">Dominican Republic</a></td>
-                    <td>0.38</td>
+                    <td>0.39</td>
                     <td>0.274</td>
                     <td>69.983</td>
                   </tr>
@@ -2333,8 +2333,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 <tr>
                     <td><a href="#card=IND">India</a></td>
                     <td>0.35</td>
-                    <td>0.13</td>
-                    <td>9.497</td>
+                    <td>0.15</td>
+                    <td>10.996</td>
                   </tr>
                 <tr>
                     <td><a href="#card=IDN">Indonesia</a></td>
@@ -2500,7 +2500,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=MEX">Mexico</a></td>
-                    <td>0.37</td>
+                    <td>0.36</td>
                     <td>1.869</td>
                     <td>28.558</td>
                   </tr>
@@ -2554,7 +2554,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=NZL">New Zealand</a></td>
-                    <td>0.77</td>
+                    <td>0.85</td>
                     <td>0.0</td>
                     <td>13.343</td>
                   </tr>
@@ -2638,7 +2638,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=PER">Peru</a></td>
-                    <td>0.58</td>
+                    <td>0.6</td>
                     <td>0.664</td>
                     <td>21.587</td>
                   </tr>
@@ -2674,7 +2674,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=RUS">Russia</a></td>
-                    <td>0.34</td>
+                    <td>0.32</td>
                     <td>6.695</td>
                     <td>217.181</td>
                   </tr>
@@ -2902,15 +2902,15 @@ document.addEventListener("DOMContentLoaded", function(){
                   </tr>
                 <tr>
                     <td><a href="#card=VNM">Vietnam</a></td>
-                    <td>0.44</td>
+                    <td>0.46</td>
                     <td>0.845</td>
                     <td>34.962</td>
                   </tr>
                 <tr>
                     <td><a href="#card=OWID_WRL">World</a></td>
                     <td>0.38</td>
-                    <td>0.858</td>
-                    <td>51.677</td>
+                    <td>0.862</td>
+                    <td>51.943</td>
                   </tr>
                 <tr>
                     <td><a href="#card=YEM">Yemen</a></td>
@@ -3383,7 +3383,7 @@ document.addEventListener("DOMContentLoaded", function () {
           'name': 'Excess Mortality',
           'path': 'pages/mortality',
           'relpath': 'mortality',
-          'text': "# Excess Mortality **Excess mortality** is a [term](https://odihpn.org/resources/interpreting-and-using-mortality-data-in-humanitarian-emergencies/) used in epidemiology and public health that refers to the number of deaths from all causes during a crisis above and beyond what we would have expected to see under \u2018normal\u2019 conditions. ## Deaths Here is a representation of excess mortality per country on the world map: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Deaths/100k\" } ] } } ``` ## Locations Here is a list of excess deaths by countries: ```yaml table data: data/reports/mortality.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: Country - name: Deaths data: Excess deaths - name: Deaths/100k data: Excess per 100k - name: Undercount data: Undercount ratio - name: Last Updated data: Data until ``` ## Methodology This page is based on researh by [Karlinsky \u0026 Kobak](https://github.com/dkobak/excess-mortality). The numbers are based on the World Mortality Dataset and the idea the comparing expected mortality trends with real mortality during pandemic we can calculate the real deaths amount as some countries might provide innacurate data.",
+          'text': "# Excess Mortality **Excess mortality** is a [term](https://odihpn.org/resources/interpreting-and-using-mortality-data-in-humanitarian-emergencies/) used in epidemiology and public health that refers to the number of deaths from all causes during a crisis above and beyond what we would have expected to see under \u2018normal\u2019 conditions. ## Deaths Here is a representation of excess mortality per country on the world map: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Deaths/100k\" } ] } } ``` ## Locations Here is a list of excess deaths by countries: ```yaml table data: data/reports/mortality.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: Country - name: Deaths data: Excess deaths - name: Deaths/100k data: Excess per 100k - name: Undercount data: Undercount ratio type: num - name: Last Updated data: Data until ``` ## Methodology This page is based on researh by [Karlinsky \u0026 Kobak](https://github.com/dkobak/excess-mortality). The numbers are based on the World Mortality Dataset and the idea the comparing expected mortality trends with real mortality during pandemic we can calculate the real deaths amount as some countries might provide innacurate data.",
       },
           'pages/immunity': {
           'name': 'Rolling Immunity',
