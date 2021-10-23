@@ -11,10 +11,7 @@ install:
 	pip install -r requirements.txt
 
 data:
-	python code/extract.py
-	python code/transform/timeline.py
-	python code/transform/latest.py
-	python code/load.py
+	livemark run data
 
 github:
 	sed -i -E "s/@(\w*)/@$(LEAD)/" .github/issue_template.md
