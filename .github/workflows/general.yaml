@@ -15,8 +15,10 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+      - name: Install livemark
+        run: pip install livemark
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: livemark run install
       - name: Update data
         run: livemark run data
       - name: Build site

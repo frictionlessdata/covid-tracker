@@ -11,19 +11,31 @@ $ git clone git@github.com:frictionlessdata/covid-tracker.git
 $ cd covid-tracker
 ```
 
-## Install
-
-Run the following script to initiate a virtual environmentdependencies (optional):
+Create a virtual environment (optional):
 
 ```bash
-python3.8 -m venv .python
-source .python/bin/activate
+$ python3 -m venv .python
+$ source .python/bin/activate
 ```
 
-Install the dependencies:
+And install livemark:
+
+```
+$ pip install livemark
+```
+
+## Install
+
+Run the following script to install dependencies:
 
 ```bash
-$ pip install -r requirements.txt
+$ livemark run install
+```
+
+Which will run:
+
+```bash script run=install
+pip install -r requirements.txt
 ```
 
 ## Data
@@ -34,7 +46,7 @@ To collect the data use the data collection script (run only if you want to upda
 $ livemark run data
 ```
 
-Which will run all the scripts from the [pages/data.html](page).
+Which will run all the scripts on the [data.html](page).
 
 ## Build
 
@@ -42,16 +54,29 @@ Which will run all the scripts from the [pages/data.html](page).
 
 You can then use the command-line interface to build the output HTML file:
 
-```
+```bash
 $ livemark build
 ```
 
 Or start a livereload server to automatically reload the output page as you modify the input Markdown document:
 
-```
+```bash
 $ livemark start
 ```
 
 ## Deploy
 
 The project is deployed automatically to Github Pages on every push to "main". That means that the page will automatically be deployed every time there is a change approved from a Pull Request.
+
+If you'd like to update Github Issue/PR templates run:
+
+```bash
+$ livemark run github
+```
+
+Which will run:
+
+```bash script run=github
+sed -i -E "s/@(\w*)/@$(head -n 1 LEAD.md)/" .github/issue_template.md
+sed -i -E "s/@(\w*)/@$(head -n 1 LEAD.md)/" .github/pull_request_template.md
+```
