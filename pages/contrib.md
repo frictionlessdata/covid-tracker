@@ -34,7 +34,7 @@ $ livemark run install
 
 Which will run:
 
-```bash script run=install
+```bash task id=install
 pip install -r requirements.txt
 ```
 
@@ -76,7 +76,7 @@ $ livemark run github
 
 Which will run:
 
-```bash script run=github
+```bash task id=github
 sed -i -E "s/@(\w*)/@$(head -n 1 LEAD.md)/" .github/issue_template.md
 sed -i -E "s/@(\w*)/@$(head -n 1 LEAD.md)/" .github/pull_request_template.md
 ```
