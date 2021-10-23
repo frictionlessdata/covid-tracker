@@ -6,7 +6,7 @@ All data on this site was generated (cleaned, analysed) using the [Frictionless 
 
 First of all, we need to extract all the data from [Our World in Data](https://ourworldindata.org/coronavirus) and [Excess Mortality](https://github.com/dkobak/excess-mortality) repositories:
 
-```python script run=data-extract
+```python task id=data-extract
 from frictionless import Resource
 
 OWID = "https://covid.ourworldindata.org/data"
@@ -35,7 +35,7 @@ print(f"Extracted: reports/mortality")
 
 We will split the data by location and calculate rolling immunity:
 
-```python script run=data-transform-timeline
+```python task id=data-transform-timeline
 from pprint import pprint
 from frictionless import Resource, Detector
 
@@ -87,7 +87,7 @@ Resource(immunity).write("data/reports/immunity.csv")
 
 Also, we need to transform `data/latest.csv`:
 
-```python script run=data-transform-latest
+```python task id=data-transform-latest
 from frictionless import Resource
 
 WORLD = ["OWID_WRL"]
@@ -121,7 +121,7 @@ print("Transformed latest")
 
 To show different locations as cards we render them:
 
-```python script run=data-load
+```python task id=data-load
 from frictionless import Resource
 from livemark.plugins.cards import CardsPlugin
 
