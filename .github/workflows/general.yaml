@@ -16,9 +16,9 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - name: Install dependencies
-        run: make install
+        run: pip install -r requirements.txt
       - name: Update data
-        run: make data
+        run: livemark run data
       - name: Build site
         run: livemark build
       - name: Commit files

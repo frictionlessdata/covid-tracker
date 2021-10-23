@@ -23,7 +23,7 @@ source .python/bin/activate
 Install the dependencies:
 
 ```bash
-$ make install
+$ pip install -r requirements.txt
 ```
 
 ## Data
@@ -31,8 +31,10 @@ $ make install
 To collect the data use the data collection script (run only if you want to update the data):
 
 ```bash
-$ make data
+$ livemark run data
 ```
+
+Which will run all the scripts from the [pages/data.html](page).
 
 ## Build
 

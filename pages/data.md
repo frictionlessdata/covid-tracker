@@ -44,7 +44,6 @@ detector = Detector(sample_size=10000)
 
 # Helpers
 
-
 def calculate_rolling_immunity(group):
     total_units = 0
     for number, row in enumerate(reversed(group[-FRAME:]), start=1):
@@ -58,7 +57,6 @@ def calculate_rolling_immunity(group):
         total_units += row_units
     return round(total_units, 2)
 
-
 def write_group(group):
     if group:
         row = group[-1].copy()
@@ -69,9 +67,7 @@ def write_group(group):
             immunity.append(row)
         print(f"Transformed timeline: {row['location']}")
 
-
 # General
-
 
 immunity = []
 with Resource("data/timeline.csv", detector=detector) as resource:
@@ -129,9 +125,7 @@ To show different locations as cards we render them:
 from frictionless import Resource
 from livemark.plugins.cards import CardsPlugin
 
-
 # General
-
 
 CardsPlugin.delete_cards()
 with Resource("data/latest.csv") as resource:
