@@ -4,6 +4,8 @@ Welcome! We're happy you'd like to contribute! This is an open project, and we v
 
 We use Github as a code and issues hosting platform. To report a bug or propose a new feature, please open an [issue](https://github.com/frictionlessdata/covid-tracker/issues). For pull requests, we would ask you initially create an issue and then create a pull requests linked to this issue.
 
+## Setup
+
 To start working on the project clone the repository and enter its directory:
 
 ```bash
