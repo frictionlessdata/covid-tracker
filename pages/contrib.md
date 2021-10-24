@@ -26,13 +26,7 @@ $ pip install livemark
 
 ## Install
 
-Run the following script to install dependencies:
-
-```bash
-$ livemark run install
-```
-
-Which will run:
+Run the following command to install dependencies:
 
 ```bash task id=install
 pip install -r requirements.txt
@@ -46,7 +40,7 @@ To collect the data use the data collection script (run only if you want to upda
 $ livemark run data
 ```
 
-Which will run all the scripts on the [data.html](page).
+See in-detail on the [Data Collection](data.html) page.
 
 ## Build
 
@@ -68,13 +62,7 @@ $ livemark start
 
 The project is deployed automatically to Github Pages on every push to "main". That means that the page will automatically be deployed every time there is a change approved from a Pull Request.
 
-If you'd like to update Github Issue/PR templates run:
-
-```bash
-$ livemark run github
-```
-
-Which will run:
+If you'd like to update Github Issue/PR templates run this command:
 
 ```bash task id=github
 sed -i -E "s/@(\w*)/@$(head -n 1 LEAD.md)/" .github/issue_template.md
