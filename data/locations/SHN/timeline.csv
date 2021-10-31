@@ -1,5 +1,5 @@
 iso_code,continent,location,date,total_cases,new_cases,new_cases_smoothed,total_deaths,new_deaths,new_deaths_smoothed,total_cases_per_million,new_cases_per_million,new_cases_smoothed_per_million,total_deaths_per_million,new_deaths_per_million,new_deaths_smoothed_per_million,reproduction_rate,icu_patients,icu_patients_per_million,hosp_patients,hosp_patients_per_million,weekly_icu_admissions,weekly_icu_admissions_per_million,weekly_hosp_admissions,weekly_hosp_admissions_per_million,new_tests,total_tests,total_tests_per_thousand,new_tests_per_thousand,new_tests_smoothed,new_tests_smoothed_per_thousand,positive_rate,tests_per_case,tests_units,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_smoothed,total_vaccinations_per_hundred,people_vaccinated_per_hundred,people_fully_vaccinated_per_hundred,total_boosters_per_hundred,new_vaccinations_smoothed_per_million,stringency_index,population,population_density,median_age,aged_65_older,aged_70_older,gdp_per_capita,extreme_poverty,cardiovasc_death_rate,diabetes_prevalence,female_smokers,male_smokers,handwashing_facilities,hospital_beds_per_thousand,life_expectancy,human_development_index,excess_mortality_cumulative_absolute,excess_mortality_cumulative,excess_mortality,excess_mortality_cumulative_per_million,rolling_immunity
-SHN,Africa,Saint Helena,2021-02-03,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,107.0,107.0,,,,,1.76,1.76,,,,,6095,,,,,,,,,,,,,80.56,,,,,,0
+SHN,Africa,Saint Helena,2021-02-03,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,107,107,,,,,1.76,1.76,,,,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-02-04,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,75,,,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-02-05,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,75,,,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-02-06,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,75,,,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
@@ -39,17 +39,17 @@ SHN,Africa,Saint Helena,2021-03-11,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,75,,,,,123
 SHN,Africa,Saint Helena,2021-03-12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,75,,,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-13,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,75,,,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-14,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,75,,,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
-SHN,Africa,Saint Helena,2021-03-15,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3107.0,3107.0,,,,75,50.98,50.98,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
+SHN,Africa,Saint Helena,2021-03-15,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3107,3107,,,,75,50.98,50.98,,,12305,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-16,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,73,,,,,11977,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-17,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,72,,,,,11813,,6095,,,,,,,,,,,,,80.56,,,,,,0
-SHN,Africa,Saint Helena,2021-03-18,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3300.0,3300.0,,,,70,54.14,54.14,,,11485,,6095,,,,,,,,,,,,,80.56,,,,,,0
+SHN,Africa,Saint Helena,2021-03-18,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3300,3300,,,,70,54.14,54.14,,,11485,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-19,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,83,,,,,13618,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-20,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,96,,,,,15751,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-21,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,109,,,,,17884,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-22,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,122,,,,,20016,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-23,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,136,,,,,22313,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-24,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,150,,,,,24610,,6095,,,,,,,,,,,,,80.56,,,,,,0
-SHN,Africa,Saint Helena,2021-03-25,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4454.0,4344.0,110.0,,,165,73.08,71.27,1.8,,27071,,6095,,,,,,,,,,,,,80.56,,,,,,0
+SHN,Africa,Saint Helena,2021-03-25,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4454,4344,110.0,,,165,73.08,71.27,1.8,,27071,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-26,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,150,,,,,24610,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-27,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,135,,,,,22149,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-03-28,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,120,,,,,19688,,6095,,,,,,,,,,,,,80.56,,,,,,0
@@ -64,7 +64,7 @@ SHN,Africa,Saint Helena,2021-04-05,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,61,,,,,100
 SHN,Africa,Saint Helena,2021-04-06,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,61,,,,,10008,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-04-07,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,61,,,,,10008,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-04-08,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,61,,,,,10008,,6095,,,,,,,,,,,,,80.56,,,,,,0
-SHN,Africa,Saint Helena,2021-04-09,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5373.0,4361.0,1012.0,,,61,88.15,71.55,16.6,,10008,,6095,,,,,,,,,,,,,80.56,,,,,,0
+SHN,Africa,Saint Helena,2021-04-09,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5373,4361,1012.0,,,61,88.15,71.55,16.6,,10008,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-04-10,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,66,,,,,10829,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-04-11,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,71,,,,,11649,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-04-12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,77,,,,,12633,,6095,,,,,,,,,,,,,80.56,,,,,,0
@@ -90,4 +90,4 @@ SHN,Africa,Saint Helena,2021-05-01,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,97,,,,,159
 SHN,Africa,Saint Helena,2021-05-02,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,97,,,,,15915,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-05-03,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,97,,,,,15915,,6095,,,,,,,,,,,,,80.56,,,,,,0
 SHN,Africa,Saint Helena,2021-05-04,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,97,,,,,15915,,6095,,,,,,,,,,,,,80.56,,,,,,0
-SHN,Africa,Saint Helena,2021-05-05,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,7892.0,4361.0,3531.0,,,97,129.48,71.55,57.93,,15915,,6095,,,,,,,,,,,,,80.56,,,,,,0
+SHN,Africa,Saint Helena,2021-05-05,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,7892,4361,3531.0,,,97,129.48,71.55,57.93,,15915,,6095,,,,,,,,,,,,,80.56,,,,,,0
