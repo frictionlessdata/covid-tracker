@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="This page displays the total count of deaths, case numbers, and vaccinations for regions of the world.">
-<meta name="keywords" content="regions">
+<meta name="description" content="None">
+<meta name="keywords" content="blog">
 <link rel="icon" href="../assets/covid.svg">
-<title>Regions | COVID-19 Tracker</title>
+<title>Blog | COVID-19 Tracker</title>
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.23.0/themes/prism.css">
@@ -1306,7 +1306,6 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 }
 
 </style>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 <style>
 
 #livemark-topics {
@@ -1840,43 +1839,43 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
         World
       </a>
           </li>
-        <li class="primary  active">
-      <a href="regions.html" class="primary">
+        <li class="primary  ">
+      <a href="../pages/regions.html" class="primary">
         Regions
       </a>
           </li>
         <li class="primary  ">
-      <a href="countries.html" class="primary">
+      <a href="../pages/countries.html" class="primary">
         Countries
       </a>
           </li>
         <li class="primary  ">
-      <a href="mortality.html" class="primary">
+      <a href="../pages/mortality.html" class="primary">
         Excess Mortality
       </a>
           </li>
         <li class="primary  ">
-      <a href="immunity.html" class="primary">
+      <a href="../pages/immunity.html" class="primary">
         Rolling Immunity
       </a>
           </li>
         <li class="primary  ">
-      <a href="data.html" class="primary">
+      <a href="../pages/data.html" class="primary">
         Data Collection
       </a>
           </li>
         <li class="primary  ">
-      <a href="contrib.html" class="primary">
+      <a href="../pages/contrib.html" class="primary">
         Contribute
       </a>
           </li>
         <li class="primary  ">
-      <a href="forum.html" class="primary">
+      <a href="../pages/forum.html" class="primary">
         Forum
       </a>
           </li>
-        <li class="primary  ">
-      <a href="../blog/index.html" class="primary">
+        <li class="primary  active">
+      <a href="index.html" class="primary">
         Blog
       </a>
           </li>
@@ -1891,149 +1890,39 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2021-10-08 09:54)
+  (2021-11-02 18:53)
 </div>
 
-<h1>Regions</h1>
-<p>This page displays the total count of deaths, case numbers, and vaccinations for regions of the world.</p>
-<h2>Deaths</h2>
-<p>Here is an interactive map showing the count of total deaths per region:</p>
-<div class="livemark-chart" style="overflow-x: auto">
-  <div id="livemark-chart-1">
+<h1>Blog</h1>
+<div class="livemark-blog-item">
+  <h2><a href="2021-11-02-five-millions-deaths.html">COVID-19 took more than 5 millions lives</a></h2>
+  <div class="row">
+    <div class="col-8">
+      <p>
+        <strong>
+          By Evgeny Karev
+          on 2021-11-02
+        </strong>
+      </p>
+      According to the official data, COVID-19 is now responsible for more than 5 millions deaths. It passed this mark yesterday on November the 1st. As known, there are some <a href="../pages/mortality.html">undercount</a> in official data so the real figures are even bigger.
+      <a href="2021-11-02-five-millions-deaths.html">Read more »</a>
+    </div>
+    <div class="col-4">
+      <img src="../assets/covid.jpg">
+    </div>
   </div>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  vegaEmbed('#livemark-chart-1', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/reports/regions.csv"}, "key": "location", "fields": ["iso_code", "location", "total_deaths_per_million"]}}, {"calculate": "\'#card=\' + datum.iso_code", "as": "url"}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_deaths_per_million", "type": "quantitative", "scale": {"scheme": "reds"}, "legend": {"title": "Deaths/1M"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_deaths_per_million", "type": "quantitative", "title": "Deaths/1M"}], "href": {"field": "url", "type": "nominal"}}}'))
-})
-</script>
-
-<h2>Total Cases</h2>
-<p>Here is an interactive map showing the count of total cases per region:</p>
-<div class="livemark-chart" style="overflow-x: auto">
-  <div id="livemark-chart-2">
-  </div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  vegaEmbed('#livemark-chart-2', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/reports/regions.csv"}, "key": "location", "fields": ["iso_code", "location", "total_cases_per_million"]}}, {"calculate": "\'#card=\' + datum.iso_code", "as": "url"}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_cases_per_million", "type": "quantitative", "scale": {"scheme": "blues"}, "legend": {"title": "Cases/1M"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_cases_per_million", "type": "quantitative", "title": "Cases/1M"}], "href": {"field": "url", "type": "nominal"}}}'))
-})
-</script>
-
-<h2>Vaccinations</h2>
-<p>Here is an interactive map showing the amount of total shots taken per region:</p>
-<div class="livemark-chart" style="overflow-x: auto">
-  <div id="livemark-chart-3">
-  </div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  vegaEmbed('#livemark-chart-3', JSON.parse('{"width": 800, "height": 400, "data": {"url": "../data/spatial/regions.json", "format": {"property": "features"}}, "transform": [{"lookup": "properties.CONTINENT", "from": {"data": {"url": "../data/reports/regions.csv"}, "key": "location", "fields": ["iso_code", "location", "total_vaccinations_per_hundred"]}}, {"calculate": "\'#card=\' + datum.iso_code", "as": "url"}], "projection": {"type": "mercator"}, "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_vaccinations_per_hundred", "type": "quantitative", "scale": {"scheme": "greens"}, "legend": {"title": "Shots/100"}}, "tooltip": [{"field": "properties.CONTINENT", "type": "nominal", "title": "Region"}, {"field": "total_vaccinations_per_hundred", "type": "quantitative", "title": "Shots/100"}], "href": {"field": "url", "type": "nominal"}}}'))
-})
-</script>
-
-<h2>Locations</h2>
-<p>Here is a summary of the key pandemic data by region:</p>
-<div class="livemark-table" style="overflow-x: auto">
-  <div style="width: 100%">
-    <table id="livemark-table-1">
-      <thead>
-        <tr>
-                    <th>Location</th>
-                    <th>Deaths</th>
-                    <th>Deaths/1M</th>
-                    <th>Cases</th>
-                    <th>Cases/1M</th>
-                    <th>Shots</th>
-                    <th>Shots/100</th>
-                  </tr>
-      </thead>
-      <tbody>
-                <tr>
-                    <td><a href="#card=OWID_AFR">Africa</a></td>
-                    <td>218395</td>
-                    <td>159.008</td>
-                    <td>8503442</td>
-                    <td>6191.136</td>
-                    <td>191329421</td>
-                    <td>13.93</td>
-                  </tr>
-                <tr>
-                    <td><a href="#card=OWID_ASI">Asia</a></td>
-                    <td>1176994</td>
-                    <td>251.578</td>
-                    <td>79449529</td>
-                    <td>16982.038</td>
-                    <td>4779704333</td>
-                    <td>102.16</td>
-                  </tr>
-                <tr>
-                    <td><a href="#card=OWID_EUR">Europe</a></td>
-                    <td>1309961</td>
-                    <td>1749.033</td>
-                    <td>65155586</td>
-                    <td>86994.401</td>
-                    <td>858269549</td>
-                    <td>114.59</td>
-                  </tr>
-                <tr>
-                    <td><a href="#card=OWID_NAM">North America</a></td>
-                    <td>1127035</td>
-                    <td>1889.156</td>
-                    <td>55372775</td>
-                    <td>92816.816</td>
-                    <td>688564782</td>
-                    <td>115.42</td>
-                  </tr>
-                <tr>
-                    <td><a href="#card=OWID_OCE">Oceania</a></td>
-                    <td>2829</td>
-                    <td>65.456</td>
-                    <td>261927</td>
-                    <td>6060.326</td>
-                    <td>45328510</td>
-                    <td>104.88</td>
-                  </tr>
-                <tr>
-                    <td><a href="#card=OWID_SAM">South America</a></td>
-                    <td>1170409</td>
-                    <td>2695.179</td>
-                    <td>38384940</td>
-                    <td>88391.581</td>
-                    <td>509164617</td>
-                    <td>117.25</td>
-                  </tr>
-              </tbody>
-      <tfoot>
-        <tr>
-                    <th>Location</th>
-                    <th>Deaths</th>
-                    <th>Deaths/1M</th>
-                    <th>Cases</th>
-                    <th>Cases/1M</th>
-                    <th>Shots</th>
-                    <th>Shots/100</th>
-                  </tr>
-      </tfoot>
-    </table>
-  </div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  $('#livemark-table-1').DataTable(JSON.parse('{"order": [[1, "desc"]], "columns": [{"name": "Location", "data": "link", "type": "string"}, {"name": "Deaths", "data": "total_deaths"}, {"name": "Deaths/1M", "data": "total_deaths_per_million"}, {"name": "Cases", "data": "total_cases"}, {"name": "Cases/1M", "data": "total_cases_per_million"}, {"name": "Shots", "data": "total_vaccinations"}, {"name": "Shots/100", "data": "total_vaccinations_per_hundred"}], "columnDefs": [{"targets": "_all", "orderSequence": ["desc", "asc"]}]}'))
-})
-</script>
 
 <div id="livemark-signs">
   <div>
         <div class="next">
-      <a href="/pages/countries.html">
-        Countries »
+      <a href="/blog/2021-11-02-five-millions-deaths.html">
+        COVID-19 took more than 5 millions lives »
       </a>
     </div>
             <div class="prev">
-      <a href="/index.html">
-        « COVID-19 Tracker
+      <a href="/pages/forum.html">
+        « Forum
       </a>
     </div>
       </div>
@@ -2085,7 +1974,7 @@ document.addEventListener("DOMContentLoaded", function(){
       </a>
     </li>
         <li>
-      <a href="https://github.com/frictionlessdata/covid-tracker/edit/main/pages/regions.md" target="_blank">
+      <a href="https://github.com/frictionlessdata/covid-tracker/edit/main/blog/index.md" target="_blank">
         Edit
       </a>
     </li>
@@ -2152,10 +2041,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
-<script src="https://unpkg.com/vega@5.20.2/build/vega.min.js"></script>
-<script src="https://unpkg.com/vega-lite@5.1.0/build/vega-lite.min.js"></script>
-<script src="https://unpkg.com/vega-embed@6.18.2/build/vega-embed.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 <script src="https://unpkg.com/tocbot@4.12.3/dist/tocbot.min.js"></script>
 <script>
 
@@ -2436,55 +2321,55 @@ document.addEventListener("DOMContentLoaded", function () {
           'pages/regions': {
           'name': 'Regions',
           'path': 'pages/regions',
-          'relpath': 'regions',
+          'relpath': '../pages/regions',
           'text': "# Regions This page displays the total count of deaths, case numbers, and vaccinations for regions of the world. ## Deaths Here is an interactive map showing the count of total deaths per region: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/reports/regions.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_deaths_per_million\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Total Cases Here is an interactive map showing the count of total cases per region: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/reports/regions.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_cases_per_million\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"blues\"}, \"legend\": { \"title\": \"Cases/1M\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Vaccinations Here is an interactive map showing the amount of total shots taken per region: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/regions.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.CONTINENT\", \"from\": { \"data\": { \"url\": \"../data/reports/regions.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_vaccinations_per_hundred\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.CONTINENT\", \"type\": \"nominal\", \"title\": \"Region\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Locations Here is a summary of the key pandemic data by region: ```yaml table data: data/reports/regions.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: link type: string - name: Deaths data: total_deaths - name: Deaths/1M data: total_deaths_per_million - name: Cases data: total_cases - name: Cases/1M data: total_cases_per_million - name: Shots data: total_vaccinations - name: Shots/100 data: total_vaccinations_per_hundred ```",
       },
           'pages/countries': {
           'name': 'Countries',
           'path': 'pages/countries',
-          'relpath': 'countries',
-          'text': "# Countries This page displays the total count of deaths, case numbers, and vaccinations for countries of the world. ## Deaths Here is an interactive map showing the count of total deaths per country: ```json chart {% with field=\u0027total_deaths_per_million\u0027, title=\u0027Deaths/1M\u0027, scheme=\u0027reds\u0027 %} {% include \u0027blocks/charts/countries.json\u0027 %} {% endwith %} ``` ## Total Cases Here is an interactive map showing the count of total cases per country: ```json chart {% with field=\u0027total_cases_per_million\u0027, title=\u0027Cases/1M\u0027, scheme=\u0027blues\u0027 %} {% include \u0027blocks/charts/countries.json\u0027 %} {% endwith %} ``` ## Vaccinations Here is an interactive map showing the amount of total shots taken per country: ```json chart {% with field=\u0027total_vaccinations_per_hundred\u0027, title=\u0027Shots/100\u0027, scheme=\u0027greens\u0027 %} {% include \u0027blocks/charts/countries.json\u0027 %} {% endwith %} ``` ## Locations Here is a summary of the key pandemic data by country: ```yaml table {% with type=\u0027countries\u0027 %} {% include \u0027blocks/tables/locations.yaml\u0027 %} {% endwith %} ```",
+          'relpath': '../pages/countries',
+          'text': "# Countries This page displays the total count of deaths, case numbers, and vaccinations for countries of the world. ## Deaths Here is an interactive map showing the count of total deaths per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_deaths_per_million\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"reds\"}, \"legend\": { \"title\": \"Deaths/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_deaths_per_million\", \"type\": \"quantitative\", \"title\": \"Deaths/1M\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Total Cases Here is an interactive map showing the count of total cases per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_cases_per_million\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"blues\"}, \"legend\": { \"title\": \"Cases/1M\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_cases_per_million\", \"type\": \"quantitative\", \"title\": \"Cases/1M\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Vaccinations Here is an interactive map showing the amount of total shots taken per country: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/countries.csv\" }, \"key\": \"location\", \"fields\": [\"iso_code\", \"location\", \"total_vaccinations_per_hundred\"] } }, { \"calculate\": \"\u0027#card=\u0027 + datum.iso_code\", \"as\": \"url\" } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"greens\"}, \"legend\": { \"title\": \"Shots/100\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"total_vaccinations_per_hundred\", \"type\": \"quantitative\", \"title\": \"Shots/100\" } ], \"href\": {\"field\": \"url\", \"type\": \"nominal\"} } } ``` ## Locations Here is a summary of the key pandemic data by country: ```yaml table data: data/reports/countries.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: link type: string - name: Deaths data: total_deaths - name: Deaths/1M data: total_deaths_per_million - name: Cases data: total_cases - name: Cases/1M data: total_cases_per_million - name: Shots data: total_vaccinations - name: Shots/100 data: total_vaccinations_per_hundred ```",
       },
           'pages/mortality': {
           'name': 'Excess Mortality',
           'path': 'pages/mortality',
-          'relpath': 'mortality',
-          'text': "# Excess Mortality **Excess mortality** is a [term](https://odihpn.org/resources/interpreting-and-using-mortality-data-in-humanitarian-emergencies/) used in epidemiology and public health that refers to the number of deaths from all causes during a crisis above and beyond what we would have expected to see under \u2018normal\u2019 conditions. ## Deaths Here is a representation of excess mortality per country on the world map: ```json chart {% with %} {% include \u0027blocks/charts/mortality.json\u0027 %} {% endwith %} ``` ## Locations Here is a list of excess deaths by countries: ```yaml table {% with %} {% include \u0027blocks/tables/mortality.yaml\u0027 %} {% endwith %} ``` ## Methodology This page is based on researh by [Karlinsky \u0026 Kobak](https://github.com/dkobak/excess-mortality). The numbers are based on the World Mortality Dataset and the idea the comparing expected mortality trends with real mortality during pandemic we can calculate the real deaths amount as some countries might provide innacurate data.",
+          'relpath': '../pages/mortality',
+          'text': "# Excess Mortality **Excess mortality** is a [term](https://odihpn.org/resources/interpreting-and-using-mortality-data-in-humanitarian-emergencies/) used in epidemiology and public health that refers to the number of deaths from all causes during a crisis above and beyond what we would have expected to see under \u2018normal\u2019 conditions. ## Deaths Here is a representation of excess mortality per country on the world map: ```json chart { \"width\": 800, \"height\": 400, \"data\": { \"url\": \"../data/spatial/countries.json\", \"format\": {\"property\": \"features\"} }, \"transform\": [ { \"lookup\": \"properties.name\", \"from\": { \"data\": { \"url\": \"../data/reports/mortality.csv\" }, \"key\": \"Country\", \"fields\": [\"Country\", \"Excess per 100k\"] } } ], \"projection\": {\"type\": \"mercator\"}, \"mark\": { \"type\": \"geoshape\", \"stroke\": \"#757575\", \"strokeWidth\": 0.5 }, \"encoding\": { \"color\": { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"scale\": {\"scheme\": \"Reds\"}, \"legend\": { \"title\": \"Deaths/100k\" } }, \"tooltip\": [ { \"field\": \"properties.name\", \"type\": \"nominal\", \"title\": \"Country\" }, { \"field\": \"Excess per 100k\", \"type\": \"quantitative\", \"title\": \"Deaths/100k\" } ] } } ``` ## Locations Here is a list of excess deaths by countries: ```yaml table data: data/reports/mortality.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: Country - name: Deaths data: Excess deaths - name: Deaths/100k data: Excess per 100k - name: Undercount data: Undercount ratio type: num - name: Last Updated data: Data until ``` ## Methodology This page is based on researh by [Karlinsky \u0026 Kobak](https://github.com/dkobak/excess-mortality). The numbers are based on the World Mortality Dataset and the idea the comparing expected mortality trends with real mortality during pandemic we can calculate the real deaths amount as some countries might provide innacurate data.",
       },
           'pages/immunity': {
           'name': 'Rolling Immunity',
           'path': 'pages/immunity',
-          'relpath': 'immunity',
-          'text': "# Rolling Immunity ```yaml remark type: warning text: This website is data journalism rather than scientific work. Immunity/antibodies analysis is a complicated matter. You can read more about it, for example, in this scientific paper (DOI). ``` **Rolling immunity** (in terms of this page) is a collective immunity metric based on factual uses cases (counted using deaths) and vaccination shots timeline and the fact that individual immunity decreases over time. This page is about finding relations with pandemic outbreaks and the rolling immunity concept. ## Examples To showcase the idea of rolling immunity, we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast of a vaccination campaign leads to outbreaks due to low levels of rolling immunity. This USA case **might** be showing that the vaccination level wasn\u0027t enough. ### Israel ```json chart {% with code=\"ISR\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### USA ```json chart {% with code=\"USA\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### UK ```json chart {% with code=\"GBR\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### Germany ```json chart {% with code=\"DEU\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ### Brasil ```json chart {% with code=\"BRA\" %} {% include \u0027blocks/charts/immunity.json\u0027 %} {% endwith %} ``` ## Locations Explore charts for other countries and [share](forum.html) what you think. Take into account that this methodology is very approximate as the numbers depend on the healthcare and vaccines efficacy in the exact country. This table uses 7 day moving averages for deaths and cases: ```yaml table {% with %} {% include \u0027blocks/tables/immunity.yaml\u0027 %} {% endwith %} ``` ## Methodology We use oversimplified rolling immunity formula for a date. We use deaths instead of use cases to overcome the problem of inaccurate use cases reporting. The exact ratio is configurable; we use 1 death for 100 use cases based on known death rate for now around 50 use cases per a death and estimating unreported use cases as 50 use cases per 1 death: ``` rolling_immunity_for_a_date = (estimated_new_cases + new_vaccinations) / population estimated_new_cases = new_deaths * 100 ``` We count one case to be equal to one vaccination shot. For the model we use the decreasing ration `(180 - days)/180` meaning that you will lose all the immunity you had acquired in 180 days. Again, this parameter is configurable and might be changed in other models. ``` rolling_immunity_for_a_date = 100% rolling_immunity_for_a_date_in_180_days = 0% ``` Please take a look at the [full algorithm](data.html).",
+          'relpath': '../pages/immunity',
+          'text': "# Rolling Immunity ```yaml remark type: warning text: This website is data journalism rather than scientific work. Immunity/antibodies analysis is a complicated matter. You can read more about it, for example, in this scientific paper (DOI). ``` **Rolling immunity** (in terms of this page) is a collective immunity metric based on factual uses cases (counted using deaths) and vaccination shots timeline and the fact that individual immunity decreases over time. This page is about finding relations with pandemic outbreaks and the rolling immunity concept. ## Examples To showcase the idea of rolling immunity, we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast of a vaccination campaign leads to outbreaks due to low levels of rolling immunity. This USA case **might** be showing that the vaccination level wasn\u0027t enough. ### Israel ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/ISR/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### USA ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/USA/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### UK ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/GBR/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### Germany ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/DEU/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ### Brasil ```json chart { \"width\": 800, \"data\": {\"url\": \"../data/locations/BRA/timeline.csv\"}, \"resolve\": {\"scale\": {\"y\": \"independent\"}}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"} }, \"layer\": [ { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"new_deaths_per_million\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"color\": {\"value\": \"red\"} } }, { \"mark\": \"line\", \"encoding\": { \"y\": {\"field\": \"rolling_immunity\", \"type\": \"quantitative\", \"scale\": {\"domain\": [0, 1]}}, \"color\": {\"value\": \"green\"} } } ] } ``` ## Locations Explore charts for other countries and [share](forum.html) what you think. Take into account that this methodology is very approximate as the numbers depend on the healthcare and vaccines efficacy in the exact country. This table uses 7 day moving averages for deaths and cases: ```yaml table data: data/reports/immunity.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: link - name: Immunity data: rolling_immunity - name: Deaths/1M data: new_deaths_smoothed_per_million - name: Cases/1M data: new_cases_smoothed_per_million ``` ## Methodology We use oversimplified rolling immunity formula for a date. We use deaths instead of use cases to overcome the problem of inaccurate use cases reporting. The exact ratio is configurable; we use 1 death for 100 use cases based on known death rate for now around 50 use cases per a death and estimating unreported use cases as 50 use cases per 1 death: ``` rolling_immunity_for_a_date = (estimated_new_cases + new_vaccinations) / population estimated_new_cases = new_deaths * 100 ``` We count one case to be equal to one vaccination shot. For the model we use the decreasing ration `(180 - days)/180` meaning that you will lose all the immunity you had acquired in 180 days. Again, this parameter is configurable and might be changed in other models. ``` rolling_immunity_for_a_date = 100% rolling_immunity_for_a_date_in_180_days = 0% ``` Please take a look at the [full algorithm](data.html).",
       },
           'pages/data': {
           'name': 'Data Collection',
           'path': 'pages/data',
-          'relpath': 'data',
+          'relpath': '../pages/data',
           'text': "# Data Collection All data on this site was generated (cleaned, analysed) using the [Frictionless Python Framework](https://framework.frictionlessdata.io/) on openly availabe data. The data is from [Our World in Data](https://ourworldindata.org/coronavirus) and [Excess Mortality](https://github.com/dkobak/excess-mortality). Read on to see the Frictionless code that was used to analyse the data. ## Extract First of all, we need to extract all the data from [Our World in Data](https://ourworldindata.org/coronavirus) and [Excess Mortality](https://github.com/dkobak/excess-mortality) repositories: ```python task id=data-extract from frictionless import Resource OWID = \"https://covid.ourworldindata.org/data\" GITHUB = \"https://raw.githubusercontent.com\" # Timeline resource = Resource(f\"{OWID}/owid-covid-data.csv\") resource.write(\"data/timeline.csv\") print(f\"Extracted: timeline\") # Latest resource = Resource(f\"{OWID}/latest/owid-covid-latest.csv\") resource.write(\"data/latest.csv\") print(f\"Extracted: latest\") # Mortality resource = Resource(f\"{GITHUB}/dkobak/excess-mortality/main/excess-mortality.csv\") resource.write(\"data/reports/mortality.csv\") print(f\"Extracted: reports/mortality\") ``` ## Transform We will split the data by location and calculate rolling immunity: ```python task id=data-transform-timeline from pprint import pprint from frictionless import Resource, Detector FRAME = 180 detector = Detector(sample_size=10000) # Helpers def calculate_rolling_immunity(group): total_units = 0 for number, row in enumerate(reversed(group[-FRAME:]), start=1): if not row[\"population\"]: return 0 new_vaccinations = float(row[\"new_vaccinations\"] or 0) new_cases = float(row[\"new_deaths\"] or 0) * 100 # new_cases = float(row[\"new_cases\"] or 0) * 2 row_units = (new_cases + new_vaccinations) * ((FRAME - number + 1) / FRAME) row_units = row_units / float(row[\"population\"]) total_units += row_units return round(total_units, 2) def write_group(group): if group: row = group[-1].copy() path = f\"data/locations/{row[\u0027iso_code\u0027]}/timeline.csv\" Resource(group, detector=detector).write(path) if (row[\"population\"] or 0) \u003e 1000000: row[\"link\"] = f\"{row[\u0027location\u0027]}\" immunity.append(row) print(f\"Transformed timeline: {row[\u0027location\u0027]}\") # General immunity = [] with Resource(\"data/timeline.csv\", detector=detector) as resource: code = None group = [] for row in resource: if code != row[\"iso_code\"]: write_group(group) code = row[\"iso_code\"] group = [] row = row.to_dict() row[\"rolling_immunity\"] = calculate_rolling_immunity(group) group.append(row) write_group(group) Resource(immunity).write(\"data/reports/immunity.csv\") ``` Also, we need to transform `data/latest.csv`: ```python task id=data-transform-latest from frictionless import Resource WORLD = [\"OWID_WRL\"] REGIONS = [\"OWID_AFR\", \"OWID_ASI\", \"OWID_EUR\", \"OWID_OCE\", \"OWID_NAM\", \"OWID_SAM\"] # General world = [] regions = [] countries = [] with Resource(\"data/latest.csv\") as resource: for row in resource: row = row.to_dict() code = row[\"iso_code\"] row[\"link\"] = f\"{row[\u0027location\u0027]}\" path = f\"data/locations/{code}/latest.csv\" Resource([row]).write(path) if code in WORLD: world.append(row) elif code in REGIONS: regions.append(row) elif not code.startswith(\"OWID\"): countries.append(row) Resource(world).write(\"data/reports/world.csv\") Resource(regions).write(\"data/reports/regions.csv\") Resource(countries).write(\"data/reports/countries.csv\") print(\"Transformed latest\") ``` ## Load To show different locations as cards we render them: ```python task id=data-load from frictionless import Resource from livemark.plugins.cards import CardsPlugin # General CardsPlugin.delete_cards() with Resource(\"data/latest.csv\") as resource: for row in resource: code = row[\"iso_code\"] CardsPlugin.create_card(\"cards/location.md\", code=code, data=row) print(f\"Loaded: {row[\u0027location\u0027]}\") ```",
       },
           'pages/contrib': {
           'name': 'Contribute',
           'path': 'pages/contrib',
-          'relpath': 'contrib',
+          'relpath': '../pages/contrib',
           'text': "# Contribute Welcome! We\u0027re happy you\u0027d like to contribute! This is an open project, and we value contributions from everyone. We use Github as a code and issues hosting platform. To report a bug or propose a new feature, please open an [issue](https://github.com/frictionlessdata/covid-tracker/issues). For pull requests, we would ask you initially create an issue and then create a pull requests linked to this issue. ## Setup To start working on the project clone the repository and enter its directory: ```bash $ git clone git@github.com:frictionlessdata/covid-tracker.git $ cd covid-tracker ``` Create a virtual environment (optional): ```bash $ python3 -m venv .python $ source .python/bin/activate ``` And install livemark: ``` $ pip install livemark ``` ## Install Run the following command to install dependencies: ```bash task id=install pip install -r requirements.txt ``` ## Data To collect the data use the data collection script (run only if you want to update the data): ```bash $ livemark run data ``` See in-detail on the [Data Collection](data.html) page. ## Build \u003e See the Livemark documentation for full details: https://livemark.frictionlessdata.io/ You can then use the command-line interface to build the output HTML file: ```bash $ livemark build ``` Or start a livereload server to automatically reload the output page as you modify the input Markdown document: ```bash $ livemark start ``` ## Deploy The project is deployed automatically to Github Pages on every push to \"main\". That means that the page will automatically be deployed every time there is a change approved from a Pull Request. If you\u0027d like to update Github Issue/PR templates run this command: ```bash task id=github sed -i -E \"s/@(\\w*)/@$(head -n 1 LEAD.md)/\" .github/issue_template.md sed -i -E \"s/@(\\w*)/@$(head -n 1 LEAD.md)/\" .github/pull_request_template.md ```",
       },
           'pages/forum': {
           'name': 'Forum',
           'path': 'pages/forum',
-          'relpath': 'forum',
+          'relpath': '../pages/forum',
           'text': "# Forum",
       },
           'blog/index': {
           'name': 'Blog',
           'path': 'blog/index',
-          'relpath': '../blog/index',
-          'text': "# Blog ```html markup {% for item in document.get_plugin(\u0027blog\u0027).items %} {{ item.document.name }} By {{ item.document.get_plugin(\u0027blog\u0027).author }} on {{ item.document.get_plugin(\u0027blog\u0027).date }} {{ item.document.description }} Read more \u00bb {% endfor %} ```",
+          'relpath': 'index',
+          'text': "# Blog ```html markup COVID-19 took more than 5 millions lives By Evgeny Karev on 2021-11-02 According to the official data, COVID-19 is now responsible for more than 5 millions deaths. It passed this mark yesterday on November the 1st. As known, there are some undercount in official data so the real figures are even bigger. Read more \u00bb ```",
       },
           'blog/2021-11-02-five-millions-deaths': {
           'name': 'COVID-19 took more than 5 millions lives',
           'path': 'blog/2021-11-02-five-millions-deaths',
-          'relpath': '../blog/2021-11-02-five-millions-deaths',
+          'relpath': '2021-11-02-five-millions-deaths',
           'text': "# COVID-19 took more than 5 millions lives According to the official data, COVID-19 is now responsible for more than 5 millions deaths. It passed this mark yesterday on November the 1st. As known, there are some undercount in official data so the real figures are even bigger.",
       },
       };

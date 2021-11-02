@@ -25,6 +25,7 @@ pages:
     - path: pages/data
     - path: pages/contrib
     - path: pages/forum
+    - path: blog/index
 links:
   items:
     - name: Our World in Data

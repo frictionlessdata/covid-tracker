@@ -1883,6 +1883,11 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
         Forum
       </a>
           </li>
+        <li class="primary  ">
+      <a href="../blog/index.html" class="primary">
+        Blog
+      </a>
+          </li>
       </ul>
 </div>
 
@@ -1894,7 +1899,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2021-11-02 06:04)
+  (2021-10-08 17:25)
 </div>
 
 <h1>Forum</h1>
@@ -1905,6 +1910,11 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 
 <div id="livemark-signs">
   <div>
+        <div class="next">
+      <a href="/blog/index.html">
+        Blog »
+      </a>
+    </div>
             <div class="prev">
       <a href="/pages/contrib.html">
         « Contribute
@@ -2361,6 +2371,18 @@ document.addEventListener("DOMContentLoaded", function () {
           'path': 'pages/forum',
           'relpath': 'forum',
           'text': "# Forum",
+      },
+          'blog/index': {
+          'name': 'Blog',
+          'path': 'blog/index',
+          'relpath': '../blog/index',
+          'text': "# Blog ```html markup {% for item in document.get_plugin(\u0027blog\u0027).items %} {{ item.document.name }} By {{ item.document.get_plugin(\u0027blog\u0027).author }} on {{ item.document.get_plugin(\u0027blog\u0027).date }} {{ item.document.description }} Read more \u00bb {% endfor %} ```",
+      },
+          'blog/2021-11-02-five-millions-deaths': {
+          'name': 'COVID-19 took more than 5 millions lives',
+          'path': 'blog/2021-11-02-five-millions-deaths',
+          'relpath': '../blog/2021-11-02-five-millions-deaths',
+          'text': "# COVID-19 took more than 5 millions lives According to the official data, COVID-19 is now responsible for more than 5 millions deaths. It passed this mark yesterday on November the 1st. As known, there are some undercount in official data so the real figures are even bigger.",
       },
       };
   const searchIndex = lunr(function () {
