@@ -11,9 +11,6 @@ site:
   favicon: assets/covid.svg
   styles:
     - style.css
-counter:
-  type: google
-  code: G-FXQ5VVS0NV
 pages:
   items:
     - path: index
