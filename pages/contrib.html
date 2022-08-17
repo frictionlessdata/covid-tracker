@@ -1744,6 +1744,17 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 </style>
 <style>
 
+.nav-tabs {
+    padding-left: 0 !important;
+}
+
+.nav-item {
+    margin-top: 0 !important;
+}
+
+</style>
+<style>
+
 .livemark-task pre:first-child {
   margin-bottom: 0 !important;
   border-bottom: dashed 1px #ccc;
@@ -1824,7 +1835,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
       <a href="https://github.com/frictionlessdata/covid-tracker/edit/main/pages/contrib.md" target="_blank">Edit page </a> in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-    (2022-08-16 06:08)
+    (2022-08-17 06:10)
 </div>
 
 <h1>Contribute</h1>
@@ -1832,46 +1843,46 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <p>We use Github as a code and issues hosting platform. To report a bug or propose a new feature, please open an <a href="https://github.com/frictionlessdata/covid-tracker/issues">issue</a>. For pull requests, we would ask you initially create an issue and then create a pull requests linked to this issue.</p>
 <h2>Setup</h2>
 <p>To start working on the project clone the repository and enter its directory:</p>
-<pre><code class="language-bash">$ git clone git@github.com:frictionlessdata/covid-tracker.git
+<div><pre><code class="language-bash">$ git clone git@github.com:frictionlessdata/covid-tracker.git
 $ cd covid-tracker
 </code></pre>
-<p>Create a virtual environment (optional):</p>
-<pre><code class="language-bash">$ python3 -m venv .python
+</div><p>Create a virtual environment (optional):</p>
+<div><pre><code class="language-bash">$ python3 -m venv .python
 $ source .python/bin/activate
 </code></pre>
-<p>And install livemark:</p>
-<pre><code>$ pip install livemark
+</div><p>And install livemark:</p>
+<div><pre><code>$ pip install livemark
 </code></pre>
-<h2>Install</h2>
+</div><h2>Install</h2>
 <p>Run the following command to install dependencies:</p>
-<div class="livemark-task"><pre><code class="language-bash">$ livemark run install</code></pre>
+<div data-id="install"><div class="livemark-task"><pre><code class="language-bash">$ livemark run install</code></pre>
 
 <pre><code class="language-bash">pip install -r requirements.txt
 </code></pre>
-</div><h2>Data</h2>
+</div></div><h2>Data</h2>
 <p>To collect the data use the data collection script (run only if you want to update the data):</p>
-<pre><code class="language-bash">$ livemark run data
+<div><pre><code class="language-bash">$ livemark run data
 </code></pre>
-<p>See in-detail on the <a href="data.html">Data Collection</a> page.</p>
+</div><p>See in-detail on the <a href="data.html">Data Collection</a> page.</p>
 <h2>Build</h2>
 <blockquote>
 <p>See the Livemark documentation for full details: <a href="https://livemark.frictionlessdata.io/">https://livemark.frictionlessdata.io/</a></p>
 </blockquote>
 <p>You can then use the command-line interface to build the output HTML file:</p>
-<pre><code class="language-bash">$ livemark build
+<div><pre><code class="language-bash">$ livemark build
 </code></pre>
-<p>Or start a livereload server to automatically reload the output page as you modify the input Markdown document:</p>
-<pre><code class="language-bash">$ livemark start
+</div><p>Or start a livereload server to automatically reload the output page as you modify the input Markdown document:</p>
+<div><pre><code class="language-bash">$ livemark start
 </code></pre>
-<h2>Deploy</h2>
+</div><h2>Deploy</h2>
 <p>The project is deployed automatically to Github Pages on every push to "main". That means that the page will automatically be deployed every time there is a change approved from a Pull Request.</p>
 <p>If you'd like to update Github Issue/PR templates run this command:</p>
-<div class="livemark-task"><pre><code class="language-bash">$ livemark run github</code></pre>
+<div data-id="github"><div class="livemark-task"><pre><code class="language-bash">$ livemark run github</code></pre>
 
 <pre><code class="language-bash">sed -i -E "s/@(\w*)/@$(head -n 1 LEAD.md)/" .github/issue_template.md
 sed -i -E "s/@(\w*)/@$(head -n 1 LEAD.md)/" .github/pull_request_template.md
 </code></pre>
-</div>
+</div></div>
 
 <div id="livemark-signs">
   <div>

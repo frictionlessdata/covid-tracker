@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="To showcase the idea of rolling immunity, we use 5 countries having different vaccination timeframes. The Israel use case **might** be showing that having too fast of a vaccination campaign leads to outbreaks due to low levels of rolling immunity. This USA case **might** be showing that the vaccination level wasn't enough.">
+<meta name="description" content="To showcase the idea of rolling immunity, we use 5 countries having different vaccination timeframes. The Israel use case  might  be showing that having too fast of a vaccination campaign leads to outbreaks due to low levels of rolling immunity. This USA case  might  be showing that the vaccination level wasn't enough.">
 <meta name="keywords" content="rolling,immunity">
 <link rel="icon" href="../assets/covid.svg">
 <title>Rolling Immunity | COVID-19 Tracker</title>
@@ -1745,6 +1745,17 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 </style>
 <style>
 
+.nav-tabs {
+    padding-left: 0 !important;
+}
+
+.nav-item {
+    margin-top: 0 !important;
+}
+
+</style>
+<style>
+
 .livemark-task pre:first-child {
   margin-bottom: 0 !important;
   border-bottom: dashed 1px #ccc;
@@ -1825,19 +1836,19 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
       <a href="https://github.com/frictionlessdata/covid-tracker/edit/main/pages/immunity.md" target="_blank">Edit page </a> in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-    (2022-08-16 06:08)
+    (2022-08-17 06:10)
 </div>
 
 <h1>Rolling Immunity</h1>
-<div class="livemark-remark">
+<div><div class="livemark-remark">
   <div class="alert alert-warning" role="alert">
     This website is data journalism rather than scientific work. Immunity/antibodies analysis is a complicated matter. You can read more about it, for example, in this <a href="https://www.nature.com/articles/s41591-021-01377-8">scientific paper</a><a href="https://doi.org/10.1038/s41591-021-01377-8"> (DOI)</a>.
   </div>
-</div><p><strong>Rolling immunity</strong> (in terms of this page) is a collective immunity metric based on factual uses cases (counted using deaths) and vaccination shots timeline and the fact that individual immunity decreases over time.  This page is about finding relations with pandemic outbreaks and the rolling immunity concept.</p>
+</div></div><p><strong>Rolling immunity</strong> (in terms of this page) is a collective immunity metric based on factual uses cases (counted using deaths) and vaccination shots timeline and the fact that individual immunity decreases over time.  This page is about finding relations with pandemic outbreaks and the rolling immunity concept.</p>
 <h2>Examples</h2>
 <p>To showcase the idea of rolling immunity, we use 5 countries having different vaccination timeframes. The Israel use case <strong>might</strong> be showing that having too fast of a vaccination campaign leads to outbreaks due to low levels of rolling immunity. This USA case <strong>might</strong> be showing that the vaccination level wasn't enough.</p>
 <h3>Israel</h3>
-<div class="livemark-chart" style="overflow-x: auto">
+<div><div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-1">
   </div>
 </div>
@@ -1847,8 +1858,8 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h3>USA</h3>
-<div class="livemark-chart" style="overflow-x: auto">
+</div><h3>USA</h3>
+<div><div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-2">
   </div>
 </div>
@@ -1858,8 +1869,8 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h3>UK</h3>
-<div class="livemark-chart" style="overflow-x: auto">
+</div><h3>UK</h3>
+<div><div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-3">
   </div>
 </div>
@@ -1869,8 +1880,8 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h3>Germany</h3>
-<div class="livemark-chart" style="overflow-x: auto">
+</div><h3>Germany</h3>
+<div><div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-4">
   </div>
 </div>
@@ -1880,8 +1891,8 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h3>Brasil</h3>
-<div class="livemark-chart" style="overflow-x: auto">
+</div><h3>Brasil</h3>
+<div><div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-5">
   </div>
 </div>
@@ -1891,9 +1902,9 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h2>Locations</h2>
+</div><h2>Locations</h2>
 <p>Explore charts for other countries and <a href="forum.html">share</a> what you think. Take into account that this methodology is very approximate as the numbers depend on the healthcare and vaccines efficacy in the exact country. This table uses 7 day moving averages for deaths and cases:</p>
-<div class="livemark-table" style="overflow-x: auto">
+<div><div class="livemark-table" style="overflow-x: auto">
   <div style="width: 100%">
     <table id="livemark-table-1">
       <thead>
@@ -2955,16 +2966,16 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h2>Methodology</h2>
+</div><h2>Methodology</h2>
 <p>We use oversimplified rolling immunity formula for a date. We use deaths instead of use cases to overcome the problem of inaccurate use cases reporting. The exact ratio is configurable; we use 1 death for 100 use cases based on known death rate for now around 50 use cases per a death and estimating unreported use cases as 50 use cases per 1 death:</p>
-<pre><code>rolling_immunity_for_a_date = (estimated_new_cases + new_vaccinations) / population
+<div><pre><code>rolling_immunity_for_a_date = (estimated_new_cases + new_vaccinations) / population
 estimated_new_cases = new_deaths * 100
 </code></pre>
-<p>We count one case to be equal to one vaccination shot. For the model we use the decreasing ration <code>(180 - days)/180</code> meaning that you will lose all the immunity you had acquired in 180 days. Again, this parameter is configurable and might be changed in other models.</p>
-<pre><code>rolling_immunity_for_a_date = 100%
+</div><p>We count one case to be equal to one vaccination shot. For the model we use the decreasing ration <code>(180 - days)/180</code> meaning that you will lose all the immunity you had acquired in 180 days. Again, this parameter is configurable and might be changed in other models.</p>
+<div><pre><code>rolling_immunity_for_a_date = 100%
 rolling_immunity_for_a_date_in_180_days = 0%
 </code></pre>
-<p>Please take a look at the <a href="data.html">full algorithm</a>.</p>
+</div><p>Please take a look at the <a href="data.html">full algorithm</a>.</p>
 
 <div id="livemark-signs">
   <div>

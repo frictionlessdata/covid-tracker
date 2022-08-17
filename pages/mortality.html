@@ -1745,6 +1745,17 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 </style>
 <style>
 
+.nav-tabs {
+    padding-left: 0 !important;
+}
+
+.nav-item {
+    margin-top: 0 !important;
+}
+
+</style>
+<style>
+
 .livemark-task pre:first-child {
   margin-bottom: 0 !important;
   border-bottom: dashed 1px #ccc;
@@ -1825,14 +1836,14 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
       <a href="https://github.com/frictionlessdata/covid-tracker/edit/main/pages/mortality.md" target="_blank">Edit page </a> in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-    (2022-08-16 06:08)
+    (2022-08-17 06:10)
 </div>
 
 <h1>Excess Mortality</h1>
 <p><strong>Excess mortality</strong> is a <a href="https://odihpn.org/resources/interpreting-and-using-mortality-data-in-humanitarian-emergencies/">term</a> used in epidemiology and public health that refers to the number of deaths from all causes during a crisis above and beyond what we would have expected to see under ‘normal’ conditions.</p>
 <h2>Deaths</h2>
 <p>Here is a representation of excess mortality per country on the world map:</p>
-<div class="livemark-chart" style="overflow-x: auto">
+<div><div class="livemark-chart" style="overflow-x: auto">
   <div id="livemark-chart-1">
   </div>
 </div>
@@ -1842,9 +1853,9 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h2>Locations</h2>
+</div><h2>Locations</h2>
 <p>Here is a list of excess deaths by countries:</p>
-<div class="livemark-table" style="overflow-x: auto">
+<div><div class="livemark-table" style="overflow-x: auto">
   <div style="width: 100%">
     <table id="livemark-table-1">
       <thead>
@@ -2716,7 +2727,7 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 </script>
 
-<h2>Methodology</h2>
+</div><h2>Methodology</h2>
 <p>This page is based on researh by <a href="https://github.com/dkobak/excess-mortality">Karlinsky &amp; Kobak</a>. The numbers are based on the World Mortality Dataset and the idea the comparing expected mortality trends with real mortality during pandemic we can calculate the real deaths amount as some countries might provide innacurate data.</p>
 
 <div id="livemark-signs">
