@@ -99,7 +99,7 @@ world = []
 regions = []
 countries = []
 with Resource("data/latest.csv") as resource:
-    for row in resource:
+    for row in resource.row_stream:
         row = row.to_dict()
         code = row["iso_code"]
         row["link"] = f"<a href='#card={code}'>{row['location']}</a>"
