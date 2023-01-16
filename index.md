@@ -1,6 +1,6 @@
 # COVID-19 Tracker
 
-[![Build](https://img.shields.io/github/workflow/status/frictionlessdata/covid-tracker/general/main)](https://github.com/frictionlessdata/covid-tracker/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/frictionlessdata/covid-tracker/general.yaml?branch=main)](https://github.com/frictionlessdata/covid-tracker/actions)
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/covid-tracker)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
