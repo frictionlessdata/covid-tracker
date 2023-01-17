@@ -129,7 +129,7 @@ from livemark.plugins.cards import CardsPlugin
 
 CardsPlugin.delete_cards()
 with Resource("data/latest.csv") as resource:
-    for row in resource:
+    for row in resource.row_stream:
         code = row["iso_code"]
         CardsPlugin.create_card("cards/location.md", code=code, data=row)
         print(f"Loaded: {row['location']}")
