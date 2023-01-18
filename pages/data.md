@@ -73,7 +73,7 @@ immunity = []
 with Resource("data/timeline.csv", detector=detector) as resource:
     code = None
     group = []
-    for row in resource:
+    for row in resource.row_stream:
         if code != row["iso_code"]:
             write_group(group)
             code = row["iso_code"]
