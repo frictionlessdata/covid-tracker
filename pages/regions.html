@@ -1843,7 +1843,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
       <a href="https://github.com/frictionlessdata/covid-tracker/edit/main/pages/regions.md" target="_blank">Edit page </a> in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-    (2023-01-30 06:10)
+    (2023-01-31 06:10)
 </div>
 
 <h1>Regions</h1>
@@ -1903,57 +1903,57 @@ document.addEventListener("DOMContentLoaded", function(){
       <tbody>
                 <tr>
                     <td><a href="#card=OWID_AFR">Africa</a></td>
-                    <td>257576</td>
-                    <td>180.535</td>
-                    <td>12496724</td>
-                    <td>8758.957</td>
+                    <td>257588</td>
+                    <td>180.543</td>
+                    <td>12499036</td>
+                    <td>8760.577</td>
                     <td>746813684</td>
                     <td>52.34</td>
                   </tr>
                 <tr>
                     <td><a href="#card=OWID_ASI">Asia</a></td>
-                    <td>1605175</td>
-                    <td>339.98</td>
-                    <td>208859351</td>
-                    <td>44236.897</td>
-                    <td>8959283808</td>
-                    <td>189.76</td>
+                    <td>1611826</td>
+                    <td>341.389</td>
+                    <td>208925502</td>
+                    <td>44250.908</td>
+                    <td>8964414090</td>
+                    <td>189.87</td>
                   </tr>
                 <tr>
                     <td><a href="#card=OWID_EUR">Europe</a></td>
-                    <td>2021409</td>
-                    <td>2714.001</td>
-                    <td>246460776</td>
-                    <td>330905.201</td>
-                    <td>1372818797</td>
+                    <td>2021758</td>
+                    <td>2714.469</td>
+                    <td>246500763</td>
+                    <td>330958.889</td>
+                    <td>1372820847</td>
                     <td>184.32</td>
                   </tr>
                 <tr>
                     <td><a href="#card=OWID_NAM">North America</a></td>
-                    <td>1569416</td>
-                    <td>2614.283</td>
-                    <td>120978079</td>
-                    <td>201521.425</td>
-                    <td>1138634388</td>
-                    <td>189.67</td>
+                    <td>1569663</td>
+                    <td>2614.695</td>
+                    <td>121006614</td>
+                    <td>201568.958</td>
+                    <td>1138744268</td>
+                    <td>189.69</td>
                   </tr>
                 <tr>
                     <td><a href="#card=OWID_OCE">Oceania</a></td>
                     <td>23928</td>
                     <td>531.275</td>
-                    <td>13888342</td>
-                    <td>308363.533</td>
+                    <td>13888454</td>
+                    <td>308366.02</td>
                     <td>80762472</td>
                     <td>179.32</td>
                   </tr>
                 <tr>
                     <td><a href="#card=OWID_SAM">South America</a></td>
-                    <td>1346125</td>
-                    <td>3081.67</td>
-                    <td>67562604</td>
-                    <td>154670.385</td>
-                    <td>949362659</td>
-                    <td>217.34</td>
+                    <td>1346368</td>
+                    <td>3082.227</td>
+                    <td>67583374</td>
+                    <td>154717.934</td>
+                    <td>949435781</td>
+                    <td>217.35</td>
                   </tr>
               </tbody>
       <tfoot>
@@ -2348,7 +2348,7 @@ document.addEventListener("DOMContentLoaded", function () {
           'name': 'COVID-19 Tracker',
           'path': 'index',
           'relpath': '../index',
-          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/actions/workflow/status/frictionlessdata/covid-tracker/general.yaml?branch=main)](https://github.com/frictionlessdata/covid-tracker/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/covid-tracker) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: \"Last data update: 2023-01-29 (this site is being updated on a nightly basis).\" ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. The main COVID-19 data resources we use for this project are [Our World in Data](https://ourworldindata.org/coronavirus) core data and [Excess Mortality](https://github.com/dkobak/excess-mortality) research. ## Status The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken (worldwide): ```html markup Deaths 6.8M Cases 670.2M Vaccinations 13.2B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"tooltip\": [ { \"field\": \"date\", \"type\": \"temporal\", \"title\": \"Date\" }, { \"field\": \"new_deaths\", \"type\": \"quantitative\", \"title\": \"Deaths\" } ] }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"tooltip\": [ { \"field\": \"date\", \"type\": \"temporal\", \"title\": \"Date\" }, { \"field\": \"new_cases\", \"type\": \"quantitative\", \"title\": \"Cases\" } ] }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart shows all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"tooltip\": [ { \"field\": \"date\", \"type\": \"temporal\", \"title\": \"Date\" }, { \"field\": \"new_vaccinations\", \"type\": \"quantitative\", \"title\": \"Shots\" } ] }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Locations Here is a summary of the key pandemic data: ```yaml table data: data/reports/world.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: link type: string - name: Deaths data: total_deaths - name: Deaths/1M data: total_deaths_per_million - name: Cases data: total_cases - name: Cases/1M data: total_cases_per_million - name: Shots data: total_vaccinations - name: Shots/100 data: total_vaccinations_per_hundred ``` ## About The purpose of this site is to display analyzed COVID-19 data in a helpful way. On the homepage, you can find summary data for total counts of death, case numbers, and vaccinations from around the world. There are also separate pages displaying similar data but for specific world [regions](/pages/regions.html) and [countries](/pages/countries.html), as well as displaying calculated data like [excess mortality](/pages/mortality.html) and [rolling immunity](/pages/immunity.html). This site is build on the open source Frictionless Livemark tool, and all data collection information is freely shared on the [data collection page](/pages/data.html). Additionally, all source code for the data visualisations can be found on the [GitHub repository](https://github.com/frictionlessdata/covid-tracker). Finally, this is a community project, and anyone is welcome to [contribute](/pages/contrib.html)!",
+          'text': "# COVID-19 Tracker [![Build](https://img.shields.io/github/actions/workflow/status/frictionlessdata/covid-tracker/general.yaml?branch=main)](https://github.com/frictionlessdata/covid-tracker/actions) [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/covid-tracker) [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133) ```yaml remark type: primary text: \"Last data update: 2023-01-30 (this site is being updated on a nightly basis).\" ``` **Coronavirus disease 2019 (COVID-19)**, also known as [COVID](https://en.wikipedia.org/wiki/COVID-19) and the coronavirus, is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The data dashboard has been created by the Frictionless Data team and it\u0027s open for contributing for anyone who is interested. The main COVID-19 data resources we use for this project are [Our World in Data](https://ourworldindata.org/coronavirus) core data and [Excess Mortality](https://github.com/dkobak/excess-mortality) research. ## Status The main three core metrics we track: total deaths, total cases, and all the vaccination shots taken (worldwide): ```html markup Deaths 6.8M Cases 670.4M Vaccinations 13.3B ``` ## Deaths Here is a timeline of the worldwide deaths caused by the COVID-19 pandemic: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_deaths\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"tooltip\": [ { \"field\": \"date\", \"type\": \"temporal\", \"title\": \"Date\" }, { \"field\": \"new_deaths\", \"type\": \"quantitative\", \"title\": \"Deaths\" } ] }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"red\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"red\"}] } } } ``` ## New Cases The new cases data is less reliable as cases registration really depends on the testing volume and methodology: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_cases\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"tooltip\": [ { \"field\": \"date\", \"type\": \"temporal\", \"title\": \"Date\" }, { \"field\": \"new_cases\", \"type\": \"quantitative\", \"title\": \"Cases\" } ] }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"blue\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"blue\"}] } } } ``` ## Vaccinations The vaccination campaign had been started around January 2021; this chart shows all the shots taken: ```json chart { \"width\": 800, \"data\": {\"url\": \"data/locations/OWID_WRL/timeline.csv\"}, \"encoding\": { \"x\": {\"field\": \"date\", \"type\": \"temporal\"}, \"y\": {\"field\": \"new_vaccinations\", \"type\": \"quantitative\", \"scale\": {\"domainMin\": 0}}, \"tooltip\": [ { \"field\": \"date\", \"type\": \"temporal\", \"title\": \"Date\" }, { \"field\": \"new_vaccinations\", \"type\": \"quantitative\", \"title\": \"Shots\" } ] }, \"mark\": { \"type\": \"area\", \"line\": {\"color\": \"green\"}, \"color\": { \"x1\": 1, \"y1\": 1, \"x2\": 1, \"y2\": 0, \"gradient\": \"linear\", \"stops\": [{\"offset\": 0, \"color\": \"white\"}, {\"offset\": 1, \"color\": \"green\"}] } } } ``` ## Locations Here is a summary of the key pandemic data: ```yaml table data: data/reports/world.csv order: - [1, \u0027desc\u0027] columns: - name: Location data: link type: string - name: Deaths data: total_deaths - name: Deaths/1M data: total_deaths_per_million - name: Cases data: total_cases - name: Cases/1M data: total_cases_per_million - name: Shots data: total_vaccinations - name: Shots/100 data: total_vaccinations_per_hundred ``` ## About The purpose of this site is to display analyzed COVID-19 data in a helpful way. On the homepage, you can find summary data for total counts of death, case numbers, and vaccinations from around the world. There are also separate pages displaying similar data but for specific world [regions](/pages/regions.html) and [countries](/pages/countries.html), as well as displaying calculated data like [excess mortality](/pages/mortality.html) and [rolling immunity](/pages/immunity.html). This site is build on the open source Frictionless Livemark tool, and all data collection information is freely shared on the [data collection page](/pages/data.html). Additionally, all source code for the data visualisations can be found on the [GitHub repository](https://github.com/frictionlessdata/covid-tracker). Finally, this is a community project, and anyone is welcome to [contribute](/pages/contrib.html)!",
       },
           'pages/regions': {
           'name': 'Regions',
