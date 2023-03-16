@@ -4,7 +4,7 @@
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/covid-tracker)
 [![Support](https://img.shields.io/badge/support-discord-brightgreen)](https://discord.com/channels/695635777199145130/695635777199145133)
 
-{% set data = frictionless.extract('data/locations/OWID_WRL/latest.csv')[0] %}
+{% set data = frictionless.Resource('data/locations/OWID_WRL/latest.csv').read_rows(size=1)[0] %}
 
 ```yaml remark
 type: primary
