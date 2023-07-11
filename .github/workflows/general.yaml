@@ -1,8 +1,11 @@
 name: general
 
 on:
-  schedule:
-    - cron: "0 6 * * *"
+  push:
+    branches:
+      - main
+    tags:
+      - v*.*.*
 
 jobs:
 
